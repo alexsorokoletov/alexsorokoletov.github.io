@@ -13,7 +13,7 @@ My choice was to contribute to [.NET Core](http://dotnet.github.io/core/) which 
 
 Before you can do anything with .NET on your Mac, you will need to do several things:
 
-1) [Download Visual Studio Code (vscode)](https://code.visualstudio.com/Download)
+1) [Download Visual Studio Code (vscode)](https://code.visualstudio.com/Download?Wt.mc_id=DX_MVP5000197)
 
 2) Install the .NET Core itself. Here is a good guide to follow: [http://dotnet.github.io/core/getting-started/](http://dotnet.github.io/core/getting-started/)
 
