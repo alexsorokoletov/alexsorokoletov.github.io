@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Alex Sorokoletov Notes &middot; Good luck with this code
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Alex Sorokoletov Notes" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Alex Sorokoletov Notes</a>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/about">About</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/archive">Archive</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/atom.xml">Feed</a></small>
+            
+        </h3>
+      </header>
+
+      <main>
+        <div class="posts">
+  
+  <article class="post">
+    <h1 class="post-title">
+      <a href="/2015/11/05/contributing-to-dotnet-on-mac-osx/">
+        Contributing to .NET Core from OS X
+      </a>
+    </h1>
+
+    <time datetime="2015-11-05T00:00:00-08:00" class="post-date">05 Nov 2015</time>
+
+    <p>Imagine you forgot your Windows laptop and have only old Macbook and you are on .NET hackathon. What do you do there?</p>
+
+<p>Well, you have number of options. What you probably dont  know <em>yet</em> is that you can develop using .NET also on your Macbook (or your spouse).</p>
+
+<p>My choice was to contribute to <a href="http://dotnet.github.io/core/">.NET Core</a> which works on everything (have you read recent announcement from RedHat?)</p>
+
+<h2 id="getting-ready-to-rock">Getting ready to rock</h2>
+
+<p>Before you can do anything with .NET on your Mac, you will need to do several things:</p>
+
+<p>1) <a href="https://code.visualstudio.com/Download">Download Visual Studio Code (vscode)</a></p>
+
+<p>2) Install the .NET Core itself. Here is a good guide to follow: <a href="http://dotnet.github.io/core/getting-started/">http://dotnet.github.io/core/getting-started/</a></p>
+
+<p>3) Next step is to fork <a href="https://github.com/dotnet/corefx">dotnet/corefx repository</a>. In my case it’s <a href="https://github.com/alexsorokoletov/corefx">https://github.com/alexsorokoletov/corefx</a></p>
+
+<p>In order to get and compile current master of <a href="https://github.com/dotnet/corefx">dotnet/corefx repository</a> you need to have the very latest Mono version installed. Mono website provides CI packages (nightly builds) for Windows and *nix, and provides nothing for OS X. So you have to compile it manually (just once, no worries)</p>
+
+<h3 id="compiling-mono-on-os-x">Compiling Mono on OS X</h3>
+<p>Good article to follow is available on the Mono website <a href="http://www.mono-project.com/docs/compiling-mono/mac/#building-mono-from-a-git-source-code-checkout">http://www.mono-project.com/docs/compiling-mono/mac/#building-mono-from-a-git-source-code-checkout</a>.</p>
+
+<p>To make it easy to follow, here is what I did:</p>
+
+<p>1) clone mono repository</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir monoci
+
+git clone --recursive git@github.com:mono/mono.git
+
+<span class="nb">cd </span>monoci/mono</code></pre></figure>
+
+<p>2) install required tools</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install autoconf automake libtool pkg-config</code></pre></figure>
+
+<p>3) the compilation itself. In my case folder with mono was <code>~/work/monoci/mono</code></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">CC</span><span class="o">=</span><span class="s1">'cc -m32'</span> ./autogen.sh --prefix<span class="o">=</span>~/work/monoci/mono --disable-nls --build<span class="o">=</span>i386-apple-darwin11.2.0
+make
+make install</code></pre></figure>
+
+<p>These lines of code took around hour to execute on my wife’s old macbook.
+Take a nap or go to gym.</p>
+
+<p>4) now, when mono is compiled, make sure you tell your system to use the fresh mono. To do that, just add ahead of the PATH variable your folder with mono</p>
+
+<p>For example, modify ~/.bash_profile file and add line like that</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/Users/theuser/work/monoci/mono/bin:</span><span class="nv">$PATH</span><span class="s2">"</span></code></pre></figure>
+
+<p>and then just quit and reopen terminal.</p>
+
+<p>5) try it out by running <code>mono --version</code> in the terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Marias-MacBook-Pro:tests theuser<span class="nv">$ </span>mono --version
+Mono JIT compiler version 4.3.0 <span class="o">(</span>master/c278ead Thu Nov  5 11:03:13 PST 2015<span class="o">)</span>
+Copyright <span class="o">(</span>C<span class="o">)</span> 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
+	TLS:           normal
+	SIGSEGV:       altstack
+	Notification:  kqueue
+	Architecture:  x86
+	Disabled:      none
+	Misc:          softdebug 
+	LLVM:          supported, not enabled.
+	GC:            sgen</code></pre></figure>
+
+<p>6) last thing is to copy PCL reference libraries.
+<a href="https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0">Get it here 9.8mb</a> and unzip to folder <code>~/work/monoci/mono/lib/mono/xbuild-frameworks</code></p>
+
+<p>After doing that you should see two subfolders there:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Marias-MacBook-Pro:xbuild-frameworks theuser<span class="nv">$ </span>ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
+total 0
+drwxr-xr-x   4 theuser  staff  136 Nov  5 11:53 .
+drwxr-xr-x  12 theuser  staff  408 Nov  5 11:24 ..
+drwxr-xr-x   9 theuser  staff  306 Nov  5 11:24 .NETFramework
+drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable</code></pre></figure>
+
+<h3 id="compiling-net-core-on-os-x">Compiling .NET Core on OS X</h3>
+
+<p>1) clone your fork of corefx</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone --recursive https://github.com/alexsorokoletov/corefx.git
+<span class="nb">cd </span>corefx</code></pre></figure>
+
+<p>2) run the build script (yay!)</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./build.sh /p:SkipTests<span class="o">=</span><span class="nb">true</span></code></pre></figure>
+
+<p>The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.</p>
+
+<p>The build process first gets some Nuget packages, then spins number of parallel compiler processes.
+On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal <code>ulimit -n 2048</code> to make sure system can spin more procesess - my limit was 256.</p>
+
+<p>So if you have the same problem, just do the magic and restart the build. Probably, the build.sh should handle that process limit better</p>
+
+<p>Great stuff is that build is incremental so it will start where it failed and will save time for all of us :)</p>
+
+<p>3) Assuming you waited enough and things compile (if not, contact me and I will help), you’re all set.</p>
+
+<h3 id="before-we-change-anything-in-the-net-core">Before we change anything in the .NET Core</h3>
+
+<p>So in order to contribute there are several things you need to keep in mind.</p>
+
+<p>One, there is a legal side of any contribution. Read on that here, I’m not a lawyer.</p>
+
+<p>Two, there is a contribution guide you should be familiar with.</p>
+
+<p>Three, the flow is simple - find task -&gt; create branch -&gt; do change -&gt; run tests -&gt; commit &amp; push changes -&gt; create pull request.</p>
+
+<p>I will be covering the flow, you need to read legal stuff and contribution guide.</p>
+
+<h3 id="changing-net-core">Changing .NET Core</h3>
+
+<p>For my first contribution I decided to find something easy and Stephen Toub was very kind and suggested to look at this issue:</p>
+
+<p><a href="https://github.com/dotnet/corefx/issues/2699">Code cleanup for System.IO.Packaging #2699</a></p>
+
+<p>Nothing fancy and a good way to learn.</p>
+
+<p>1) Let’s create a branch for changes</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch fix2699
+git checkout fix2699</code></pre></figure>
+
+<p>2) Open VS Code and change something.</p>
+
+<p>3) Let’s compile and run tests</p>
+
+<p>To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.
+Edit ~/.bash_profile and add a line like that</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">mbuild</span><span class="o">=</span><span class="s1">'mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe'</span></code></pre></figure>
+
+<p>.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
+If it is, look it up in the <code>build.sh</code> file around line 190</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">__msbuildpackageid</span><span class="o">=</span><span class="s2">"Microsoft.Build.Mono.Debug"</span>
+<span class="nv">__msbuildpackageversion</span><span class="o">=</span><span class="s2">"14.1.0.0-prerelease"</span></code></pre></figure>
+
+<p>Restart the terminal (or do <code>source ~/.bash_profile</code>) and let’s go into the folder of the exact package you’re touching.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>src/System.IO.Packaging/tests/</code></pre></figure>
+
+<p>and then run</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mbuild /t:rebuildandtest /p:OSGroup<span class="o">=</span>OSX</code></pre></figure>
+
+<p>This code will compile whatever it sees (either whole .NET Core or just a package). If the changes are local to the package, there is no reason to recompile whole framework.</p>
+
+<p>You should see:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  xUnit.net console <span class="nb">test </span>runner <span class="o">(</span>64-bit .NET Core<span class="o">)</span>
+  Copyright <span class="o">(</span>C<span class="o">)</span> 2014 Outercurve Foundation.
+  
+  Discovering: System.IO.Packaging.Tests
+  Discovered:  System.IO.Packaging.Tests
+  Starting:    System.IO.Packaging.Tests
+  Finished:    System.IO.Packaging.Tests
+  
+  <span class="o">===</span> TEST EXECUTION SUMMARY <span class="o">===</span>
+     System.IO.Packaging.Tests  Total: 122, Errors: 0, Failed: 0, Skipped: 0, Time: 2.080s
+  Touching <span class="s2">"/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing"</span>.
+Done Building Project <span class="s2">"/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj"</span> <span class="o">(</span>rebuildandtest target<span class="o">(</span>s<span class="o">))</span>.
+
+Build succeeded.
+    0 Warning<span class="o">(</span>s<span class="o">)</span>
+    0 Error<span class="o">(</span>s<span class="o">)</span>
+
+Time Elapsed 00:00:22.61</code></pre></figure>
+
+<p>Nice, everything works!</p>
+
+<p>4) Commiting the change. 
+As the contributing guide suggest, you commit message should look like</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Code cleanup <span class="k">in </span>System.IO.Packaging
+
+This request has several changes <span class="k">in </span>ContentType.cs to make sure I understand the contribution workflow
+
+Related to <span class="c">#2699</span></code></pre></figure>
+
+<p>The empty lines are required because of the way github handles commits and pull requests.
+As my commit doesn’t really fixes anything, I wrote in the last line “Related to #issue_number” and not “Fixed #issue_number”.</p>
+
+<p>After you commit, push the changes to the github and create a pull request.</p>
+
+<p>Github will pickup the pull request contents automatically.</p>
+
+<p>Time to wait till .NET Core automatic build compiles your changes and also till .NET team provides feedback on the changes.</p>
+
+<p>5) Common thing is that you get feedback on pull request and need to do some minor changes.
+After you do the changes, you might want to create a new commit, but there is a better way.</p>
+
+<p>You can update your previous commit, by ammending the previous commit and force-pushing it to the server.</p>
+
+<p>Easy in the terminal:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit --amend
+git push origin +fix2699</code></pre></figure>
+
+<p>Thanks for this tip, Stephen!</p>
+
+<p>6) Then your pull request is accepted and merged. 
+Congratulations!</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>Things I just did were impossible all 12 years .NET existed before.</p>
+
+<p>It is a still mind-blowing how .NET Core, build and tests work on anything running OS X, Linux and Windows.</p>
+
+<p>What is great is that you can already write apps using .NET and C# for OS X (console and web apps so far).</p>
+
+<p>What is incredibly great is that how easy is to contribute to the .NET now.</p>
+
+<p>First time it might be hard, submitting first pull request took me 4 hours. Submitting second took me 30 minutes.</p>
+
+<p>Huge thanks and kudos to the .NET Core team, Mat, Stephen and everyone else helping me!</p>
+
+<p>I hope this experience will be helpful to other people having spare time and experience to share and reuse.</p>
+
+<p>If you liked this post, you can
+<a href="https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;text=Contributing to .NET Core from OS X&amp;via=alexsorokoletov" target="_blank">
+  share it with your followers</a> 
+or 
+<a href="https://twitter.com/alexsorokoletov">
+  follow me on Twitter</a>!</p>
+
+  </article>
+  
+</div>
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+      </main>
+
+      
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2015-11-05T18:50:53-08:00">2015</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69801505-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
