@@ -34,4 +34,4 @@ pages_list:
   Archive: '/archive'
   Feed: '/atom.xml'
   
- 
+excerpt_separator: '<!--more-->'

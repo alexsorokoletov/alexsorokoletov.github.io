@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Contributing to .NET Core from OS X
+comments: True
 ---
 
 Imagine you forgot your Windows laptop and have only old Macbook and you are on .NET hackathon. What do you do there? 
@@ -8,6 +9,8 @@ Imagine you forgot your Windows laptop and have only old Macbook and you are on 
 Well, you have number of options. What you probably dont  know *yet* is that you can develop using .NET also on your Macbook (or your spouse).
 
 My choice was to contribute to [.NET Core](http://dotnet.github.io/core/) which works on everything (have you read recent announcement from RedHat?)
+
+<!--more-->
 
 ## Getting ready to rock
 

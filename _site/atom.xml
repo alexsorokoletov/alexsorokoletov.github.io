@@ -4,7 +4,7 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2015-11-05T23:41:25-08:00</updated>
+ <updated>2015-11-06T00:07:03-08:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
@@ -22,6 +22,8 @@
 &lt;p&gt;Well, you have number of options. What you probably dont  know &lt;em&gt;yet&lt;/em&gt; is that you can develop using .NET also on your Macbook (or your spouse).&lt;/p&gt;
 
 &lt;p&gt;My choice was to contribute to &lt;a href=&quot;http://dotnet.github.io/core/&quot;&gt;.NET Core&lt;/a&gt; which works on everything (have you read recent announcement from RedHat?)&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;getting-ready-to-rock&quot;&gt;Getting ready to rock&lt;/h2&gt;
 
