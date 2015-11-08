@@ -14,9 +14,9 @@ gMaps Pro (paid version already including all features of gMaps) is top 2 paid n
 <!--more-->
 Here you are, facts :)
 
-{% responsive_image path: assets/gmaps-is-top-free-navigation-app-for-wp.png alt: 'gMaps is top free navigation app for Windows Phone' %}
+![gMaps is top free navigation app for Windows Phone](/assets/gmaps-is-top-free-navigation-app-for-wp.png)
 
-{% responsive_image path: assets/gmaps-is-top2-paid-navigation-app-for-wp.png alt: 'gMaps is top2 paid navigation app for Windows Phone' %}
+![gMaps is top2 paid navigation app for Windows Phone](/assets/gmaps-is-top2-paid-navigation-app-for-wp.png)
 
 We put a lot of energy into gMaps and are striving for the quality and features.
 

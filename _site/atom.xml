@@ -4,7 +4,7 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2015-11-08T09:13:43-05:00</updated>
+ <updated>2015-11-08T09:20:09-05:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
@@ -28,15 +28,9 @@ Yay!&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;p&gt;Here you are, facts :)&lt;/p&gt;
 
-&lt;picture&gt;
-    
-    &lt;img src=&quot;/assets/gmaps-is-top-free-navigation-app-for-wp.png&quot; alt=&quot;gMaps is top free navigation app for Windows Phone&quot; /&gt;
-&lt;/picture&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/gmaps-is-top-free-navigation-app-for-wp.png&quot; alt=&quot;gMaps is top free navigation app for Windows Phone&quot; /&gt;&lt;/p&gt;
 
-&lt;picture&gt;
-    
-    &lt;img src=&quot;/assets/gmaps-is-top2-paid-navigation-app-for-wp.png&quot; alt=&quot;gMaps is top2 paid navigation app for Windows Phone&quot; /&gt;
-&lt;/picture&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/gmaps-is-top2-paid-navigation-app-for-wp.png&quot; alt=&quot;gMaps is top2 paid navigation app for Windows Phone&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We put a lot of energy into gMaps and are striving for the quality and features.&lt;/p&gt;
 
