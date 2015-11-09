@@ -7,9 +7,9 @@ permalink:           pretty
 title:               Alex Sorokoletov Notes
 tagline:             Good luck with this code
 url:                 http://sorokoletov.com
-paginate:            1
+paginate:            5
 baseurl:             ""
-gems: [jekyll-paginate, jekyll-gist]
+gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap, jemoji]
 
 # Assets
 #

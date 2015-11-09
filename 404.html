@@ -5,6 +5,21 @@ permalink: 404.html
 ---
 
 <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ site.baseurl }}/">Head back home</a> to try finding it again.</p>
+  <h1 class="page-title">404: Not sure if page is not found or missing</h1>
+  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.</p>
+  <p class="lead"> <a href="{{ site.baseurl }}/">Head home</a> to try finding it again or contact me on twitter <a href="https://twitter.com/alexsorokoletov">@AlexSorokoletov</a>.</p>
+  
+  <p>
+      Instead, read these recent posts :books: 
+  </p>
+  <div class="posts">
+    {% for post in site.posts limit:3 %}
+    <div>
+      - <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+
 </div>

@@ -3,11 +3,12 @@ layout: post
 title: gMaps is again best navigation app for Windows Phone
 comments: True
 ---
-I recently opened Store app on Lumia 925 and was surprised.
-Turns out, after so many years, gMaps is still the best navigation app out there. 
+I recently opened Store app on Lumia 925 and was surprised.  
+Turns out, after so many years, gMaps is still the best navigation app out there.
 
-gMaps is top 1 free navigation application for Windows Phone 8.1 
-Yay!
+gMaps is top 1 free navigation application for Windows Phone 8.1! Yay!
+
+:rocket:
 
 gMaps Pro (paid version already including all features of gMaps) is top 2 paid navigation application for Windows Phone 8.1
 

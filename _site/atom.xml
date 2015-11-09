@@ -4,7 +4,7 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2015-11-08T09:22:18-05:00</updated>
+ <updated>2015-11-09T14:18:20-05:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
@@ -17,11 +17,12 @@
    <link href="http://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/"/>
    <updated>2015-11-07T00:00:00-05:00</updated>
    <id>http://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone</id>
-   <content type="html">&lt;p&gt;I recently opened Store app on Lumia 925 and was surprised.
+   <content type="html">&lt;p&gt;I recently opened Store app on Lumia 925 and was surprised.&lt;br /&gt;
 Turns out, after so many years, gMaps is still the best navigation app out there.&lt;/p&gt;
 
-&lt;p&gt;gMaps is top 1 free navigation application for Windows Phone 8.1 
-Yay!&lt;/p&gt;
+&lt;p&gt;gMaps is top 1 free navigation application for Windows Phone 8.1! Yay!&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;emoji&quot; title=&quot;:rocket:&quot; alt=&quot;:rocket:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f680.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;gMaps Pro (paid version already including all features of gMaps) is top 2 paid navigation application for Windows Phone 8.1&lt;/p&gt;
 
