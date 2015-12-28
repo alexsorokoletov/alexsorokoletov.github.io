@@ -4,13 +4,163 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2015-11-09T14:18:20-05:00</updated>
+ <updated>2015-12-28T14:21:15-05:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Android-maps-utils bindings for Xamarin.Android apps</title>
+   <link href="http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/"/>
+   <updated>2015-12-28T00:00:00-05:00</updated>
+   <id>http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id>
+   <content type="html">&lt;h3 id=&quot;bindings-for-android-maps-utils-for-xamarinandroid-apps&quot;&gt;Bindings for android-maps-utils for Xamarin.Android apps&lt;/h3&gt;
+
+&lt;p&gt;Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.&lt;/p&gt;
+
+&lt;p&gt;Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. 
+However, there is a solution!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;To address this problem, Google Maps team shared so called &lt;code&gt;android-maps-utils&lt;/code&gt; extensions to the Android maps SDK which allows you do following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Marker clustering — handles the display of a large number of points&lt;/li&gt;
+  &lt;li&gt;Heat maps — display a large number of points as a heat map&lt;/li&gt;
+  &lt;li&gt;IconGenerator — display text on your Markers (see screenshot to the right)&lt;/li&gt;
+  &lt;li&gt;Poly decoding and encoding — compact encoding for paths, interoperability with Maps API web services&lt;/li&gt;
+  &lt;li&gt;Spherical geometry — for example: computeDistance, computeHeading, computeArea&lt;/li&gt;
+  &lt;li&gt;KML — displays KML data (Caution: Beta!)&lt;/li&gt;
+  &lt;li&gt;GeoJSON — displays and styles GeoJSON data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Please read more on the official website: &lt;a href=&quot;http://googlemaps.github.io/android-maps-utils/&quot;&gt;http://googlemaps.github.io/android-maps-utils/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Down the road you can find steps and details how the bindings for quite complex java library could be created and how these fresh bindings for Android Maps utils could be consumed in the Xamarin Android application.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To get to the how to part, scroll down&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;existing-xamarinandroid-bindings&quot;&gt;Existing Xamarin.Android bindings&lt;/h3&gt;
+&lt;p&gt;Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area.&lt;/p&gt;
+
+&lt;p&gt;Looking for existing solution to the problem, one can find &lt;a href=&quot;https://github.com/oystehei/MapsUtilityDemo&quot;&gt;bindings made by Øystein Heimark&lt;/a&gt;. But these are quite old. To practice and to get the freshest code, I’ve created the updated bindings:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils&quot;&gt;github.com/alexsorokoletov/Xamarin.Android.Maps.Utils&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-java-library-bindings-for-xamarinandroid&quot;&gt;Creating java library bindings for Xamarin.Android&lt;/h3&gt;
+
+&lt;p&gt;There is an official guide from Xamarin: 
+&lt;a href=&quot;https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/&quot;&gt;Binding a Java Library - Consuming Java libraries from C#&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Following the guide, one can sometimes see warnings or erros on the bindings.
+For example, 
+&lt;code&gt;/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name &#39;IGeoJsonStyle&#39; does not exist in the namespace &#39;Com.Google.Maps.Android.Geojson&#39;. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To fix this error all you need is to manually &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml#L15&quot;&gt;edit Metadata.xml file and introduce these changes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As you proceed, there will be a few more errors and several warnings. Fixes for them are documented in the &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml&quot;&gt;Metadata.xml file&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;More than helpful were comments and examples from &lt;a href=&quot;https://github.com/brendanzagaeski&quot;&gt;brendanzagaeski&lt;/a&gt; with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.&lt;/p&gt;
+
+&lt;h4 id=&quot;jaraar-dependencies&quot;&gt;JAR/AAR dependencies&lt;/h4&gt;
+&lt;p&gt;Case with &lt;code&gt;android-maps-utils&lt;/code&gt; is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
+Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
+With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.&lt;/p&gt;
+
+&lt;p&gt;One of the questions one might have - which version of google-play-services.jar should we use?
+&lt;a href=&quot;https://github.com/googlemaps/android-maps-utils/blob/master/library/build.gradle#L19&quot;&gt;The android-maps-utils library is compiled against google-play-services 7.8.0&lt;/a&gt;, so, basically, we can use anything &amp;gt;=7.8.0&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-use-this-library-examples&quot;&gt;How to use this library (examples)&lt;/h3&gt;
+
+&lt;p&gt;On C# side what you need to do is following:
+0) reference the bindings
+1) instantiate cluster manager&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//on MapReady&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ClusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetOnCameraChangeListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SetOnMarkerClickListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you already have custom handlers to map CameraChange/MarkerClick, you can do following (specifics of Xamarin.Android events subscriptions)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map_MarkerClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GoogleMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MarkerClickEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OnMarkerClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Marker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//your custom code&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map_CameraChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GoogleMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CameraChangeEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OnCameraChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//your custom code&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;2) implement custom IClusterItem object&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ServiceClusterItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IClusterItem&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LatLng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;serviceItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntPtr&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Android&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Runtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JniHandleOwnership&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transfer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transfer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LatLng&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;3) add items to the clusterer and enjoy&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusterItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AddItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;helpful-links&quot;&gt;Helpful links&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;My other Xamarin bindings:
+&lt;a href=&quot;http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/&quot;&gt;Tutorial – Android float label binding for Xamarin.Android&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;“Maps Shortcuts: Android Maps Utility Library” youtube video
+  &lt;a href=&quot;https://www.youtube.com/watch?v=nb2X9IjjZpM&quot;&gt;Maps Shortcuts: Android Maps Utility Library&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;example of use for original android maps util library
+&lt;a href=&quot;https://github.com/googlemaps/android-maps-utils/tree/master/demo&quot;&gt;github.com/googlemaps/android-maps-utils/tree/master/demo&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;brendanzagaeski Metadata.xml examples:&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&quot;&gt;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&lt;/a&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&quot;&gt;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&lt;/a&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&quot;&gt;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&lt;/a&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&quot;&gt;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&lt;/a&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9834034&quot;&gt;https://gist.github.com/brendanzagaeski/9834034&lt;/a&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9607158&quot;&gt;https://gist.github.com/brendanzagaeski/9607158&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&amp;amp;text=Android-maps-utils bindings for Xamarin.Android apps&amp;amp;via=@alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>gMaps is again best navigation app for Windows Phone</title>
@@ -81,21 +231,21 @@ or
 
 &lt;p&gt;1) clone mono repository&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir monoci
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir monoci
 
 git clone --recursive git@github.com:mono/mono.git
 
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;monoci/mono&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;monoci/mono&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2) install required tools&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install autoconf automake libtool pkg-config&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install autoconf automake libtool pkg-config&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;3) the compilation itself. In my case folder with mono was &lt;code&gt;~/work/monoci/mono&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;cc -m32&#39;&lt;/span&gt; ./autogen.sh --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/work/monoci/mono --disable-nls --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;i386-apple-darwin11.2.0
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cc -m32&amp;#39;&lt;/span&gt; ./autogen.sh --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/work/monoci/mono --disable-nls --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;i386-apple-darwin11.2.0
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;These lines of code took around hour to execute on my wife’s old macbook.
 Take a nap or go to gym.&lt;/p&gt;
@@ -104,14 +254,14 @@ Take a nap or go to gym.&lt;/p&gt;
 
 &lt;p&gt;For example, modify ~/.bash_profile file and add line like that&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/monoci/mono/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/Users/theuser/work/monoci/mono/bin:$PATH&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;and then just quit and reopen terminal.&lt;/p&gt;
 
 &lt;p&gt;5) try it out by running &lt;code&gt;mono --version&lt;/code&gt; in the terminal&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:tests theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mono --version
-Mono JIT compiler version 4.3.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master/c278ead Thu Nov  5 11:03:13 PST 2015&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:tests theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mono --version
+Mono JIT compiler version 4.3.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master/c278ead Thu Nov  &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; 11:03:13 PST 2015&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
 	TLS:           normal
 	SIGSEGV:       altstack
@@ -120,30 +270,30 @@ Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&
 	Disabled:      none
 	Misc:          softdebug 
 	LLVM:          supported, not enabled.
-	GC:            sgen&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+	GC:            sgen&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;6) last thing is to copy PCL reference libraries.
 &lt;a href=&quot;https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0&quot;&gt;Get it here 9.8mb&lt;/a&gt; and unzip to folder &lt;code&gt;~/work/monoci/mono/lib/mono/xbuild-frameworks&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After doing that you should see two subfolders there:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:xbuild-frameworks theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:xbuild-frameworks theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
 total 0
-drwxr-xr-x   4 theuser  staff  136 Nov  5 11:53 .
-drwxr-xr-x  12 theuser  staff  408 Nov  5 11:24 ..
-drwxr-xr-x   9 theuser  staff  306 Nov  5 11:24 .NETFramework
-drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+drwxr-xr-x   &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; theuser  staff  &lt;span class=&quot;m&quot;&gt;136&lt;/span&gt; Nov  &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; 11:53 .
+drwxr-xr-x  &lt;span class=&quot;m&quot;&gt;12&lt;/span&gt; theuser  staff  &lt;span class=&quot;m&quot;&gt;408&lt;/span&gt; Nov  &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; 11:24 ..
+drwxr-xr-x   &lt;span class=&quot;m&quot;&gt;9&lt;/span&gt; theuser  staff  &lt;span class=&quot;m&quot;&gt;306&lt;/span&gt; Nov  &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; 11:24 .NETFramework
+drwxr-xr-x   &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt; theuser  staff  &lt;span class=&quot;m&quot;&gt;204&lt;/span&gt; Aug &lt;span class=&quot;m&quot;&gt;13&lt;/span&gt; 01:35 .NETPortable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;compiling-net-core-on-os-x&quot;&gt;Compiling .NET Core on OS X&lt;/h3&gt;
 
 &lt;p&gt;1) clone your fork of corefx&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone --recursive https://github.com/alexsorokoletov/corefx.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;corefx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone --recursive https://github.com/alexsorokoletov/corefx.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;corefx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2) run the build script (yay!)&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./build.sh /p:SkipTests&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./build.sh /p:SkipTests&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.&lt;/p&gt;
 
@@ -178,8 +328,8 @@ On my machine it failed at some point to spin new processes. To overcome that, I
 
 &lt;p&gt;1) Let’s create a branch for changes&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git branch fix2699
-git checkout fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git branch fix2699
+git checkout fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;2) Open VS Code and change something.&lt;/p&gt;
 
@@ -188,55 +338,55 @@ git checkout fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.
 Edit ~/.bash_profile and add a line like that&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mbuild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mbuild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
 If it is, look it up in the &lt;code&gt;build.sh&lt;/code&gt; file around line 190&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;__msbuildpackageid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Microsoft.Build.Mono.Debug&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;__msbuildpackageversion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;14.1.0.0-prerelease&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;__msbuildpackageid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Microsoft.Build.Mono.Debug&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;__msbuildpackageversion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;14.1.0.0-prerelease&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Restart the terminal (or do &lt;code&gt;source ~/.bash_profile&lt;/code&gt;) and let’s go into the folder of the exact package you’re touching.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;src/System.IO.Packaging/tests/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;src/System.IO.Packaging/tests/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;and then run&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mbuild /t:rebuildandtest /p:OSGroup&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;OSX&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mbuild /t:rebuildandtest /p:OSGroup&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;OSX&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This code will compile whatever it sees (either whole .NET Core or just a package). If the changes are local to the package, there is no reason to recompile whole framework.&lt;/p&gt;
 
 &lt;p&gt;You should see:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  xUnit.net console &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;runner &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;64-bit .NET Core&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2014 Outercurve Foundation.
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;xUnit.net console &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;runner &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;64-bit .NET Core&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2014&lt;/span&gt; Outercurve Foundation.
   
   Discovering: System.IO.Packaging.Tests
   Discovered:  System.IO.Packaging.Tests
   Starting:    System.IO.Packaging.Tests
   Finished:    System.IO.Packaging.Tests
   
-  &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; TEST EXECUTION SUMMARY &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; TEST EXECUTION &lt;span class=&quot;nv&quot;&gt;SUMMARY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;
      System.IO.Packaging.Tests  Total: 122, Errors: 0, Failed: 0, Skipped: 0, Time: 2.080s
-  Touching &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing&quot;&lt;/span&gt;.
-Done Building Project &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rebuildandtest target&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.
+  Touching &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing&amp;quot;&lt;/span&gt;.
+Done Building Project &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rebuildandtest target&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.
 
 Build succeeded.
-    0 Warning&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    0 Error&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; Warning&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; Error&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
-Time Elapsed 00:00:22.61&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+Time Elapsed 00:00:22.61&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Nice, everything works!&lt;/p&gt;
 
 &lt;p&gt;4) Commiting the change. 
 As the contributing guide suggest, you commit message should look like&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Code cleanup &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;System.IO.Packaging
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Code cleanup in System.IO.Packaging
 
-This request has several changes &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;ContentType.cs to make sure I understand the contribution workflow
+This request has several changes in ContentType.cs to make sure I understand the contribution workflow
 
-Related to &lt;span class=&quot;c&quot;&gt;#2699&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+Related to &lt;span class=&quot;c&quot;&gt;#2699&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The empty lines are required because of the way github handles commits and pull requests.
 As my commit doesn’t really fixes anything, I wrote in the last line “Related to #issue_number” and not “Fixed #issue_number”.&lt;/p&gt;
@@ -254,8 +404,8 @@ After you do the changes, you might want to create a new commit, but there is a 
 
 &lt;p&gt;Easy in the terminal:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git commit --amend
-git push origin +fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git commit --amend
+git push origin +fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Thanks for this tip, Stephen!&lt;/p&gt;
 
