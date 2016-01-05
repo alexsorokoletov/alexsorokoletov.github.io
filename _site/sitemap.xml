@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/</loc>
+    <lastmod>2016-01-05T00:00:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/</loc>
     <lastmod>2015-12-28T00:00:00-05:00</lastmod>
   </url>
