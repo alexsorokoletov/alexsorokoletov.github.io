@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV
+title: Coding for fun - AT&T signal levels on route from DC to Snowshoe, WV
 comments: True
 ---
 We go the [Snowshoe ski resort](http://snowshoemtn.com) almost every weekend when there is snow.
