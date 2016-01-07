@@ -4,7 +4,7 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2016-01-04T19:10:50-05:00</updated>
+ <updated>2016-01-07T14:21:01-05:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
@@ -17,86 +17,79 @@
    <link href="http://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/"/>
    <updated>2016-01-05T00:00:00-05:00</updated>
    <id>http://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id>
-   <content type="html">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
-Driving there takes up to 5 hours.
+   <content type="html">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.&lt;br /&gt;
+Driving there takes up to 5 hours.&lt;br /&gt;
 As long as you drive off the interstate you loose your cell signal.&lt;/p&gt;
 
 &lt;p&gt;Last year we had to learn how to drive and communicate in a disconnected world. We now know the route by heart, we know stops, we know which restaurants or gas stations have Wi-Fi. We also got some low-power FRS radios to have more flexibility during our trips.&lt;/p&gt;
 
-&lt;p&gt;Honestly, I was always wondering why T-Mobile was so bad in this area. This spring I switched to AT&amp;amp;T to compare the coverage on Outer Banks (where T-Mobile is also failing to get you even basic coverage).
+&lt;p&gt;Honestly, I was always wondering why T-Mobile was so bad in this area. This spring I switched to AT&amp;amp;T to compare the coverage on Outer Banks (where T-Mobile is also failing to get you even basic coverage).&lt;br /&gt;
 Now it`s winter and it’s time to check out AT&amp;amp;T coverage in our favorite skiing area.&lt;/p&gt;
 
-&lt;p&gt;Let’s see how we do that and what we find
+&lt;p&gt;Let’s see how we do that and what we find&lt;br /&gt;
 &lt;!--more--&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;why&quot;&gt;Why&lt;/h3&gt;
-&lt;p&gt;As the article says, point is get some code just for fun. And see, if switching from T-Mobile to AT&amp;amp;T makes any sense.
+&lt;p&gt;As the article says, point is get some code just for fun. And see, if switching from T-Mobile to AT&amp;amp;T makes any sense.&lt;br /&gt;
 And see, maybe there is a reason why we have almost no coverage off the interstates.&lt;/p&gt;
 
-&lt;h3 id=&quot;technical-details&quot;&gt;Technical details&lt;/h3&gt;
-&lt;p&gt;So, I had macbook with OS X and Windows 10, iPhone 6 and Lumia 950 and Lumia 925. First idea was to have Lumia 950 with AT&amp;amp;T and Lumia 925 with T-Mobile run same app along the route and then compare results. Unfortunately, I forgot my USB C cable so 950 died on the way there. 
+&lt;p&gt;###Technical details&lt;br /&gt;
+So, I had macbook with OS X and Windows 10, iPhone 6 and Lumia 950 and Lumia 925. First idea was to have Lumia 950 with AT&amp;amp;T and Lumia 925 with T-Mobile run same app along the route and then compare results. Unfortunately, I forgot my USB C cable so 950 died on the way there. &lt;br /&gt;
 So plan changed and I got an iOS app and did a AT&amp;amp;T cellular network signal level log on the way back.&lt;/p&gt;
 
-&lt;p&gt;Interesting that iOS has no public API to get cellular service signal level. There was some way in iOS 4.2 days &lt;a href=&quot;https://github.com/valexa/VAFieldTest&quot;&gt;VAFieldTest&lt;/a&gt;. Doesn’t work now.
+&lt;p&gt;Interesting that iOS has no public API to get cellular service signal level. There was some way in iOS 4.2 days &lt;a href=&quot;https://github.com/valexa/VAFieldTest&quot;&gt;VAFieldTest&lt;/a&gt;. Doesn’t work now.&lt;br /&gt;
 However, there is a way to get a signal level on iOS 9 devices. Kind gentleman shared the idea on Stack Overflow: &lt;a href=&quot;http://stackoverflow.com/a/34389611/883738&quot;&gt;Measuring cellular signal strength&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;That was enough for the first version.&lt;/p&gt;
 
 &lt;p&gt;You can get the app from github - &lt;a href=&quot;https://github.com/alexsorokoletov/SignalLogger&quot;&gt;github.com/alexsorokoletov/SignalLogger&lt;/a&gt;. App tracks GPS and signal level every 10 seconds, while tracking screen stays active, all results are exported to CSV and emailed to you after you stop tracking. Keep it simple.&lt;/p&gt;
 
-&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
-&lt;p&gt;Gist with raw CSV data: &lt;a href=&quot;https://gist.github.com/alexsorokoletov/0ce68926804dee671563&quot;&gt;DC to Snowshoe ATT signal strength data.csv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###Results&lt;br /&gt;
+Gist with raw CSV data: &lt;a href=&quot;https://gist.github.com/alexsorokoletov/0ce68926804dee671563&quot;&gt;DC to Snowshoe ATT signal strength data.csv&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Using QGIS I was able to get the results on the map:&lt;/p&gt;
 
-&lt;p&gt;This is a complete route from DC to Snowshoe, WV with AT&amp;amp;T signal level. Green - available, red - unavailable.
-I have no idea yet how to make the route colorful with orange where the signal is low and green where it is good.
+&lt;p&gt;This is a complete route from DC to Snowshoe, WV with AT&amp;amp;T signal level. Green - available, red - unavailable.&lt;br /&gt;
+I have no idea yet how to make the route colorful with orange where the signal is low and green where it is good.&lt;br /&gt;
 &lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-complete.png&quot; alt=&quot;Complete route from DC to Snowshoe, WV with AT&amp;amp;T signal level&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Part of the route where the service is available.
+&lt;p&gt;Part of the route where the service is available.&lt;br /&gt;
 &lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-available.png&quot; alt=&quot;Route from DC to Snowshoe, WV where AT&amp;amp;T is available&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Part of the route where the service is &lt;strong&gt;not&lt;/strong&gt; available.
+&lt;p&gt;Part of the route where the service is &lt;strong&gt;not&lt;/strong&gt; available.&lt;br /&gt;
 &lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-unavailable.png&quot; alt=&quot;Route from DC to Snowshoe, WV without AT&amp;amp;T service&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;And also a terrain based part of the map where the AT&amp;amp;T service is interrupted.
+&lt;p&gt;And also a terrain based part of the map where the AT&amp;amp;T service is interrupted.&lt;br /&gt;
 &lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-terrain.png&quot; alt=&quot;AT&amp;amp;T service with terrain map as a base&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Looks like the rule for the AT&amp;amp;T service is simple. Inside park areas (forests, national and state parks - green on the terrain map) service is absent. Otherwise AT&amp;amp;T gives some coverage.&lt;/p&gt;
 
-&lt;p&gt;I was surprised to find out that the coverage is not actually related to &lt;a href=&quot;https://en.wikipedia.org/wiki/United_States_National_Radio_Quiet_Zone&quot;&gt;the US NRQZ area&lt;/a&gt; or distance to &lt;a href=&quot;https://en.wikipedia.org/wiki/Green_Bank_Telescope&quot;&gt;the Green Bank Radio Observatory&lt;/a&gt;. 
-One can get some details about that in the NPR article &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned&quot;&gt;Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned&lt;/a&gt;
-###Next steps
+&lt;p&gt;I was surprised to find out that the coverage is not actually related to &lt;a href=&quot;https://en.wikipedia.org/wiki/United_States_National_Radio_Quiet_Zone&quot;&gt;the US NRQZ area&lt;/a&gt; or distance to &lt;a href=&quot;https://en.wikipedia.org/wiki/Green_Bank_Telescope&quot;&gt;the Green Bank Radio Observatory&lt;/a&gt;. &lt;br /&gt;
+One can get some details about that in the NPR article &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned&quot;&gt;Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned&lt;/a&gt;&lt;br /&gt;
+###Next steps&lt;br /&gt;
 Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage results and then compare and see if it makes sense to have one or another.&lt;/p&gt;
 
-&lt;h3 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h3&gt;
+&lt;p&gt;###Thoughts&lt;br /&gt;
+- What is wrong with Apple not providing API for cellular service signal strength?&lt;/p&gt;
+
+&lt;p&gt;I guess it would benefit if Apple would be more open in terms of APIs available.&lt;br /&gt;
+- There are interesting ways of getting data through private Apple APIs and from private UIView classes &lt;a href=&quot;stackoverflow.com/questions/754824/get-an-object-properties-list-in-objective-c&quot;&gt;Get an object properties list in Objective-C&lt;/a&gt; and &lt;a href=&quot;https://github.com/valexa/VAFieldTest/blob/master/CoreTelephony.txt&quot;&gt;CoreTelephony.h file&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;These ways will stop your app from being published in the App Store, but for experiments like this are good alternative. &lt;br /&gt;
+- Let’s see if Microsoft is more open with cellular&lt;/p&gt;
+
+&lt;p&gt;Probably, there are different ways to access this data just because MS had different API sets for WP7, WP8, WinRT (WPA81) and Windows 10 UWP. Let’s see who is the winner.&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;What is wrong with Apple not providing API for cellular service signal strength?&lt;/p&gt;
-
-    &lt;p&gt;I guess it would benefit if Apple would be more open in terms of APIs available.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;There are interesting ways of getting data through private Apple APIs and from private UIView classes &lt;a href=&quot;stackoverflow.com/questions/754824/get-an-object-properties-list-in-objective-c&quot;&gt;Get an object properties list in Objective-C&lt;/a&gt; and &lt;a href=&quot;https://github.com/valexa/VAFieldTest/blob/master/CoreTelephony.txt&quot;&gt;CoreTelephony.h file&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;These ways will stop your app from being published in the App Store, but for experiments like this are good alternative.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Let’s see if Microsoft is more open with cellular&lt;/p&gt;
-
-    &lt;p&gt;Probably, there are different ways to access this data just because MS had different API sets for WP7, WP8, WinRT (WPA81) and Windows 10 UWP. Let’s see who is the winner.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I want to render same data in the Microsoft Power BI. Presumably, this is the kind of tasks to be handled by the Power BI.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;I want to render same data in the Microsoft Power BI. Presumably, this is the kind of tasks to be handled by the Power BI.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;If you liked this post, you can
+&lt;p&gt;If you liked this post, you can&lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/&amp;amp;text=Coding+for+fun+-+AT%26T+signal+levels+on+route+from+DC+to+Snowshoe%2C+WV&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
+  share it with your followers&lt;/a&gt; &lt;br /&gt;
+or &lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
 </content>
@@ -107,11 +100,11 @@ or
    <link href="http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/"/>
    <updated>2015-12-28T00:00:00-05:00</updated>
    <id>http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id>
-   <content type="html">&lt;h3 id=&quot;bindings-for-android-maps-utils-for-xamarinandroid-apps&quot;&gt;Bindings for android-maps-utils for Xamarin.Android apps&lt;/h3&gt;
+   <content type="html">&lt;p&gt;###Bindings for android-maps-utils for Xamarin.Android apps&lt;/p&gt;
 
 &lt;p&gt;Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.&lt;/p&gt;
 
-&lt;p&gt;Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. 
+&lt;p&gt;Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. &lt;br /&gt;
 However, there is a solution!&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -134,20 +127,20 @@ However, there is a solution!&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;To get to the how to part, scroll down&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;existing-xamarinandroid-bindings&quot;&gt;Existing Xamarin.Android bindings&lt;/h3&gt;
-&lt;p&gt;Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area.&lt;/p&gt;
+&lt;p&gt;###Existing Xamarin.Android bindings&lt;br /&gt;
+Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area.&lt;/p&gt;
 
 &lt;p&gt;Looking for existing solution to the problem, one can find &lt;a href=&quot;https://github.com/oystehei/MapsUtilityDemo&quot;&gt;bindings made by Øystein Heimark&lt;/a&gt;. But these are quite old. To practice and to get the freshest code, I’ve created the updated bindings:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils&quot;&gt;github.com/alexsorokoletov/Xamarin.Android.Maps.Utils&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;creating-java-library-bindings-for-xamarinandroid&quot;&gt;Creating java library bindings for Xamarin.Android&lt;/h3&gt;
+&lt;p&gt;###Creating java library bindings for Xamarin.Android&lt;/p&gt;
 
-&lt;p&gt;There is an official guide from Xamarin: 
+&lt;p&gt;There is an official guide from Xamarin: &lt;br /&gt;
 &lt;a href=&quot;https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/&quot;&gt;Binding a Java Library - Consuming Java libraries from C#&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Following the guide, one can sometimes see warnings or erros on the bindings.
-For example, 
+&lt;p&gt;Following the guide, one can sometimes see warnings or erros on the bindings.&lt;br /&gt;
+For example, &lt;br /&gt;
 &lt;code&gt;/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name &#39;IGeoJsonStyle&#39; does not exist in the namespace &#39;Com.Google.Maps.Android.Geojson&#39;. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;To fix this error all you need is to manually &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml#L15&quot;&gt;edit Metadata.xml file and introduce these changes&lt;/a&gt;&lt;/p&gt;
@@ -156,18 +149,18 @@ For example,
 
 &lt;p&gt;More than helpful were comments and examples from &lt;a href=&quot;https://github.com/brendanzagaeski&quot;&gt;brendanzagaeski&lt;/a&gt; with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.&lt;/p&gt;
 
-&lt;h4 id=&quot;jaraar-dependencies&quot;&gt;JAR/AAR dependencies&lt;/h4&gt;
-&lt;p&gt;Case with &lt;code&gt;android-maps-utils&lt;/code&gt; is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
-Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
+&lt;p&gt;####JAR/AAR dependencies&lt;br /&gt;
+Case with &lt;code&gt;android-maps-utils&lt;/code&gt; is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.&lt;br /&gt;
+Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.&lt;br /&gt;
 With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.&lt;/p&gt;
 
-&lt;p&gt;One of the questions one might have - which version of google-play-services.jar should we use?
+&lt;p&gt;One of the questions one might have - which version of google-play-services.jar should we use?&lt;br /&gt;
 &lt;a href=&quot;https://github.com/googlemaps/android-maps-utils/blob/master/library/build.gradle#L19&quot;&gt;The android-maps-utils library is compiled against google-play-services 7.8.0&lt;/a&gt;, so, basically, we can use anything &amp;gt;=7.8.0&lt;/p&gt;
 
-&lt;h3 id=&quot;how-to-use-this-library-examples&quot;&gt;How to use this library (examples)&lt;/h3&gt;
+&lt;p&gt;###How to use this library (examples)&lt;/p&gt;
 
-&lt;p&gt;On C# side what you need to do is following:
-0) reference the bindings
+&lt;p&gt;On C# side what you need to do is following:&lt;br /&gt;
+0) reference the bindings&lt;br /&gt;
 1) instantiate cluster manager&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//on MapReady&lt;/span&gt;
@@ -217,36 +210,35 @@ With that change,C# bindings generator will generate correct code an generated C
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusterItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AddItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;helpful-links&quot;&gt;Helpful links&lt;/h3&gt;
+&lt;p&gt;###Helpful links&lt;br /&gt;
+- My other Xamarin bindings:&lt;br /&gt;
+  &lt;a href=&quot;http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/&quot;&gt;Tutorial – Android float label binding for Xamarin.Android&lt;/a&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;My other Xamarin bindings:
-&lt;a href=&quot;http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/&quot;&gt;Tutorial – Android float label binding for Xamarin.Android&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;“Maps Shortcuts: Android Maps Utility Library” youtube video
+  &lt;li&gt;“Maps Shortcuts: Android Maps Utility Library” youtube video&lt;br /&gt;
   &lt;a href=&quot;https://www.youtube.com/watch?v=nb2X9IjjZpM&quot;&gt;Maps Shortcuts: Android Maps Utility Library&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;example of use for original android maps util library
+    &lt;p&gt;example of use for original android maps util library&lt;br /&gt;
 &lt;a href=&quot;https://github.com/googlemaps/android-maps-utils/tree/master/demo&quot;&gt;github.com/googlemaps/android-maps-utils/tree/master/demo&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;brendanzagaeski Metadata.xml examples:&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&quot;&gt;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&quot;&gt;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&quot;&gt;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&quot;&gt;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9834034&quot;&gt;https://gist.github.com/brendanzagaeski/9834034&lt;/a&gt;
+    &lt;p&gt;&lt;a href=&quot;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&quot;&gt;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&quot;&gt;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&quot;&gt;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&quot;&gt;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9834034&quot;&gt;https://gist.github.com/brendanzagaeski/9834034&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://gist.github.com/brendanzagaeski/9607158&quot;&gt;https://gist.github.com/brendanzagaeski/9607158&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;If you liked this post, you can
+&lt;p&gt;If you liked this post, you can&lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&amp;amp;text=Android-maps-utils+bindings+for+Xamarin.Android+apps&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
+  share it with your followers&lt;/a&gt; &lt;br /&gt;
+or &lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
 </content>
@@ -257,7 +249,7 @@ or
    <link href="http://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/"/>
    <updated>2015-11-07T00:00:00-05:00</updated>
    <id>http://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone</id>
-   <content type="html">&lt;p&gt;I recently opened Store app on Lumia 925 and was surprised.&lt;br /&gt;
+   <content type="html">&lt;p&gt;I recently opened Store app on Lumia 925 and was surprised.  &lt;br /&gt;
 Turns out, after so many years, gMaps is still the best navigation app out there.&lt;/p&gt;
 
 &lt;p&gt;gMaps is top 1 free navigation application for Windows Phone 8.1! Yay!&lt;/p&gt;
@@ -275,15 +267,15 @@ Turns out, after so many years, gMaps is still the best navigation app out there
 
 &lt;p&gt;We put a lot of energy into gMaps and are striving for the quality and features.&lt;/p&gt;
 
-&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#103;&amp;#109;&amp;#097;&amp;#112;&amp;#115;&amp;#046;&amp;#102;&amp;#101;&amp;#101;&amp;#100;&amp;#098;&amp;#097;&amp;#099;&amp;#107;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;gmaps feedback email&lt;/a&gt;
+&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#103;&amp;#109;&amp;#097;&amp;#112;&amp;#115;&amp;#046;&amp;#102;&amp;#101;&amp;#101;&amp;#100;&amp;#098;&amp;#097;&amp;#099;&amp;#107;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;gmaps feedback email&lt;/a&gt;&lt;br /&gt;
  address or &lt;a href=&quot;https://gmaps.uservoice.com/&quot;&gt;gMaps uservoice&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;If you liked this post, you can
+&lt;p&gt;If you liked this post, you can&lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/&amp;amp;text=gMaps+is+again+best+navigation+app+for+Windows+Phone&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
+  share it with your followers&lt;/a&gt; &lt;br /&gt;
+or &lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
 </content>
@@ -337,7 +329,7 @@ git clone --recursive git@github.com:mono/mono.git
 make
 make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;These lines of code took around hour to execute on my wife’s old macbook.
+&lt;p&gt;These lines of code took around hour to execute on my wife’s old macbook.&lt;br /&gt;
 Take a nap or go to gym.&lt;/p&gt;
 
 &lt;p&gt;4) now, when mono is compiled, make sure you tell your system to use the fresh mono. To do that, just add ahead of the PATH variable your folder with mono&lt;/p&gt;
@@ -362,7 +354,7 @@ Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&
 	LLVM:          supported, not enabled.
 	GC:            sgen&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;6) last thing is to copy PCL reference libraries.
+&lt;p&gt;6) last thing is to copy PCL reference libraries.&lt;br /&gt;
 &lt;a href=&quot;https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0&quot;&gt;Get it here 9.8mb&lt;/a&gt; and unzip to folder &lt;code&gt;~/work/monoci/mono/lib/mono/xbuild-frameworks&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After doing that you should see two subfolders there:&lt;/p&gt;
@@ -387,7 +379,7 @@ drwxr-xr-x   &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt; theuser  staff  &lt;
 
 &lt;p&gt;The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.&lt;/p&gt;
 
-&lt;p&gt;The build process first gets some Nuget packages, then spins number of parallel compiler processes.
+&lt;p&gt;The build process first gets some Nuget packages, then spins number of parallel compiler processes.&lt;br /&gt;
 On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal &lt;code&gt;ulimit -n 2048&lt;/code&gt; to make sure system can spin more procesess - my limit was 256.&lt;/p&gt;
 
 &lt;p&gt;So if you have the same problem, just do the magic and restart the build. Probably, the build.sh should handle that process limit better&lt;/p&gt;
@@ -425,12 +417,12 @@ git checkout fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;3) Let’s compile and run tests&lt;/p&gt;
 
-&lt;p&gt;To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.
+&lt;p&gt;To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.&lt;br /&gt;
 Edit ~/.bash_profile and add a line like that&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mbuild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
+&lt;p&gt;.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. &lt;br /&gt;
 If it is, look it up in the &lt;code&gt;build.sh&lt;/code&gt; file around line 190&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;__msbuildpackageid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Microsoft.Build.Mono.Debug&amp;quot;&lt;/span&gt;
@@ -469,7 +461,7 @@ Time Elapsed 00:00:22.61&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Nice, everything works!&lt;/p&gt;
 
-&lt;p&gt;4) Commiting the change. 
+&lt;p&gt;4) Commiting the change. &lt;br /&gt;
 As the contributing guide suggest, you commit message should look like&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Code cleanup in System.IO.Packaging
@@ -478,7 +470,7 @@ This request has several changes in ContentType.cs to make sure I understand the
 
 Related to &lt;span class=&quot;c&quot;&gt;#2699&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The empty lines are required because of the way github handles commits and pull requests.
+&lt;p&gt;The empty lines are required because of the way github handles commits and pull requests.&lt;br /&gt;
 As my commit doesn’t really fixes anything, I wrote in the last line “Related to #issue_number” and not “Fixed #issue_number”.&lt;/p&gt;
 
 &lt;p&gt;After you commit, push the changes to the github and create a pull request.&lt;/p&gt;
@@ -487,7 +479,7 @@ As my commit doesn’t really fixes anything, I wrote in the last line “Relate
 
 &lt;p&gt;Time to wait till .NET Core automatic build compiles your changes and also till .NET team provides feedback on the changes.&lt;/p&gt;
 
-&lt;p&gt;5) Common thing is that you get feedback on pull request and need to do some minor changes.
+&lt;p&gt;5) Common thing is that you get feedback on pull request and need to do some minor changes.&lt;br /&gt;
 After you do the changes, you might want to create a new commit, but there is a better way.&lt;/p&gt;
 
 &lt;p&gt;You can update your previous commit, by ammending the previous commit and force-pushing it to the server.&lt;/p&gt;
@@ -499,7 +491,7 @@ git push origin +fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Thanks for this tip, Stephen!&lt;/p&gt;
 
-&lt;p&gt;6) Then your pull request is accepted and merged. 
+&lt;p&gt;6) Then your pull request is accepted and merged. &lt;br /&gt;
 Congratulations!&lt;/p&gt;
 
 &lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
@@ -520,10 +512,10 @@ Congratulations!&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;If you liked this post, you can
+&lt;p&gt;If you liked this post, you can&lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;amp;text=Contributing+to+.NET+Core+from+OS+X&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
+  share it with your followers&lt;/a&gt; &lt;br /&gt;
+or &lt;br /&gt;
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
 </content>

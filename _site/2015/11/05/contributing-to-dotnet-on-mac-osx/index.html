@@ -92,7 +92,7 @@ git clone --recursive git@github.com:mono/mono.git
 make
 make install</code></pre></div>
 
-<p>These lines of code took around hour to execute on my wife’s old macbook.
+<p>These lines of code took around hour to execute on my wife’s old macbook.<br />
 Take a nap or go to gym.</p>
 
 <p>4) now, when mono is compiled, make sure you tell your system to use the fresh mono. To do that, just add ahead of the PATH variable your folder with mono</p>
@@ -117,7 +117,7 @@ Copyright <span class="o">(</span>C<span class="o">)</span> 2002-2014 Novell, In
 	LLVM:          supported, not enabled.
 	GC:            sgen</code></pre></div>
 
-<p>6) last thing is to copy PCL reference libraries.
+<p>6) last thing is to copy PCL reference libraries.<br />
 <a href="https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0">Get it here 9.8mb</a> and unzip to folder <code>~/work/monoci/mono/lib/mono/xbuild-frameworks</code></p>
 
 <p>After doing that you should see two subfolders there:</p>
@@ -142,7 +142,7 @@ drwxr-xr-x   <span class="m">6</span> theuser  staff  <span class="m">204</span>
 
 <p>The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.</p>
 
-<p>The build process first gets some Nuget packages, then spins number of parallel compiler processes.
+<p>The build process first gets some Nuget packages, then spins number of parallel compiler processes.<br />
 On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal <code>ulimit -n 2048</code> to make sure system can spin more procesess - my limit was 256.</p>
 
 <p>So if you have the same problem, just do the magic and restart the build. Probably, the build.sh should handle that process limit better</p>
@@ -180,12 +180,12 @@ git checkout fix2699</code></pre></div>
 
 <p>3) Let’s compile and run tests</p>
 
-<p>To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.
+<p>To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.<br />
 Edit ~/.bash_profile and add a line like that</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">mbuild</span><span class="o">=</span><span class="s1">&#39;mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe&#39;</span></code></pre></div>
 
-<p>.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
+<p>.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. <br />
 If it is, look it up in the <code>build.sh</code> file around line 190</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">__msbuildpackageid</span><span class="o">=</span><span class="s2">&quot;Microsoft.Build.Mono.Debug&quot;</span>
@@ -224,7 +224,7 @@ Time Elapsed 00:00:22.61</code></pre></div>
 
 <p>Nice, everything works!</p>
 
-<p>4) Commiting the change. 
+<p>4) Commiting the change. <br />
 As the contributing guide suggest, you commit message should look like</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Code cleanup in System.IO.Packaging
@@ -233,7 +233,7 @@ This request has several changes in ContentType.cs to make sure I understand the
 
 Related to <span class="c">#2699</span></code></pre></div>
 
-<p>The empty lines are required because of the way github handles commits and pull requests.
+<p>The empty lines are required because of the way github handles commits and pull requests.<br />
 As my commit doesn’t really fixes anything, I wrote in the last line “Related to #issue_number” and not “Fixed #issue_number”.</p>
 
 <p>After you commit, push the changes to the github and create a pull request.</p>
@@ -242,7 +242,7 @@ As my commit doesn’t really fixes anything, I wrote in the last line “Relate
 
 <p>Time to wait till .NET Core automatic build compiles your changes and also till .NET team provides feedback on the changes.</p>
 
-<p>5) Common thing is that you get feedback on pull request and need to do some minor changes.
+<p>5) Common thing is that you get feedback on pull request and need to do some minor changes.<br />
 After you do the changes, you might want to create a new commit, but there is a better way.</p>
 
 <p>You can update your previous commit, by ammending the previous commit and force-pushing it to the server.</p>
@@ -254,7 +254,7 @@ git push origin +fix2699</code></pre></div>
 
 <p>Thanks for this tip, Stephen!</p>
 
-<p>6) Then your pull request is accepted and merged. 
+<p>6) Then your pull request is accepted and merged. <br />
 Congratulations!</p>
 
 <h3 id="summary">Summary</h3>
@@ -275,10 +275,10 @@ Congratulations!</p>
 
 <hr />
 
-<p>If you liked this post, you can
+<p>If you liked this post, you can<br />
 <a href="https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;text=Contributing+to+.NET+Core+from+OS+X&amp;via=alexsorokoletov" target="_blank">
-  share it with your followers</a> 
-or 
+  share it with your followers</a> <br />
+or <br />
 <a href="https://twitter.com/alexsorokoletov">
   follow me on Twitter</a>!</p>
 
@@ -346,7 +346,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2016-01-04T19:10:50-05:00">2016</time>. All rights reserved.
+          &copy; <time datetime="2016-01-07T14:21:01-05:00">2016</time>. All rights reserved.
         </small>
       </footer>
     </div>
