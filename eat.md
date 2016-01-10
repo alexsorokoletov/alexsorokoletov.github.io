@@ -4,6 +4,8 @@ title: Handy list of restaurants to try out in Washington, DC area
 ---
 <!-- ✓ ☐ ☑-->
 ️
+✓ [The Coffee Bar [Coffee, 1$]](http://www.yelp.com/biz/the-coffee-bar-washington)
+                
 ☐ [Convivial [French, 2$]](http://www.yelp.com/biz/convivial-washington)
 
 ☐ [Ariake [Sushi, 2$, Reston]](http://www.yelp.com/biz/ariake-reston)
@@ -34,6 +36,6 @@ title: Handy list of restaurants to try out in Washington, DC area
 
 
 #### Pizza ####
-☐ [Wiseguy [Pizza, 1$, NY Style]](http://www.yelp.com/biz/wiseguy-ny-pizza-washington) + [website](http://www.wiseguynypizza.com/home)
+✓ [Wiseguy [Pizza, 1$, NY Style]](http://www.yelp.com/biz/wiseguy-ny-pizza-washington) + [website](http://www.wiseguynypizza.com/home)
 
 ☐ [Piola [Pizza, 2$]](http://www.yelp.com/biz/piola-arlington-3)

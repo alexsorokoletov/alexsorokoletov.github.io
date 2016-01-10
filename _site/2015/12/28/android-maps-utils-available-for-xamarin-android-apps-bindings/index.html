@@ -49,11 +49,11 @@
         <article class="post">
   <h1 class="post-title">Android-maps-utils bindings for Xamarin.Android apps</h1>
   <time datetime="2015-12-28T00:00:00-05:00" class="post-date">28 Dec 2015</time>
-  <p>###Bindings for android-maps-utils for Xamarin.Android apps</p>
+  <h3 id="bindings-for-android-maps-utils-for-xamarinandroid-apps">Bindings for android-maps-utils for Xamarin.Android apps</h3>
 
 <p>Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.</p>
 
-<p>Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. <br />
+<p>Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. 
 However, there is a solution!</p>
 
 <!--more-->
@@ -76,20 +76,20 @@ However, there is a solution!</p>
 
 <p><strong>To get to the how to part, scroll down</strong></p>
 
-<p>###Existing Xamarin.Android bindings<br />
-Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area.</p>
+<h3 id="existing-xamarinandroid-bindings">Existing Xamarin.Android bindings</h3>
+<p>Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area.</p>
 
 <p>Looking for existing solution to the problem, one can find <a href="https://github.com/oystehei/MapsUtilityDemo">bindings made by Øystein Heimark</a>. But these are quite old. To practice and to get the freshest code, I’ve created the updated bindings:</p>
 
 <p><a href="https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils">github.com/alexsorokoletov/Xamarin.Android.Maps.Utils</a></p>
 
-<p>###Creating java library bindings for Xamarin.Android</p>
+<h3 id="creating-java-library-bindings-for-xamarinandroid">Creating java library bindings for Xamarin.Android</h3>
 
-<p>There is an official guide from Xamarin: <br />
+<p>There is an official guide from Xamarin: 
 <a href="https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/">Binding a Java Library - Consuming Java libraries from C#</a></p>
 
-<p>Following the guide, one can sometimes see warnings or erros on the bindings.<br />
-For example, <br />
+<p>Following the guide, one can sometimes see warnings or erros on the bindings.
+For example, 
 <code>/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name 'IGeoJsonStyle' does not exist in the namespace 'Com.Google.Maps.Android.Geojson'. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)</code></p>
 
 <p>To fix this error all you need is to manually <a href="https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml#L15">edit Metadata.xml file and introduce these changes</a></p>
@@ -98,18 +98,18 @@ For example, <br />
 
 <p>More than helpful were comments and examples from <a href="https://github.com/brendanzagaeski">brendanzagaeski</a> with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.</p>
 
-<p>####JAR/AAR dependencies<br />
-Case with <code>android-maps-utils</code> is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.<br />
-Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.<br />
+<h4 id="jaraar-dependencies">JAR/AAR dependencies</h4>
+<p>Case with <code>android-maps-utils</code> is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
+Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
 With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.</p>
 
-<p>One of the questions one might have - which version of google-play-services.jar should we use?<br />
+<p>One of the questions one might have - which version of google-play-services.jar should we use?
 <a href="https://github.com/googlemaps/android-maps-utils/blob/master/library/build.gradle#L19">The android-maps-utils library is compiled against google-play-services 7.8.0</a>, so, basically, we can use anything &gt;=7.8.0</p>
 
-<p>###How to use this library (examples)</p>
+<h3 id="how-to-use-this-library-examples">How to use this library (examples)</h3>
 
-<p>On C# side what you need to do is following:<br />
-0) reference the bindings<br />
+<p>On C# side what you need to do is following:
+0) reference the bindings
 1) instantiate cluster manager</p>
 
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">//on MapReady</span>
@@ -159,35 +159,36 @@ With that change,C# bindings generator will generate correct code an generated C
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">clusterItem</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ServiceClusterItem</span><span class="p">(...);</span>
 <span class="n">_clusterManager</span><span class="p">.</span><span class="n">AddItem</span><span class="p">(</span><span class="n">clusterItem</span><span class="p">);</span></code></pre></div>
 
-<p>###Helpful links<br />
-- My other Xamarin bindings:<br />
-  <a href="http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/">Tutorial – Android float label binding for Xamarin.Android</a></p>
-
+<h3 id="helpful-links">Helpful links</h3>
 <ul>
-  <li>“Maps Shortcuts: Android Maps Utility Library” youtube video<br />
+  <li>
+    <p>My other Xamarin bindings:
+<a href="http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/">Tutorial – Android float label binding for Xamarin.Android</a></p>
+  </li>
+  <li>“Maps Shortcuts: Android Maps Utility Library” youtube video
   <a href="https://www.youtube.com/watch?v=nb2X9IjjZpM">Maps Shortcuts: Android Maps Utility Library</a></li>
   <li>
-    <p>example of use for original android maps util library<br />
+    <p>example of use for original android maps util library
 <a href="https://github.com/googlemaps/android-maps-utils/tree/master/demo">github.com/googlemaps/android-maps-utils/tree/master/demo</a></p>
   </li>
   <li>
     <p>brendanzagaeski Metadata.xml examples:</p>
 
-    <p><a href="https://gist.github.com/brendanzagaeski/c32d65c21e152799af69">https://gist.github.com/brendanzagaeski/c32d65c21e152799af69</a><br />
-<a href="https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e">https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e</a><br />
-<a href="https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff">https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff</a><br />
-<a href="https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b">https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b</a><br />
-<a href="https://gist.github.com/brendanzagaeski/9834034">https://gist.github.com/brendanzagaeski/9834034</a><br />
+    <p><a href="https://gist.github.com/brendanzagaeski/c32d65c21e152799af69">https://gist.github.com/brendanzagaeski/c32d65c21e152799af69</a>
+<a href="https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e">https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e</a>
+<a href="https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff">https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff</a>
+<a href="https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b">https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b</a>
+<a href="https://gist.github.com/brendanzagaeski/9834034">https://gist.github.com/brendanzagaeski/9834034</a>
 <a href="https://gist.github.com/brendanzagaeski/9607158">https://gist.github.com/brendanzagaeski/9607158</a></p>
   </li>
 </ul>
 
 <hr />
 
-<p>If you liked this post, you can<br />
+<p>If you liked this post, you can
 <a href="https://twitter.com/intent/tweet?url=http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&amp;text=Android-maps-utils+bindings+for+Xamarin.Android+apps&amp;via=alexsorokoletov" target="_blank">
-  share it with your followers</a> <br />
-or <br />
+  share it with your followers</a> 
+or 
 <a href="https://twitter.com/alexsorokoletov">
   follow me on Twitter</a>!</p>
 
@@ -255,7 +256,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2016-01-07T14:21:01-05:00">2016</time>. All rights reserved.
+          &copy; <time datetime="2016-01-10T18:11:54-05:00">2016</time>. All rights reserved.
         </small>
       </footer>
     </div>
