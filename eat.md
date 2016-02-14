@@ -34,8 +34,27 @@ title: Handy list of restaurants to try out in Washington, DC area
 
 ☐ [Iron Gate [American+Green, 4$]](http://www.yelp.com/biz/iron-gate-washington)
 
+☐ [Russian House [Russian, 3$]](http://www.yelp.com/biz/russia-house-restaurant-and-lounge-washington-2)
+
+☐ [Old Ebbit Grill [2$]](https://www.yelp.com/biz/old-ebbitt-grill-washington)
+
+☐ [Gadsby's Tavern [American, 2$]](https://www.yelp.com/biz/gadsbys-tavern-restaurant-alexandria)
 
 #### Pizza ####
 ✓ [Wiseguy [Pizza, 1$, NY Style]](http://www.yelp.com/biz/wiseguy-ny-pizza-washington) + [website](http://www.wiseguynypizza.com/home)
 
 ☐ [Piola [Pizza, 2$]](http://www.yelp.com/biz/piola-arlington-3)
+
+#### Live music ####
+☐ [Georgetown piano bar](http://www.georgetownpianobar.com/)
+
+☐ [Jefferson DC, Quill](http://www.jeffersondc.com/dining/quill/)
+
+☐ [Mr Smith's](http://mrsmiths.com/v1/index)
+
+☐ [Bombay club DC](http://bombayclubdc.com/about/live-music/)
+
+☐ [Shaw's tavern](http://www.shawstavern.com/events/)
+
+☐ [701](http://701restaurant.com/)
+
