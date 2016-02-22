@@ -15,11 +15,11 @@ Now it`s winter and it's time to check out AT&T coverage in our favorite skiing 
 Let's see how we do that and what we find
 <!--more-->
 
-### Why ###
+### Why
 As the article says, point is get some code just for fun. And see, if switching from T-Mobile to AT&T makes any sense.
 And see, maybe there is a reason why we have almost no coverage off the interstates. 
 
-###Technical details
+### Technical details
 So, I had macbook with OS X and Windows 10, iPhone 6 and Lumia 950 and Lumia 925. First idea was to have Lumia 950 with AT&T and Lumia 925 with T-Mobile run same app along the route and then compare results. Unfortunately, I forgot my USB C cable so 950 died on the way there. 
 So plan changed and I got an iOS app and did a AT&T cellular network signal level log on the way back. 
 
@@ -30,7 +30,7 @@ That was enough for the first version.
 
 You can get the app from github - [github.com/alexsorokoletov/SignalLogger](https://github.com/alexsorokoletov/SignalLogger). App tracks GPS and signal level every 10 seconds, while tracking screen stays active, all results are exported to CSV and emailed to you after you stop tracking. Keep it simple.
 
-###Results
+### Results
 Gist with raw CSV data: [DC to Snowshoe ATT signal strength data.csv](https://gist.github.com/alexsorokoletov/0ce68926804dee671563)
 
 Using QGIS I was able to get the results on the map:
@@ -52,10 +52,10 @@ Looks like the rule for the AT&T service is simple. Inside park areas (forests, 
 
 I was surprised to find out that the coverage is not actually related to [the US NRQZ area](https://en.wikipedia.org/wiki/United_States_National_Radio_Quiet_Zone) or distance to [the Green Bank Radio Observatory](https://en.wikipedia.org/wiki/Green_Bank_Telescope). 
 One can get some details about that in the NPR article [Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned](http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned)
-###Next steps
+### Next steps
 Next time we go to the Snowshoe resort, I'm going to get T-Mobile coverage results and then compare and see if it makes sense to have one or another.
 
-###Thoughts
+### Thoughts
 - What is wrong with Apple not providing API for cellular service signal strength?
     
   I guess it would benefit if Apple would be more open in terms of APIs available.
