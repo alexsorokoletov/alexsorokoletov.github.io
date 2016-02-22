@@ -4,13 +4,37 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2016-02-22T17:44:17-05:00</updated>
+ <updated>2016-02-22T17:55:34-05:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>gMaps for Windows Phone got 100 000 reviews!</title>
+   <link href="http://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store/"/>
+   <updated>2016-02-22T00:00:00-05:00</updated>
+   <id>http://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store</id>
+   <content type="html">&lt;p&gt;Monitoring app reviews with Reviews Reader app &lt;a href=&quot;http://twitter.com/winreviews&quot;&gt;@winreviews&lt;/a&gt;, I finally noticed gMaps got 100k of reviews!&lt;/p&gt;
+
+&lt;p&gt;Thank you, users! We are reading all of them, believe it or not!
+&lt;img src=&quot;/assets/gmaps-got-100k-reviews.png&quot; alt=&quot;gMaps is top free navigation app for Windows Phone&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#103;&amp;#109;&amp;#097;&amp;#112;&amp;#115;&amp;#046;&amp;#102;&amp;#101;&amp;#101;&amp;#100;&amp;#098;&amp;#097;&amp;#099;&amp;#107;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;gmaps feedback email&lt;/a&gt;
+ address or &lt;a href=&quot;https://gmaps.uservoice.com/&quot;&gt;gMaps uservoice&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store/&amp;amp;text=gMaps+for+Windows+Phone+got+100+000+reviews%21&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Coding for fun - AT&T signal levels on route from DC to Snowshoe, WV</title>
@@ -66,7 +90,7 @@ I have no idea yet how to make the route colorful with orange where the signal i
 
 &lt;p&gt;I was surprised to find out that the coverage is not actually related to &lt;a href=&quot;https://en.wikipedia.org/wiki/United_States_National_Radio_Quiet_Zone&quot;&gt;the US NRQZ area&lt;/a&gt; or distance to &lt;a href=&quot;https://en.wikipedia.org/wiki/Green_Bank_Telescope&quot;&gt;the Green Bank Radio Observatory&lt;/a&gt;. 
 One can get some details about that in the NPR article &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned&quot;&gt;Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned&lt;/a&gt;
-###Next steps
+### Next steps
 Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage results and then compare and see if it makes sense to have one or another.&lt;/p&gt;
 
 &lt;h3 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h3&gt;
