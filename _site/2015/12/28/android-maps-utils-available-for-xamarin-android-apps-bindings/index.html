@@ -98,7 +98,7 @@ For example,
 
 <p>More than helpful were comments and examples from <a href="https://github.com/brendanzagaeski">brendanzagaeski</a> with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.</p>
 
-<h4 id="jaraar-dependencies">JAR/AAR dependencies</h4>
+<h3 id="jaraar-dependencies">JAR/AAR dependencies</h3>
 <p>Case with <code>android-maps-utils</code> is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
 Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
 With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.</p>
@@ -158,6 +158,9 @@ With that change,C# bindings generator will generate correct code an generated C
 
 <div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">clusterItem</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ServiceClusterItem</span><span class="p">(...);</span>
 <span class="n">_clusterManager</span><span class="p">.</span><span class="n">AddItem</span><span class="p">(</span><span class="n">clusterItem</span><span class="p">);</span></code></pre></div>
+
+<p>What if you have another version of Google Play Services already linked to your main project?
+In that case fork the repo and remove references that it has currently and then add references to the same packages and versions you have in your main project.</p>
 
 <h3 id="helpful-links">Helpful links</h3>
 <ul>
@@ -256,7 +259,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2016-02-14T00:26:10-05:00">2016</time>. All rights reserved.
+          &copy; <time datetime="2016-02-22T17:44:17-05:00">2016</time>. All rights reserved.
         </small>
       </footer>
     </div>

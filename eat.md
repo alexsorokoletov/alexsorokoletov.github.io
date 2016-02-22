@@ -38,7 +38,7 @@ title: Handy list of restaurants to try out in Washington, DC area
 
 ☐ [Old Ebbit Grill [2$]](https://www.yelp.com/biz/old-ebbitt-grill-washington)
 
-☐ [Gadsby's Tavern [American, 2$]](https://www.yelp.com/biz/gadsbys-tavern-restaurant-alexandria)
+✓ [Gadsby's Tavern [American, 2$]](https://www.yelp.com/biz/gadsbys-tavern-restaurant-alexandria)
 
 #### Pizza ####
 ✓ [Wiseguy [Pizza, 1$, NY Style]](http://www.yelp.com/biz/wiseguy-ny-pizza-washington) + [website](http://www.wiseguynypizza.com/home)

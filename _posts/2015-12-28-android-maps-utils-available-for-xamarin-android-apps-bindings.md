@@ -3,7 +3,7 @@ layout: post
 title: Android-maps-utils bindings for Xamarin.Android apps
 comments: True
 ---
-###Bindings for android-maps-utils for Xamarin.Android apps
+### Bindings for android-maps-utils for Xamarin.Android apps
 
 Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.
 
@@ -28,14 +28,14 @@ Down the road you can find steps and details how the bindings for quite complex 
 
 **To get to the how to part, scroll down**
 
-###Existing Xamarin.Android bindings
+### Existing Xamarin.Android bindings
 Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area. 
 
 Looking for existing solution to the problem, one can find [bindings made by Øystein Heimark](https://github.com/oystehei/MapsUtilityDemo). But these are quite old. To practice and to get the freshest code, I've created the updated bindings:
 
 [github.com/alexsorokoletov/Xamarin.Android.Maps.Utils](https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils)
 
-###Creating java library bindings for Xamarin.Android
+### Creating java library bindings for Xamarin.Android
 
 There is an official guide from Xamarin: 
 [Binding a Java Library - Consuming Java libraries from C#](https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/)
@@ -50,7 +50,7 @@ As you proceed, there will be a few more errors and several warnings. Fixes for 
 
 More than helpful were comments and examples from [brendanzagaeski](https://github.com/brendanzagaeski) with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.
 
-####JAR/AAR dependencies
+### JAR/AAR dependencies
 Case with `android-maps-utils` is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
 Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
 With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.
@@ -58,7 +58,7 @@ With that change,C# bindings generator will generate correct code an generated C
 One of the questions one might have - which version of google-play-services.jar should we use?
 [The android-maps-utils library is compiled against google-play-services 7.8.0](https://github.com/googlemaps/android-maps-utils/blob/master/library/build.gradle#L19), so, basically, we can use anything >=7.8.0
 
-###How to use this library (examples)
+### How to use this library (examples)
 
 On C# side what you need to do is following:
 0) reference the bindings
@@ -117,9 +117,12 @@ var clusterItem = new ServiceClusterItem(...);
 _clusterManager.AddItem(clusterItem);
 {% endhighlight %}
 
+What if you have another version of Google Play Services already linked to your main project?
+In that case fork the repo and remove references that it has currently and then add references to the same packages and versions you have in your main project.
 
 
-###Helpful links
+
+### Helpful links
 - My other Xamarin bindings:
   [Tutorial – Android float label binding for Xamarin.Android](http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/)
   
