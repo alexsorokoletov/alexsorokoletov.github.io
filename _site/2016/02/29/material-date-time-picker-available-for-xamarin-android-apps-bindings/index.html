@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      MaterialDateTimePicker bindings for Xamarin.Android apps &middot; Alex Sorokoletov Notes
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Alex Sorokoletov Notes" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Alex Sorokoletov Notes</a>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/about">About</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/archive">Archive</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/atom.xml">Feed</a></small>
+            
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">MaterialDateTimePicker bindings for Xamarin.Android apps</h1>
+  <time datetime="2016-02-29T00:00:00-05:00" class="post-date">29 Feb 2016</time>
+  <h3 id="bindings-for-materialdatetimepicker-for-xamarinandroid-apps">Bindings for MaterialDateTimePicker for Xamarin.Android apps</h3>
+
+<p>One of the good libraries for Android apps made in Material design is the <a href="https://github.com/wdullaer/MaterialDateTimePicker">“Material DateTime Picker”</a> from <a href="https://github.com/wdullaer">@wdullaer</a>.
+Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.
+<!--more--></p>
+
+<p>TLDR:  <a href="https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker">https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker</a></p>
+
+<h3 id="creating-java-library-bindings-for-xamarinandroid">Creating java library bindings for Xamarin.Android</h3>
+
+<p>There is an official guide from Xamarin: 
+<a href="https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/">Binding a Java Library - Consuming Java libraries from C#</a></p>
+
+<p>First, we need to get the JAR/AAR file.
+Looking at <a href="https://github.com/wdullaer/MaterialDateTimePicker">github page</a>, we can see Maven banner. It means that we can grab a binary from Maven so let’s go there and do it:</p>
+
+<p><a href="https://repo1.maven.org/maven2/com/wdullaer/materialdatetimepicker/2.2.0/">https://repo1.maven.org/maven2/com/wdullaer/materialdatetimepicker/2.2.0/</a></p>
+
+<p>Next, following the Xamarin guide, we will see 3 errors:</p>
+
+<p><code>
+Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(34,34): 
+  Error CS0533: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)' 
+  hides inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)'
+  (CS0533) (MaterialDateTimePickerBinding)
+</code></p>
+
+<p><code>
+ Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(36,36): Error CS0534: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper' does not implement inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)' (CS0534) (MaterialDateTimePickerBinding)
+</code>
+ and</p>
+
+<p><code>
+ Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: `Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member `Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
+</code></p>
+
+<p>1st and 2nd are pretty simple. As these methods most definitely will not be consumed from C# side, we can just remove these methods from bindings.</p>
+
+<p>For that we use <code>&lt;remove-node /&gt;</code> instruction in Metadata.xml.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;remove-node</span> <span class="na">path=</span><span class="s">&quot;/api/package[@name=&#39;com.wdullaer.materialdatetimepicker.date&#39;]/class[@name=&#39;MonthView.MonthViewTouchHelper&#39;]/method[@name=&#39;getVisibleVirtualViews&#39; and count(parameter)=1 and parameter[1][@type=&#39;java.util.List&amp;lt;java.lang.Integer&amp;gt;&#39;]]&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;remove-node</span> <span class="na">path=</span><span class="s">&quot;/api/package[@name=&#39;com.wdullaer.materialdatetimepicker.date&#39;]/class[@name=&#39;MonthView.MonthViewTouchHelper&#39;]&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p>To solve 3rd problem we need to add a partial class to Additions folder:</p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">namespace</span> <span class="nn">Com.Wdullaer.Materialdatetimepicker.Time</span>
+<span class="p">{</span>
+    <span class="cm">/*</span>
+<span class="cm">     * add partial class due to Java generics and IComparable interface in Xamarin.Android</span>
+<span class="cm">     * Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: &#39;Com.Wdullaer.Materialdatetimepicker.Time.Timepoint&#39; does not implement interface member &#39;Java.Lang.IComparable.CompareTo(Java.Lang.Object)&#39; (CS0535) (MaterialDateTimePickerBinding)</span>
+<span class="cm">     * https://forums.xamarin.com/discussion/1950/binding-jar-file-with-class-that-implements-java-lang-icomparable</span>
+<span class="cm">     */</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Timepoint</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">Java</span><span class="p">.</span><span class="n">Lang</span><span class="p">.</span><span class="n">IComparable</span><span class="p">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">Java</span><span class="p">.</span><span class="n">Lang</span><span class="p">.</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">CompareTo</span> <span class="p">((</span><span class="n">Timepoint</span><span class="p">)</span> <span class="n">obj</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Solution to this issue I found on <a href="https://forums.xamarin.com/discussion/38247/binding-issue-with-android-support-v4-widget-explorebytouchhelper-getvisiblevirtualviews">Xamarin Forums</a>.</p>
+
+<p>As usual, very helpful were comments and examples from <a href="https://github.com/brendanzagaeski">brendanzagaeski</a> with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.</p>
+
+<h3 id="jaraar-dependencies">JAR/AAR dependencies</h3>
+<p>This library we are binding now has only one dependency:
+<a href="https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23">https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23</a></p>
+
+<p>It is a <code>com.android.support:support-v4:23.1.1</code> which translates to Xamarin Nuget package called Xamarin.Android.Support.v4 of version 23.1.1.</p>
+
+<p>So we will just add this Nuget package to our bindings project and that’s it.
+Clean and Build the project and you should see 0 errors.
+Yaay!</p>
+
+<h3 id="how-to-use-this-library-examples">How to use this library (examples)</h3>
+
+<p>On C# side what you need to do is following:</p>
+
+<ol>
+  <li>reference the bindings project in your app project</li>
+  <li>in your activity implement interface OnTimeSetListener/OnDateSetListener</li>
+  <li>create a datepicker and show it</li>
+</ol>
+
+<p>These steps are described in the <a href="https://github.com/wdullaer/MaterialDateTimePicker/blob/master/README.md">Readme.md file of the original library</a></p>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">//implement OnDateSetListener</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">HomeView</span> <span class="p">:</span> <span class="n">BaseActionBarView</span><span class="p">&lt;</span><span class="n">HomeViewModel</span><span class="p">&gt;,</span>  
+<span class="n">Com</span><span class="p">.</span><span class="n">Wdullaer</span><span class="p">.</span><span class="n">Materialdatetimepicker</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="n">DatePickerDialog</span><span class="p">.</span><span class="n">IOnDateSetListener</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">private</span> <span class="k">void</span> <span class="nf">OnChooseDateButtonClick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Java</span><span class="p">.</span><span class="n">Util</span><span class="p">.</span><span class="n">Calendar</span> <span class="n">now</span> <span class="p">=</span> <span class="n">Java</span><span class="p">.</span><span class="n">Util</span><span class="p">.</span><span class="n">Calendar</span><span class="p">.</span><span class="n">Instance</span><span class="p">;</span>
+    <span class="n">Com</span><span class="p">.</span><span class="n">Wdullaer</span><span class="p">.</span><span class="n">Materialdatetimepicker</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="n">DatePickerDialog</span> <span class="n">dpd</span> <span class="p">=</span> 
+        <span class="n">Com</span><span class="p">.</span><span class="n">Wdullaer</span><span class="p">.</span><span class="n">Materialdatetimepicker</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="n">DatePickerDialog</span><span class="p">.</span><span class="n">NewInstance</span><span class="p">(</span>
+        <span class="k">this</span><span class="p">,</span>
+        <span class="n">now</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">Java</span><span class="p">.</span><span class="n">Util</span><span class="p">.</span><span class="n">CalendarField</span><span class="p">.</span><span class="n">Year</span><span class="p">),</span>
+        <span class="n">now</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">Java</span><span class="p">.</span><span class="n">Util</span><span class="p">.</span><span class="n">CalendarField</span><span class="p">.</span><span class="n">Month</span><span class="p">),</span>
+        <span class="n">now</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="n">Java</span><span class="p">.</span><span class="n">Util</span><span class="p">.</span><span class="n">CalendarField</span><span class="p">.</span><span class="n">DayOfMonth</span><span class="p">)</span>
+    <span class="p">);</span>
+    <span class="n">dpd</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">FragmentManager</span><span class="p">,</span> <span class="s">&quot;Datepickerdialog&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">OnDateSet</span><span class="p">(</span><span class="n">Com</span><span class="p">.</span><span class="n">Wdullaer</span><span class="p">.</span><span class="n">Materialdatetimepicker</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="n">DatePickerDialog</span> <span class="n">p0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">p0</span><span class="p">.</span><span class="n">Dismiss</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Make sure you are using the same version of Xamarin.Android.Support.v4 package in your application project.</p>
+
+<h3 id="demo">Demo</h3>
+
+<p><img src="/assets/material-date-time-picker-xamarin-android.png" alt="Material Date Time Picker in Xamarin.Android app" /></p>
+
+<h3 id="source-code">Source code</h3>
+
+<p>See <a href="https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker">Xamarin.Wdullaer.MaterialDateTimePicker</a> github repository. 
+Clone it and use it or just add as a submodule.</p>
+
+<h3 id="helpful-links">Helpful links</h3>
+<ul>
+  <li>
+    <p>My other Xamarin.Android bindings:</p>
+
+    <p><a href="http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/">Tutorial – Android float label binding for Xamarin.Android</a></p>
+
+    <p><a href="http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/">Tutorial – Android-maps-utils bindings for Xamarin.Android apps</a></p>
+  </li>
+  <li>
+    <p>brendanzagaeski Metadata.xml examples:</p>
+
+    <p><a href="https://gist.github.com/brendanzagaeski/c32d65c21e152799af69">https://gist.github.com/brendanzagaeski/c32d65c21e152799af69</a>
+<a href="https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e">https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e</a>
+<a href="https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff">https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff</a>
+<a href="https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b">https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b</a>
+<a href="https://gist.github.com/brendanzagaeski/9834034">https://gist.github.com/brendanzagaeski/9834034</a>
+<a href="https://gist.github.com/brendanzagaeski/9607158">https://gist.github.com/brendanzagaeski/9607158</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<p>If you liked this post, you can
+<a href="https://twitter.com/intent/tweet?url=http://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;text=MaterialDateTimePicker+bindings+for+Xamarin.Android+apps&amp;via=alexsorokoletov" target="_blank">
+  share it with your followers</a> 
+or 
+<a href="https://twitter.com/alexsorokoletov">
+  follow me on Twitter</a>!</p>
+
+</article>
+
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/02/22/gmaps-got-100000-reviews-in-store/">
+            gMaps for Windows Phone got 100k reviews!
+            <small><time datetime="2016-02-22T00:00:00-05:00">22 Feb 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/">
+            Coding for fun - AT&T signal levels on route from DC to Snowshoe, WV
+            <small><time datetime="2016-01-05T00:00:00-05:00">05 Jan 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/">
+            Android-maps-utils bindings for Xamarin.Android apps
+            <small><time datetime="2015-12-28T00:00:00-05:00">28 Dec 2015</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      
+<div id="disqus_thread"></div>
+<script>
+/*
+var disqus_config = function () {
+this.page.url = 'http://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/'; 
+this.page.identifier = '/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings';
+this.page.title = 'MaterialDateTimePicker bindings for Xamarin.Android apps';
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//sorokoletovcom.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2016-02-29T18:16:56-05:00">2016</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69801505-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
