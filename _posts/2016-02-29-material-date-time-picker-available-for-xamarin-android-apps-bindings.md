@@ -135,6 +135,14 @@ See [Xamarin.Wdullaer.MaterialDateTimePicker](https://github.com/alexsorokoletov
 Clone it and use it or just add as a submodule.
 
 
+### Improving further
+
+One thing definitely open for improvement is parameter names. Right now in many places it's just p0, p1, p2, p3.
+
+Naming them hour, minute, second, isAmPm would make code cleaner and easier to understand.
+
+So if you feel like fixing something feel free to submit pull request. (Or if you know how to fix these names automaticall - let me know, please).
+
 ### Helpful links
 - My other Xamarin.Android bindings:
 
