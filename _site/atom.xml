@@ -4,13 +4,99 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://sorokoletov.com/atom.xml" rel="self"/>
  <link href="http://sorokoletov.com/"/>
- <updated>2016-02-29T18:16:56-05:00</updated>
+ <updated>2016-11-13T18:23:21-05:00</updated>
  <id>http://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>C# Standard Style - single source of formatting truth</title>
+   <link href="http://sorokoletov.com/2016/11/13/csharp-standard-style/"/>
+   <updated>2016-11-13T00:00:00-05:00</updated>
+   <id>http://sorokoletov.com/2016/11/13/csharp-standard-style</id>
+   <content type="html">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Absolutely amazing.&lt;/p&gt;
+
+&lt;p&gt;What it does is just formats code with one pre-configured, non-changeable, non-customizeable, non-arguable style. &lt;strong&gt;You either use it or not&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;After that, all discussions about curly braces, tabs and spaces go to void. Done.&lt;/p&gt;
+
+&lt;p&gt;I’d like to have this for C#.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;We all had enough of discussions whether use tabs or spaces (it’s still happens), where to put braces, how do we name methods and variables. I feel this is especially important now, when .NET is opensource, when C# is being used for iOS and Android development, when many of C# developers are working on Mac and Linux.&lt;/p&gt;
+
+&lt;p&gt;Frankly, we are all already using &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ff926074.aspx&quot;&gt;Microsoft C# Coding Conventions&lt;/a&gt; in some way. It’s just these slight modifications that make us spend time on formatting and arguing about these changes or undoing them.&lt;/p&gt;
+
+&lt;p&gt;I want my team and everyone developing in C# focus on functionality and forget about formatting forever.&lt;/p&gt;
+
+&lt;p&gt;Let’s make it happen.&lt;/p&gt;
+
+&lt;h2 id=&quot;there-should-be-something-for-this-right&quot;&gt;There should be something for this, right?&lt;/h2&gt;
+
+&lt;p&gt;Tools already exist, however…&lt;/p&gt;
+
+&lt;p&gt;One can use Visual Studio settings and configure C# formatting. Then do the same with Xamarin Studio.(strictly speaking, having XS format C# code exactly same way as VS is not possible). 
+And what about VS Code?&lt;/p&gt;
+
+&lt;p&gt;There is an &lt;a href=&quot;https://github.com/editorconfig/editorconfig-vscode&quot;&gt;.editorconfig support for Visual Studio&lt;/a&gt; but it’s covering just part of formatting questions.&lt;/p&gt;
+
+&lt;p&gt;ReSharper is another candidate, however, it doesn’t work with Xamarin Studio and you can customize rules.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/onovotny&quot;&gt;Oren&lt;/a&gt; kindly pointed there is a &lt;a href=&quot;https://github.com/dotnet/codeformatter&quot;&gt;dotnet/CodeFormatter project&lt;/a&gt; and &lt;a href=&quot;https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/contributing.md&quot;&gt;Roslyn and .NET Core teams use styles&lt;/a&gt; enforced by the tool.&lt;/p&gt;
+
+&lt;p&gt;Good old StyleCop/FxCop might be suitable as well, but again, you can and have to customize it.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, all available tools are customizable. As long as you use them, there will be always someone who will do something his way.  Again, I want to have this binary and simple choice. Use it or don’t use it.&lt;/p&gt;
+
+&lt;h2 id=&quot;should-we-build-another-tool&quot;&gt;Should we build another tool?&lt;/h2&gt;
+
+&lt;p&gt;Actually, CodeFormatter is a good candidate for becoming a single source of truth. It has default rules baked in, it runs on Windows and Mono and it’s built with Roslyn and people are already using it. Here is a &lt;a href=&quot;https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md&quot;&gt;list of rules CodeFormatter enforces&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I feel like we just need to extend it and build VS extension, Xamarin Add-in and VS Code extension to make experience seamless.&lt;/p&gt;
+
+&lt;h2 id=&quot;its-just-your-crazy-idea&quot;&gt;It’s just your crazy idea&lt;/h2&gt;
+
+&lt;p&gt;According to the post from Roslyn team, I’m not alone&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/dotnet/2015/02/09/automatic-code-formatter-released-to-github/&quot;&gt;Automatic code formatter released to GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We strongly believe that having a consistent style greatly increases the readability and maintainability of a code base. The individual style decisions themselves are subjective, the key is the consistency of the decisions. As such the .NET team has a set of style guidelines for all C# code written by the team.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;i-have-another-ideaopinion&quot;&gt;I have another idea/opinion&lt;/h2&gt;
+
+&lt;p&gt;I would love to hear your feedback and thoughs on this idea. Feel free to contact me or comment this article and please share it with your team and friends.&lt;/p&gt;
+
+&lt;h2 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h2&gt;
+
+&lt;h4 id=&quot;i-do-not-want-to-re-format-my-solution&quot;&gt;I do not want to re-format my solution.&lt;/h4&gt;
+&lt;p&gt;You don’t need to re-format existing codebase unless you want. When you start your next project, this is the best time to start using C# Standard Format.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-we-should-enforce-style-a-and-not-enforce-style-b&quot;&gt;Why we should enforce style A and not enforce style B.&lt;/h4&gt;
+
+&lt;p&gt;Discussing specific style settings is not the goal of this post.&lt;/p&gt;
+
+&lt;h4 id=&quot;i-will-not-use-this-c-standard-formatting&quot;&gt;I will not use this C# standard formatting.&lt;/h4&gt;
+
+&lt;p&gt;Fine, it’s “use it or don’t”. Nothing will change for people that don’t want to use a non-customizeable set of rules. A lot of free time will come to those that want to use it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://sorokoletov.com/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>MaterialDateTimePicker bindings for Xamarin.Android apps</title>
@@ -136,6 +222,14 @@ Yaay!&lt;/p&gt;
 
 &lt;p&gt;See &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker&quot;&gt;Xamarin.Wdullaer.MaterialDateTimePicker&lt;/a&gt; github repository. 
 Clone it and use it or just add as a submodule.&lt;/p&gt;
+
+&lt;h3 id=&quot;improving-further&quot;&gt;Improving further&lt;/h3&gt;
+
+&lt;p&gt;One thing definitely open for improvement is parameter names. Right now in many places it’s just p0, p1, p2, p3.&lt;/p&gt;
+
+&lt;p&gt;Naming them hour, minute, second, isAmPm would make code cleaner and easier to understand.&lt;/p&gt;
+
+&lt;p&gt;So if you feel like fixing something feel free to submit pull request. (Or if you know how to fix these names automaticall - let me know, please).&lt;/p&gt;
 
 &lt;h3 id=&quot;helpful-links&quot;&gt;Helpful links&lt;/h3&gt;
 &lt;ul&gt;
