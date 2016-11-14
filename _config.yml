@@ -37,3 +37,6 @@ pages_list:
 encoding: utf-8
   
 excerpt_separator: '<!--more-->'
+
+url: https://sorokoletov.com   # with the https protocol
+enforce_ssl: sorokoletov.com   # without any protocol
