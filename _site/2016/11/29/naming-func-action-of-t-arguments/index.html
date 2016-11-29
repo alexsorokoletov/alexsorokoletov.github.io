@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Named parameters in Func<T>/Action<T> type in C#? &middot; Alex Sorokoletov Notes
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Alex Sorokoletov Notes" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Alex Sorokoletov Notes</a>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/about">About</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/archive">Archive</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/atom.xml">Feed</a></small>
+            
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">Named parameters in Func<T>/Action<T> type in C#?</h1>
+  <time datetime="2016-11-29T00:00:00-05:00" class="post-date">29 Nov 2016</time>
+  <p>If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…</p>
+
+<p>Here is a common situation where somewhere in your library or helper class you have a method taking in <code>Func&lt;T&gt;</code> or <code>Action&lt;T&gt;</code>.
+<img src="/assets/naming_func_of_t_declaration.png" alt="Definition of your method using Func/Action classes" />
+and then when you want to use this method VS suggests you following names: arg1 and arg2.
+Like there is nothing better than that :)
+<img src="/assets/naming_func_of_t_default_behavior.png" alt="Definition of your method using Func/Action classes" /></p>
+
+<p>There is a cheap and easy <strong>solution for that</strong>.</p>
+
+<ul>
+  <li>Define your own delegate with same signature as <code>Func&lt;T&gt;</code> or <code>Func&lt;T1,T2,T3&gt;</code> you are using already.</li>
+  <li>Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).</li>
+  <li>In original method, replace Func<t> with this new delegate.</t></li>
+</ul>
+
+<p><img src="/assets/naming_func_of_t_custom_named_delegate.png" alt="Defining custom delegate with correct names and using it in the original method" />
+After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.
+<img src="/assets/naming_func_of_t_improved_names.png" alt="Now you get better names from VS as a suggestion" /></p>
+
+<!--more-->
+
+<h4 id="pros-and-cons">Pros and Cons</h4>
+<p><em>Pros</em></p>
+
+<ul>
+  <li>You, your team and other people using the API that you expose (whether internally in the app or in the library or NuGet) will see better names and probably will use these names.</li>
+  <li>So code will be easier to read and maintain.</li>
+  <li>If you decide to extend the delegate, you will have to do it in one place only.</li>
+  <li>It’s fun to have smart code suggestions!</li>
+</ul>
+
+<p><em>Cons</em></p>
+
+<ul>
+  <li>Bit of extra work and extra code</li>
+</ul>
+
+<h4 id="bonus">Bonus</h4>
+<p>You can have optional <code>Func&lt;T&gt;</code> arguments!
+In the example below you can omit <code>token</code> argument completely.</p>
+
+<p><img src="/assets/naming_func_t_bonus.png" alt="Optional arguments in Func of T csharp" /></p>
+
+<hr />
+
+<p>If you liked this post, you can
+<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;text=Named+parameters+in+Func%3CT%3E%2FAction%3CT%3E+type+in+C%23%3F&amp;via=alexsorokoletov" target="_blank">
+  share it with your followers</a> 
+or 
+<a href="https://twitter.com/alexsorokoletov">
+  follow me on Twitter</a>!</p>
+
+</article>
+
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/11/28/editorconfig-in-visualstudio/">
+            .editorconfig support in Visual Studio 2017
+            <small><time datetime="2016-11-28T00:00:00-05:00">28 Nov 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/13/csharp-standard-style/">
+            C# Standard Style - single source of formatting truth
+            <small><time datetime="2016-11-13T00:00:00-05:00">13 Nov 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/">
+            MaterialDateTimePicker bindings for Xamarin.Android apps
+            <small><time datetime="2016-02-29T00:00:00-05:00">29 Feb 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      
+<div id="disqus_thread"></div>
+<script>
+/*
+var disqus_config = function () {
+this.page.url = 'https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/'; 
+this.page.identifier = '/2016/11/29/naming-func-action-of-t-arguments';
+this.page.title = 'Named parameters in Func<T>/Action<T> type in C#?';
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//sorokoletovcom.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2016-11-28T22:16:29-05:00">2016</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69801505-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

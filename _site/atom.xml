@@ -4,13 +4,73 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="https://sorokoletov.com/atom.xml" rel="self"/>
  <link href="https://sorokoletov.com/"/>
- <updated>2016-11-28T16:34:28-05:00</updated>
+ <updated>2016-11-28T22:16:29-05:00</updated>
  <id>https://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Named parameters in Func<T>/Action<T> type in C#?</title>
+   <link href="https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/"/>
+   <updated>2016-11-29T00:00:00-05:00</updated>
+   <id>https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments</id>
+   <content type="html">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
+
+&lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
+&lt;img src=&quot;/assets/naming_func_of_t_declaration.png&quot; alt=&quot;Definition of your method using Func/Action classes&quot; /&gt;
+and then when you want to use this method VS suggests you following names: arg1 and arg2.
+Like there is nothing better than that :)
+&lt;img src=&quot;/assets/naming_func_of_t_default_behavior.png&quot; alt=&quot;Definition of your method using Func/Action classes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a cheap and easy &lt;strong&gt;solution for that&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Define your own delegate with same signature as &lt;code&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Func&amp;lt;T1,T2,T3&amp;gt;&lt;/code&gt; you are using already.&lt;/li&gt;
+  &lt;li&gt;Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).&lt;/li&gt;
+  &lt;li&gt;In original method, replace Func&lt;t&gt; with this new delegate.&lt;/t&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/naming_func_of_t_custom_named_delegate.png&quot; alt=&quot;Defining custom delegate with correct names and using it in the original method&quot; /&gt;
+After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.
+&lt;img src=&quot;/assets/naming_func_of_t_improved_names.png&quot; alt=&quot;Now you get better names from VS as a suggestion&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;pros-and-cons&quot;&gt;Pros and Cons&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Pros&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You, your team and other people using the API that you expose (whether internally in the app or in the library or NuGet) will see better names and probably will use these names.&lt;/li&gt;
+  &lt;li&gt;So code will be easier to read and maintain.&lt;/li&gt;
+  &lt;li&gt;If you decide to extend the delegate, you will have to do it in one place only.&lt;/li&gt;
+  &lt;li&gt;It’s fun to have smart code suggestions!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Cons&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bit of extra work and extra code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;bonus&quot;&gt;Bonus&lt;/h4&gt;
+&lt;p&gt;You can have optional &lt;code&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; arguments!
+In the example below you can omit &lt;code&gt;token&lt;/code&gt; argument completely.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/naming_func_t_bonus.png&quot; alt=&quot;Optional arguments in Func of T csharp&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named+parameters+in+Func%3CT%3E%2FAction%3CT%3E+type+in+C%23%3F&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>.editorconfig support in Visual Studio 2017</title>
