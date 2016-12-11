@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/</loc>
+    <lastmod>2016-12-11T00:00:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/</loc>
     <lastmod>2016-11-29T00:00:00-05:00</lastmod>
   </url>

@@ -4,13 +4,95 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="https://sorokoletov.com/atom.xml" rel="self"/>
  <link href="https://sorokoletov.com/"/>
- <updated>2016-11-28T22:16:29-05:00</updated>
+ <updated>2016-12-11T00:26:01-05:00</updated>
  <id>https://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Easiest way to migrate from Xamarin.Insights to HockeyApp</title>
+   <link href="https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/"/>
+   <updated>2016-12-11T00:00:00-05:00</updated>
+   <id>https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id>
+   <content type="html">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;… Do also note that Xamarin Insights is now considered to be end of life: since the acquisition by Microsoft, Insights has been deprecated in favour of HockeyApp.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Many of us have apps integrated with Xamarin.Insights. Now it’s time to ditch Xamarin.Insights and put HockeyApp SDK instead.
+HockeyApp has different integration points and API and some of the features from Insights are missing.&lt;/p&gt;
+
+&lt;p&gt;What would be the easiest way to migrate from Xamarin Insights to HockeyApp?&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;meet-dtinsightstohockey&quot;&gt;Meet DT.InsightsToHockey&lt;/h3&gt;
+&lt;p&gt;With this new project and NuGet package, all you have to do is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;to remove Xamarin.Insights package and reference&lt;/li&gt;
+  &lt;li&gt;and  install DT.InsightsToHockey package.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then, update the API key (change Insights’ one to HockeyApp app id) and you good to go.&lt;/p&gt;
+
+&lt;p&gt;Quite simple, right?&lt;/p&gt;
+
+&lt;p&gt;Here is how it looks in the project:&lt;/p&gt;
+
+&lt;p&gt;Before:
+&lt;img src=&quot;/assets/insights_to_hockeyapp_before.png&quot; alt=&quot;Xamarin Insights package in references before&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After:
+&lt;img src=&quot;/assets/insights_to_hockeyapp_after.png&quot; alt=&quot;DT.InsightsToHockey package in references after&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Events already coming to HockeyApp after the changes:
+&lt;img src=&quot;/assets/insights_to_hockeyapp_events.png&quot; alt=&quot;Events coming to HockeyApp after change&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-it-works&quot;&gt;How it works?&lt;/h3&gt;
+&lt;p&gt;Under the hood, package exposes exactly same API under same namespace, reporting and integrating with HockeyApp instead.&lt;/p&gt;
+
+&lt;p&gt;Literally, you have to change no code, just references.
+Project supports PCL and iOS as of now, Android is in progress. I’ve tried to match all features available in Insights to HockeyApp SDK features. HockeyApp team was very helpful providing some feedback on features parity.&lt;/p&gt;
+
+&lt;p&gt;I will be glad to receive any feedback and help with this project (Android and UWP are waiting!)&lt;/p&gt;
+
+&lt;h4 id=&quot;additional-information&quot;&gt;Additional information&lt;/h4&gt;
+&lt;p&gt;I recommended to take a look at features and limitations of HockeyApp SDK for each specific platform.&lt;/p&gt;
+
+&lt;p&gt;HockeyApp is powerful and well-know metrics and crash tracking system. 
+You can do in-app updates for iOS/Android, password-protected screens in the app (very well suited for diagnostics/admin screens). You can integrate a feedback page as well.&lt;/p&gt;
+
+&lt;p&gt;This fall Azure integrated HockeyApp with Azure. Data coming to HockeyApp can be available in App Insights for analysis and intelligence.
+It is very powerful way to see and analyze events coming from your app. &lt;a href=&quot;https://azure.microsoft.com/en-us/blog/access-hockeyapp-data-in-ai-with-hockeyapp-bridge-app/&quot;&gt;Step by step guidance from AppInsights team.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading. Please let me know your thoughts on the subject.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Related links:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/alexsorokoletov/DT.XamarinInsightsToHockeyApp&quot;&gt;DT.InsightsToHockey on Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bitstadium/HockeySDK-Xamarin&quot;&gt;HockeyApp SDK for Xamarin&lt;/a&gt; and for &lt;a href=&quot;https://github.com/bitstadium/HockeySDK-iOS&quot;&gt;iOS&lt;/a&gt; and &lt;a href=&quot;https://github.com/bitstadium/HockeySDK-Android&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.xamarin.com/guides/insights/&quot;&gt;Xamarin.Insights Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.xamarin.com/faq#qha1&quot;&gt;What is happening with Xamarin.Insights&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/blog/access-hockeyapp-data-in-ai-with-hockeyapp-bridge-app/&quot;&gt;Exploring HockeyApp data in Application Insights: introducing the Bridge App&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.hockeyapp.net/blog/2016/08/30/custom-events-public-preview.html&quot;&gt;Custom events for everybody&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest+way+to+migrate+from+Xamarin.Insights+to+HockeyApp&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Named parameters in Func<T>/Action<T> type in C#?</title>
