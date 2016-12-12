@@ -10,7 +10,7 @@
 
   <title>
     
-      gMaps for Windows Phone got 100k reviews! &middot; Alex Sorokoletov Notes
+      Android Maps Utils for Xamarin updated with new features and NuGet &middot; Alex Sorokoletov Notes
     
   </title>
 
@@ -47,21 +47,53 @@
 
       <main>
         <article class="post">
-  <h1 class="post-title">gMaps for Windows Phone got 100k reviews!</h1>
-  <time datetime="2016-02-22T00:00:00-05:00" class="post-date">22 Feb 2016</time>
-  <p>Monitoring app reviews with Reviews Reader app <a href="http://twitter.com/winreviews">@winreviews</a>, I finally noticed gMaps got 100k of reviews!</p>
+  <h1 class="post-title">Android Maps Utils for Xamarin updated with new features and NuGet</h1>
+  <time datetime="2016-12-12T00:00:00-05:00" class="post-date">12 Dec 2016</time>
+  <p>I’ve updated Xamarin Android Maps Utils recently and now one can get this as a <a href="https://www.nuget.org/packages/Xamarin.Android.Maps.Utils">NuGet package</a>.</p>
 
-<p>Thank you, users! We are reading all of them, believe it or not!
+<p><code>Install-Package Xamarin.Android.Maps.Utils -Pre</code></p>
+
 <!--more-->
-<img src="/assets/gmaps-got-100k-reviews.png" alt="gMaps is top free navigation app for Windows Phone" /></p>
 
-<p>If you have any ideas how to make the app better, or any other feedback, feel free to contact us using <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#103;&#109;&#097;&#112;&#115;&#046;&#102;&#101;&#101;&#100;&#098;&#097;&#099;&#107;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">gmaps feedback email</a>
- address or <a href="https://gmaps.uservoice.com/">gMaps uservoice</a>.</p>
+<p>Currently project has dependency on the latest and greatest Google Play Services package from Xamarin (32.961.0) and requires “TargetFramework” 7.0 (which should be by default for all new projects anyway).
+Besides NuGet, project has now latest (0.4.4) java code inside bringing more new features for users.</p>
+
+<p>Now you get (shameless plug from original repo):</p>
+
+<blockquote>
+
+  <p>Marker clustering — handles the display of a large number of points</p>
+
+  <p>Heat maps — display a large number of points as a heat map</p>
+
+  <p>IconGenerator — display text on your Markers</p>
+
+  <p>Poly decoding and encoding — compact encoding for paths, interoperability with Maps API web services</p>
+
+  <p>Spherical geometry — for example: computeDistance, computeHeading, computeArea</p>
+
+  <p>KML — displays KML data</p>
+
+  <p>GeoJSON — displays and styles GeoJSON data</p>
+</blockquote>
+
+<p><a href="https://github.com/googlemaps/android-maps-utils">Google’s Github has a nice GIF demo of what Android Maps Utils can do now</a>.</p>
+
+<p>Interestingly, I was not getting any notifications about activities on this project on Github, now it’s fixed. Thank you for the feedback and pull requests!</p>
+
+<p>Keep it coming!</p>
+
+<p><em>Related links:</em></p>
+
+<ol>
+  <li><a href="https://github.com/xamarin/GooglePlayServicesComponents#versioning">Versioning of Xamarin.GooglePlayServices</a></li>
+  <li><a href="https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils">Xamarin.Android.Maps.Utils on Github</a></li>
+</ol>
 
 <hr />
 
 <p>If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store/&amp;text=gMaps+for+Windows+Phone+got+100k+reviews%21&amp;via=alexsorokoletov" target="_blank">
+<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/&amp;text=Android+Maps+Utils+for+Xamarin+updated+with+new+features+and+NuGet&amp;via=alexsorokoletov" target="_blank">
   share it with your followers</a> 
 or 
 <a href="https://twitter.com/alexsorokoletov">
@@ -73,15 +105,6 @@ or
 <aside class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/12/12/android-maps-utils-updated-published-nuget/">
-            Android Maps Utils for Xamarin updated with new features and NuGet
-            <small><time datetime="2016-12-12T00:00:00-05:00">12 Dec 2016</time></small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -101,6 +124,15 @@ or
         </h3>
       </li>
     
+      <li>
+        <h3>
+          <a href="/2016/11/28/editorconfig-in-visualstudio/">
+            .editorconfig support in Visual Studio 2017
+            <small><time datetime="2016-11-28T00:00:00-05:00">28 Nov 2016</time></small>
+          </a>
+        </h3>
+      </li>
+    
   </ul>
 </aside>
 
@@ -112,9 +144,9 @@ or
 <script>
 /*
 var disqus_config = function () {
-this.page.url = 'https://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store/'; 
-this.page.identifier = '/2016/02/22/gmaps-got-100000-reviews-in-store';
-this.page.title = 'gMaps for Windows Phone got 100k reviews!';
+this.page.url = 'https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/'; 
+this.page.identifier = '/2016/12/12/android-maps-utils-updated-published-nuget';
+this.page.title = 'Android Maps Utils for Xamarin updated with new features and NuGet';
 };
 */
 (function() { // DON'T EDIT BELOW THIS LINE
