@@ -50,6 +50,29 @@
   
   <article class="post">
     <h1 class="post-title">
+      <a href="/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">
+        Easy way to create Xamarin.iOS binding from CocoaPods
+      </a>
+    </h1>
+
+    <time datetime="2017-02-05T00:00:00-05:00" class="post-date">05 Feb 2017</time>
+
+    <p>Hey, Xamarin developers!
+Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
+This was 100% manual process until <code>ObjectiveSharpie</code>. After, <code>ObjectiveSharpie</code> began supporting <code>CocoaPods</code> (it is NuGet for iOS developers, so everything is in there). 
+However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).</p>
+
+<p>Also, <code>sharpie</code> doesn’t support dependencies within pods. This is where the new <a href="https://github.com/alexsorokoletov/objc-automatic"><code>objc-automatic</code></a> started.</p>
+
+<p>But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.</p>
+
+
+    
+    <a href="/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">Read more...</a>
+  </article>
+  
+  <article class="post">
+    <h1 class="post-title">
       <a href="/2016/12/12/android-maps-utils-updated-published-nuget/">
         Android Maps Utils for Xamarin updated with new features and NuGet
       </a>
@@ -144,30 +167,6 @@ What’s so great about this?</p>
     <a href="/2016/11/28/editorconfig-in-visualstudio/">Read more...</a>
   </article>
   
-  <article class="post">
-    <h1 class="post-title">
-      <a href="/2016/11/13/csharp-standard-style/">
-        C# Standard Style - single source of formatting truth
-      </a>
-    </h1>
-
-    <time datetime="2016-11-13T00:00:00-05:00" class="post-date">13 Nov 2016</time>
-
-    <p>Months ago <a href="https://www.paralect.com/team">Andrew Orsich</a> told me about this great tool called <a href="http://standardjs.com/">javascript standard style</a>.</p>
-
-<p>Absolutely amazing.</p>
-
-<p>What it does is just formats code with one pre-configured, non-changeable, non-customizeable, non-arguable style. <strong>You either use it or not</strong>.</p>
-
-<p>After that, all discussions about curly braces, tabs and spaces go to void. Done.</p>
-
-<p>I’d like to have this for C#.</p>
-
-
-    
-    <a href="/2016/11/13/csharp-standard-style/">Read more...</a>
-  </article>
-  
 </div>
 
 <div class="pagination">
@@ -185,7 +184,7 @@ What’s so great about this?</p>
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2016-12-12T00:03:33-05:00">2016</time>. All rights reserved.
+          &copy; <time datetime="2017-02-06T03:19:56-05:00">2017</time>. All rights reserved.
         </small>
       </footer>
     </div>
