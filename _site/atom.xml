@@ -4,7 +4,7 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="https://sorokoletov.com/atom.xml" rel="self"/>
  <link href="https://sorokoletov.com/"/>
- <updated>2017-02-06T03:19:56-05:00</updated>
+ <updated>2017-02-06T09:24:38-05:00</updated>
  <id>https://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
@@ -115,9 +115,18 @@ In first place, the &lt;code&gt;objc-automatic&lt;/code&gt; tool aims for comple
   &lt;li&gt;CocoaPods spec can be a mess. Definitely moving forward I need to restructure this piece.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h4 id=&quot;links&quot;&gt;Links&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/alexsorokoletov/objc-automatic&quot;&gt;Source code on GitHub: objc-automatic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-sharpie/&quot;&gt;ObjectiveSharpie from Xamarin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.xamarin.com/guides/cross-platform/macios/binding/&quot;&gt;Xamarin Documentation - Binding Objective-C&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h4 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h4&gt;
 &lt;p&gt;This tool works as it is. There are still things to improve and fix (ZendeskSDK and AWSCognito pods are examples).
-Not all metadata flows from pod to NuGet package.&lt;/p&gt;
+Not all metadata flows from pod to NuGet package.
+Tool is opensourced and everyone is welcome to use it and improve it.&lt;/p&gt;
 
 &lt;h4 id=&quot;thank-you&quot;&gt;Thank you&lt;/h4&gt;
 &lt;p&gt;Big thanks to Xamarin Team (Miguel and Bill) who helped taming Xamarin.iOS linker.

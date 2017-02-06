@@ -102,10 +102,16 @@ One binding sometimes is really hard to crack. Having 6 of them is even harder.
 - It is so hard to debug F# FAKE scripts (ionide-fake VSCode extension doesn't help)
 - CocoaPods spec can be a mess. Definitely moving forward I need to restructure this piece.
 
+#### Links
+
+- [Source code on GitHub: objc-automatic](https://github.com/alexsorokoletov/objc-automatic)
+- [ObjectiveSharpie from Xamarin](https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-sharpie/)
+- [Xamarin Documentation - Binding Objective-C](https://developer.xamarin.com/guides/cross-platform/macios/binding/)
+
 #### Disclaimer
 This tool works as it is. There are still things to improve and fix (ZendeskSDK and AWSCognito pods are examples).
 Not all metadata flows from pod to NuGet package.
-
+Tool is opensourced and everyone is welcome to use it and improve it.
 
 #### Thank you
 Big thanks to Xamarin Team (Miguel and Bill) who helped taming Xamarin.iOS linker.
