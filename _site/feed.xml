@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
- <title>Alex Sorokoletov Notes</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2017-02-10T16:33:19-05:00</updated>
- <id>http://localhost:4000</id>
- <author>
-   <name>Alex Sorokoletov</name>
-   <email>alex@sorokoletov.com</email>
- </author>
-
- 
- <entry>
-   <title>Easy way to create Xamarin.iOS binding from CocoaPods
-</title>
-   <link href="http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/"/>
-   <updated>2017-02-05T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id>
-   <content type="html">&lt;p&gt;Hey, Xamarin developers!
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-10T16:33:19-05:00</updated><id>http://localhost:4000//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00-05:00</published><updated>2017-02-05T00:00:00-05:00</updated><id>http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
 This was 100% manual process until &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).&lt;/p&gt;
@@ -143,17 +123,14 @@ I appreciate any positive or negative feedback about &lt;code class=&quot;highli
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Android Maps Utils for Xamarin updated with new features and NuGet
-</title>
-   <link href="http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget/"/>
-   <updated>2016-12-12T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget</id>
-   <content type="html">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Hey, Xamarin developers!
+Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
+This was 100% manual process until ObjectiveSharpie. After, ObjectiveSharpie began supporting CocoaPods (it is NuGet for iOS developers, so everything is in there). 
+However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).
+
+Also, sharpie doesn’t support dependencies within pods. This is where the new objc-automatic started.
+
+But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.</summary></entry><entry><title type="html">Android Maps Utils for Xamarin updated with new features and NuGet</title><link href="http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget/" rel="alternate" type="text/html" title="Android Maps Utils for Xamarin updated with new features and NuGet" /><published>2016-12-12T00:00:00-05:00</published><updated>2016-12-12T00:00:00-05:00</updated><id>http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget</id><content type="html" xml:base="http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget/">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Install-Package Xamarin.Android.Maps.Utils -Pre&lt;/code&gt;&lt;/p&gt;
 
@@ -201,17 +178,9 @@ Besides NuGet, project has now latest (0.4.4) java code inside bringing more new
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Easiest way to migrate from Xamarin.Insights to HockeyApp
-</title>
-   <link href="http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/"/>
-   <updated>2016-12-11T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id>
-   <content type="html">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">I’ve updated Xamarin Android Maps Utils recently and now one can get this as a NuGet package.
+
+Install-Package Xamarin.Android.Maps.Utils -Pre</summary></entry><entry><title type="html">Easiest way to migrate from Xamarin.Insights to HockeyApp</title><link href="http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/" rel="alternate" type="text/html" title="Easiest way to migrate from Xamarin.Insights to HockeyApp" /><published>2016-12-11T00:00:00-05:00</published><updated>2016-12-11T00:00:00-05:00</updated><id>http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id><content type="html" xml:base="http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;… Do also note that Xamarin Insights is now considered to be end of life: since the acquisition by Microsoft, Insights has been deprecated in favour of HockeyApp.&lt;/p&gt;
@@ -284,17 +253,16 @@ It is very powerful way to see and analyze events coming from your app. &lt;a hr
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?
-</title>
-   <link href="http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/"/>
-   <updated>2016-11-29T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments</id>
-   <content type="html">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However
+
+
+  … Do also note that Xamarin Insights is now considered to be end of life: since the acquisition by Microsoft, Insights has been deprecated in favour of HockeyApp.
+
+
+Many of us have apps integrated with Xamarin.Insights. Now it’s time to ditch Xamarin.Insights and put HockeyApp SDK instead.
+HockeyApp has different integration points and API and some of the features from Insights are missing.
+
+What would be the easiest way to migrate from Xamarin Insights to HockeyApp?</summary></entry><entry><title type="html">Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?</title><link href="http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/" rel="alternate" type="text/html" title="Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?" /><published>2016-11-29T00:00:00-05:00</published><updated>2016-11-29T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments</id><content type="html" xml:base="http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
 
 &lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
 &lt;img src=&quot;/assets/naming_func_of_t_declaration.png&quot; alt=&quot;Definition of your method using Func/Action classes&quot; /&gt;
@@ -345,17 +313,24 @@ In the example below you can omit &lt;code class=&quot;highlighter-rouge&quot;&g
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>.editorconfig support in Visual Studio 2017
-</title>
-   <link href="http://localhost:4000/2016/11/28/editorconfig-in-visualstudio/"/>
-   <updated>2016-11-28T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/11/28/editorconfig-in-visualstudio</id>
-   <content type="html">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…
+
+Here is a common situation where somewhere in your library or helper class you have a method taking in Func&amp;lt;T&amp;gt; or Action&amp;lt;T&amp;gt;.
+
+and then when you want to use this method VS suggests you following names: arg1 and arg2.
+Like there is nothing better than that :)
+
+
+There is a cheap and easy solution for that.
+
+
+  Define your own delegate with same signature as Func&amp;lt;T&amp;gt; or Func&amp;lt;T1,T2,T3&amp;gt; you are using already.
+  Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).
+  In original method, replace Func with this new delegate.
+
+
+
+After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.</summary></entry><entry><title type="html">.editorconfig support in Visual Studio 2017</title><link href="http://localhost:4000/2016/11/28/editorconfig-in-visualstudio/" rel="alternate" type="text/html" title=".editorconfig support in Visual Studio 2017" /><published>2016-11-28T00:00:00-05:00</published><updated>2016-11-28T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/28/editorconfig-in-visualstudio</id><content type="html" xml:base="http://localhost:4000/2016/11/28/editorconfig-in-visualstudio/">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
 
 &lt;p&gt;It’s .editorconfig support.
 What’s so great about this?
@@ -411,17 +386,10 @@ What’s so great about this?
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>C# Standard Style - single source of formatting truth
-</title>
-   <link href="http://localhost:4000/2016/11/13/csharp-standard-style/"/>
-   <updated>2016-11-13T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/11/13/csharp-standard-style</id>
-   <content type="html">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Just recently, Visual Studio team published a post on great features coming to the VS 2017 that will increase your productivity. Among those, one small but powerful feature coming to the Visual Studio.
+
+It’s .editorconfig support.
+What’s so great about this?</summary></entry><entry><title type="html">C# Standard Style - single source of formatting truth</title><link href="http://localhost:4000/2016/11/13/csharp-standard-style/" rel="alternate" type="text/html" title="C# Standard Style - single source of formatting truth" /><published>2016-11-13T00:00:00-05:00</published><updated>2016-11-13T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/13/csharp-standard-style</id><content type="html" xml:base="http://localhost:4000/2016/11/13/csharp-standard-style/">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Absolutely amazing.&lt;/p&gt;
 
@@ -498,17 +466,15 @@ And what about VS Code?&lt;/p&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>MaterialDateTimePicker bindings for Xamarin.Android apps
-</title>
-   <link href="http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/"/>
-   <updated>2016-02-29T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id>
-   <content type="html">&lt;h3 id=&quot;bindings-for-materialdatetimepicker-for-xamarinandroid-apps&quot;&gt;Bindings for MaterialDateTimePicker for Xamarin.Android apps&lt;/h3&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Months ago Andrew Orsich told me about this great tool called javascript standard style.
+
+Absolutely amazing.
+
+What it does is just formats code with one pre-configured, non-changeable, non-customizeable, non-arguable style. You either use it or not.
+
+After that, all discussions about curly braces, tabs and spaces go to void. Done.
+
+I’d like to have this for C#.</summary></entry><entry><title type="html">MaterialDateTimePicker bindings for Xamarin.Android apps</title><link href="http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/" rel="alternate" type="text/html" title="MaterialDateTimePicker bindings for Xamarin.Android apps" /><published>2016-02-29T00:00:00-05:00</published><updated>2016-02-29T00:00:00-05:00</updated><id>http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id><content type="html" xml:base="http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/">&lt;h3 id=&quot;bindings-for-materialdatetimepicker-for-xamarinandroid-apps&quot;&gt;Bindings for MaterialDateTimePicker for Xamarin.Android apps&lt;/h3&gt;
 
 &lt;p&gt;One of the good libraries for Android apps made in Material design is the &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker&quot;&gt;“Material DateTime Picker”&lt;/a&gt; from &lt;a href=&quot;https://github.com/wdullaer&quot;&gt;@wdullaer&lt;/a&gt;.
 Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.
@@ -667,17 +633,10 @@ Clone it and use it or just add as a submodule.&lt;/p&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>gMaps for Windows Phone got 100k reviews!
-</title>
-   <link href="http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store/"/>
-   <updated>2016-02-22T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store</id>
-   <content type="html">&lt;p&gt;Monitoring app reviews with Reviews Reader app &lt;a href=&quot;http://twitter.com/winreviews&quot;&gt;@winreviews&lt;/a&gt;, I finally noticed gMaps got 100k of reviews!&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Bindings for MaterialDateTimePicker for Xamarin.Android apps
+
+One of the good libraries for Android apps made in Material design is the “Material DateTime Picker” from @wdullaer.
+Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.</summary></entry><entry><title type="html">gMaps for Windows Phone got 100k reviews!</title><link href="http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store/" rel="alternate" type="text/html" title="gMaps for Windows Phone got 100k reviews!" /><published>2016-02-22T00:00:00-05:00</published><updated>2016-02-22T00:00:00-05:00</updated><id>http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store</id><content type="html" xml:base="http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store/">&lt;p&gt;Monitoring app reviews with Reviews Reader app &lt;a href=&quot;http://twitter.com/winreviews&quot;&gt;@winreviews&lt;/a&gt;, I finally noticed gMaps got 100k of reviews!&lt;/p&gt;
 
 &lt;p&gt;Thank you, users! We are reading all of them, believe it or not!
 &lt;!--more--&gt;
@@ -693,17 +652,9 @@ or
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV
-</title>
-   <link href="http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/"/>
-   <updated>2016-01-05T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id>
-   <content type="html">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Monitoring app reviews with Reviews Reader app @winreviews, I finally noticed gMaps got 100k of reviews!
+
+Thank you, users! We are reading all of them, believe it or not!</summary></entry><entry><title type="html">Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV</title><link href="http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/" rel="alternate" type="text/html" title="Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV" /><published>2016-01-05T00:00:00-05:00</published><updated>2016-01-05T00:00:00-05:00</updated><id>http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id><content type="html" xml:base="http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
 Driving there takes up to 5 hours.
 As long as you drive off the interstate you loose your cell signal.&lt;/p&gt;
 
@@ -784,17 +735,16 @@ Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage res
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Android-maps-utils bindings for Xamarin.Android apps
-</title>
-   <link href="http://localhost:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/"/>
-   <updated>2015-12-28T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id>
-   <content type="html">&lt;h3 id=&quot;bindings-for-android-maps-utils-for-xamarinandroid-apps&quot;&gt;Bindings for android-maps-utils for Xamarin.Android apps&lt;/h3&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">We go the Snowshoe ski resort almost every weekend when there is snow.
+Driving there takes up to 5 hours.
+As long as you drive off the interstate you loose your cell signal.
+
+Last year we had to learn how to drive and communicate in a disconnected world. We now know the route by heart, we know stops, we know which restaurants or gas stations have Wi-Fi. We also got some low-power FRS radios to have more flexibility during our trips.
+
+Honestly, I was always wondering why T-Mobile was so bad in this area. This spring I switched to AT&amp;amp;T to compare the coverage on Outer Banks (where T-Mobile is also failing to get you even basic coverage).
+Now it`s winter and it’s time to check out AT&amp;amp;T coverage in our favorite skiing area.
+
+Let’s see how we do that and what we find</summary></entry><entry><title type="html">Android-maps-utils bindings for Xamarin.Android apps</title><link href="http://localhost:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/" rel="alternate" type="text/html" title="Android-maps-utils bindings for Xamarin.Android apps" /><published>2015-12-28T00:00:00-05:00</published><updated>2015-12-28T00:00:00-05:00</updated><id>http://localhost:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id><content type="html" xml:base="http://localhost:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/">&lt;h3 id=&quot;bindings-for-android-maps-utils-for-xamarinandroid-apps&quot;&gt;Bindings for android-maps-utils for Xamarin.Android apps&lt;/h3&gt;
 
 &lt;p&gt;Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.&lt;/p&gt;
 
@@ -940,288 +890,9 @@ In that case fork the repo and remove references that it has currently and then 
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>gMaps is again best navigation app for Windows Phone
-</title>
-   <link href="http://localhost:4000/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/"/>
-   <updated>2015-11-07T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone</id>
-   <content type="html">&lt;p&gt;I recently opened Store app on Lumia 925 and was surprised.&lt;br /&gt;
-Turns out, after so many years, gMaps is still the best navigation app out there.&lt;/p&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Bindings for android-maps-utils for Xamarin.Android apps
 
-&lt;p&gt;gMaps is top 1 free navigation application for Windows Phone 8.1! Yay!&lt;/p&gt;
+Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.
 
-&lt;p&gt;:rocket:&lt;/p&gt;
-
-&lt;p&gt;gMaps Pro (paid version already including all features of gMaps) is top 2 paid navigation application for Windows Phone 8.1&lt;/p&gt;
-
-&lt;!--more--&gt;
-&lt;p&gt;Here you are, facts :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/gmaps-is-top-free-navigation-app-for-wp.png&quot; alt=&quot;gMaps is top free navigation app for Windows Phone&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/gmaps-is-top2-paid-navigation-app-for-wp.png&quot; alt=&quot;gMaps is top2 paid navigation app for Windows Phone&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We put a lot of energy into gMaps and are striving for the quality and features.&lt;/p&gt;
-
-&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#103;&amp;#109;&amp;#097;&amp;#112;&amp;#115;&amp;#046;&amp;#102;&amp;#101;&amp;#101;&amp;#100;&amp;#098;&amp;#097;&amp;#099;&amp;#107;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;gmaps feedback email&lt;/a&gt;
- address or &lt;a href=&quot;https://gmaps.uservoice.com/&quot;&gt;gMaps uservoice&lt;/a&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/&amp;amp;text=gMaps is again best navigation app for Windows Phone &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Contributing to .NET Core from OS X
-</title>
-   <link href="http://localhost:4000/2015/11/05/contributing-to-dotnet-on-mac-osx/"/>
-   <updated>2015-11-05T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2015/11/05/contributing-to-dotnet-on-mac-osx</id>
-   <content type="html">&lt;p&gt;Imagine you forgot your Windows laptop and have only old Macbook and you are on .NET hackathon. What do you do there?&lt;/p&gt;
-
-&lt;p&gt;Well, you have number of options. What you probably dont  know &lt;em&gt;yet&lt;/em&gt; is that you can develop using .NET also on your Macbook (or your spouse).&lt;/p&gt;
-
-&lt;p&gt;My choice was to contribute to &lt;a href=&quot;http://dotnet.github.io/core/&quot;&gt;.NET Core&lt;/a&gt; which works on everything (have you read recent announcement from RedHat?)&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;getting-ready-to-rock&quot;&gt;Getting ready to rock&lt;/h2&gt;
-
-&lt;p&gt;Before you can do anything with .NET on your Mac, you will need to do several things:&lt;/p&gt;
-
-&lt;p&gt;1) &lt;a href=&quot;https://code.visualstudio.com/Download?Wt.mc_id=DX_MVP5000197&quot;&gt;Download Visual Studio Code (vscode)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2) Install the .NET Core itself. Here is a good guide to follow: &lt;a href=&quot;http://dotnet.github.io/core/getting-started/&quot;&gt;http://dotnet.github.io/core/getting-started/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;3) Next step is to fork &lt;a href=&quot;https://github.com/dotnet/corefx&quot;&gt;dotnet/corefx repository&lt;/a&gt;. In my case it’s &lt;a href=&quot;https://github.com/alexsorokoletov/corefx&quot;&gt;https://github.com/alexsorokoletov/corefx&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In order to get and compile current master of &lt;a href=&quot;https://github.com/dotnet/corefx&quot;&gt;dotnet/corefx repository&lt;/a&gt; you need to have the very latest Mono version installed. Mono website provides CI packages (nightly builds) for Windows and *nix, and provides nothing for OS X. So you have to compile it manually (just once, no worries)&lt;/p&gt;
-
-&lt;h3 id=&quot;compiling-mono-on-os-x&quot;&gt;Compiling Mono on OS X&lt;/h3&gt;
-&lt;p&gt;Good article to follow is available on the Mono website &lt;a href=&quot;http://www.mono-project.com/docs/compiling-mono/mac/#building-mono-from-a-git-source-code-checkout&quot;&gt;http://www.mono-project.com/docs/compiling-mono/mac/#building-mono-from-a-git-source-code-checkout&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To make it easy to follow, here is what I did:&lt;/p&gt;
-
-&lt;p&gt;1) clone mono repository&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir monoci
-
-git clone --recursive git@github.com:mono/mono.git
-
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;monoci/mono&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;2) install required tools&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install autoconf automake libtool pkg-config&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;3) the compilation itself. In my case folder with mono was &lt;code class=&quot;highlighter-rouge&quot;&gt;~/work/monoci/mono&lt;/code&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cc -m32'&lt;/span&gt; ./autogen.sh --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/work/monoci/mono --disable-nls --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;i386-apple-darwin11.2.0
-make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;These lines of code took around hour to execute on my wife’s old macbook.
-Take a nap or go to gym.&lt;/p&gt;
-
-&lt;p&gt;4) now, when mono is compiled, make sure you tell your system to use the fresh mono. To do that, just add ahead of the PATH variable your folder with mono&lt;/p&gt;
-
-&lt;p&gt;For example, modify ~/.bash_profile file and add line like that&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/monoci/mono/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and then just quit and reopen terminal.&lt;/p&gt;
-
-&lt;p&gt;5) try it out by running &lt;code class=&quot;highlighter-rouge&quot;&gt;mono --version&lt;/code&gt; in the terminal&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:tests theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mono --version
-Mono JIT compiler version 4.3.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master/c278ead Thu Nov  5 11:03:13 PST 2015&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
-	TLS:           normal
-	SIGSEGV:       altstack
-	Notification:  kqueue
-	Architecture:  x86
-	Disabled:      none
-	Misc:          softdebug 
-	LLVM:          supported, not enabled.
-	GC:            sgen&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;6) last thing is to copy PCL reference libraries.
-&lt;a href=&quot;https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0&quot;&gt;Get it here 9.8mb&lt;/a&gt; and unzip to folder &lt;code class=&quot;highlighter-rouge&quot;&gt;~/work/monoci/mono/lib/mono/xbuild-frameworks&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;After doing that you should see two subfolders there:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:xbuild-frameworks theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
-total 0
-drwxr-xr-x   4 theuser  staff  136 Nov  5 11:53 .
-drwxr-xr-x  12 theuser  staff  408 Nov  5 11:24 ..
-drwxr-xr-x   9 theuser  staff  306 Nov  5 11:24 .NETFramework
-drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;compiling-net-core-on-os-x&quot;&gt;Compiling .NET Core on OS X&lt;/h3&gt;
-
-&lt;p&gt;1) clone your fork of corefx&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone --recursive https://github.com/alexsorokoletov/corefx.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;corefx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;2) run the build script (yay!)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./build.sh /p:SkipTests&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.&lt;/p&gt;
-
-&lt;p&gt;The build process first gets some Nuget packages, then spins number of parallel compiler processes.
-On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal &lt;code class=&quot;highlighter-rouge&quot;&gt;ulimit -n 2048&lt;/code&gt; to make sure system can spin more procesess - my limit was 256.&lt;/p&gt;
-
-&lt;p&gt;So if you have the same problem, just do the magic and restart the build. Probably, the build.sh should handle that process limit better&lt;/p&gt;
-
-&lt;p&gt;Great stuff is that build is incremental so it will start where it failed and will save time for all of us :)&lt;/p&gt;
-
-&lt;p&gt;3) Assuming you waited enough and things compile (if not, contact me and I will help), you’re all set.&lt;/p&gt;
-
-&lt;h3 id=&quot;before-we-change-anything-in-the-net-core&quot;&gt;Before we change anything in the .NET Core&lt;/h3&gt;
-
-&lt;p&gt;So in order to contribute there are several things you need to keep in mind.&lt;/p&gt;
-
-&lt;p&gt;One, there is a legal side of any contribution. Read on that here, I’m not a lawyer.&lt;/p&gt;
-
-&lt;p&gt;Two, there is a contribution guide you should be familiar with.&lt;/p&gt;
-
-&lt;p&gt;Three, the flow is simple - find task -&amp;gt; create branch -&amp;gt; do change -&amp;gt; run tests -&amp;gt; commit &amp;amp; push changes -&amp;gt; create pull request.&lt;/p&gt;
-
-&lt;p&gt;I will be covering the flow, you need to read legal stuff and contribution guide.&lt;/p&gt;
-
-&lt;h3 id=&quot;changing-net-core&quot;&gt;Changing .NET Core&lt;/h3&gt;
-
-&lt;p&gt;For my first contribution I decided to find something easy and Stephen Toub was very kind and suggested to look at this issue:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dotnet/corefx/issues/2699&quot;&gt;Code cleanup for System.IO.Packaging #2699&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Nothing fancy and a good way to learn.&lt;/p&gt;
-
-&lt;p&gt;1) Let’s create a branch for changes&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git branch fix2699
-git checkout fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;2) Open VS Code and change something.&lt;/p&gt;
-
-&lt;p&gt;3) Let’s compile and run tests&lt;/p&gt;
-
-&lt;p&gt;To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.
-Edit ~/.bash_profile and add a line like that&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mbuild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
-If it is, look it up in the &lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; file around line 190&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;__msbuildpackageid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Microsoft.Build.Mono.Debug&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;__msbuildpackageversion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;14.1.0.0-prerelease&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Restart the terminal (or do &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bash_profile&lt;/code&gt;) and let’s go into the folder of the exact package you’re touching.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;src/System.IO.Packaging/tests/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and then run&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mbuild /t:rebuildandtest /p:OSGroup&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;OSX&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This code will compile whatever it sees (either whole .NET Core or just a package). If the changes are local to the package, there is no reason to recompile whole framework.&lt;/p&gt;
-
-&lt;p&gt;You should see:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  xUnit.net console &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;runner &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;64-bit .NET Core&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2014 Outercurve Foundation.
-  
-  Discovering: System.IO.Packaging.Tests
-  Discovered:  System.IO.Packaging.Tests
-  Starting:    System.IO.Packaging.Tests
-  Finished:    System.IO.Packaging.Tests
-  
-  &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; TEST EXECUTION SUMMARY &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;
-     System.IO.Packaging.Tests  Total: 122, Errors: 0, Failed: 0, Skipped: 0, Time: 2.080s
-  Touching &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing&quot;&lt;/span&gt;.
-Done Building Project &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rebuildandtest target&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.
-
-Build succeeded.
-    0 Warning&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    0 Error&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-Time Elapsed 00:00:22.61&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Nice, everything works!&lt;/p&gt;
-
-&lt;p&gt;4) Commiting the change. 
-As the contributing guide suggest, you commit message should look like&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Code cleanup &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;System.IO.Packaging
-
-This request has several changes &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;ContentType.cs to make sure I understand the contribution workflow
-
-Related to &lt;span class=&quot;c&quot;&gt;#2699&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The empty lines are required because of the way github handles commits and pull requests.
-As my commit doesn’t really fixes anything, I wrote in the last line “Related to #issue_number” and not “Fixed #issue_number”.&lt;/p&gt;
-
-&lt;p&gt;After you commit, push the changes to the github and create a pull request.&lt;/p&gt;
-
-&lt;p&gt;Github will pickup the pull request contents automatically.&lt;/p&gt;
-
-&lt;p&gt;Time to wait till .NET Core automatic build compiles your changes and also till .NET team provides feedback on the changes.&lt;/p&gt;
-
-&lt;p&gt;5) Common thing is that you get feedback on pull request and need to do some minor changes.
-After you do the changes, you might want to create a new commit, but there is a better way.&lt;/p&gt;
-
-&lt;p&gt;You can update your previous commit, by ammending the previous commit and force-pushing it to the server.&lt;/p&gt;
-
-&lt;p&gt;Easy in the terminal:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git commit --amend
-git push origin +fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Thanks for this tip, Stephen!&lt;/p&gt;
-
-&lt;p&gt;6) Then your pull request is accepted and merged. 
-Congratulations!&lt;/p&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
-
-&lt;p&gt;Things I just did were impossible all 12 years .NET existed before.&lt;/p&gt;
-
-&lt;p&gt;It is a still mind-blowing how .NET Core, build and tests work on anything running OS X, Linux and Windows.&lt;/p&gt;
-
-&lt;p&gt;What is great is that you can already write apps using .NET and C# for OS X (console and web apps so far).&lt;/p&gt;
-
-&lt;p&gt;What is incredibly great is that how easy is to contribute to the .NET now.&lt;/p&gt;
-
-&lt;p&gt;First time it might be hard, submitting first pull request took me 4 hours. Submitting second took me 30 minutes.&lt;/p&gt;
-
-&lt;p&gt;Huge thanks and kudos to the .NET Core team, Mat, Stephen and everyone else helping me!&lt;/p&gt;
-
-&lt;p&gt;I hope this experience will be helpful to other people having spare time and experience to share and reuse.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;amp;text=Contributing to .NET Core from OS X &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
-</content>
- </entry>
- 
-
-</feed>
+Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. 
+However, there is a solution!</summary></entry></feed>

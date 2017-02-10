@@ -4,18 +4,22 @@ title: About
 ---
 
 
-I'm Alexandr Sorokoletov, [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5000197?fullName=Alexandr%20%20Sorokoletov).
+I'm a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5000197?fullName=Alexandr%20%20Sorokoletov).
 
-I love developing mobile and desktop apps. I'm interested in C#/F#/.NET, Xamarin and native mobile apps.
+I enjoy developing mobile and desktop apps. 
+My interests are: C#/F#/.NET, Xamarin and native mobile apps and everything else what is new and edge.
 
-Besides that, I enjoy snowboarding and kitesurfing. I like to travel, read books and run crazy hackathons.
+I like snowboarding, kitesurfing, travel, books and crazy hackathons.
 
-Currently I reside in Washington, DC. 
+Washington, DC. 
 
 Twitter [@alexsorokoletov](https://twitter.com/alexsorokoletov) 
 
 ## Projects
 
+* [objc-automatic - CocoaPods to NuGet conversion tool](https://github.com/alexsorokoletov/objc-automatic)
+* [Xamarin Studio Add-in to sort and remove usings in C# file on each save](https://github.com/alexsorokoletov/XamarinStudio.SortRemoveUsings)
+* [Xamarin.Android bindings for https://github.com/googlemaps/android-maps-utils](https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils)
 * [MTStatusBarOverlay bindings for Xamarin](https://github.com/alexsorokoletov/MTStatusBarOverlay-Bindings)
 * [Cocos2d-xna sample game for WindowsCamp.ru](https://github.com/alexsorokoletov/crystalcraze-csharp)
 * [Xamarin Studio Add-in to sort and remove usings in C# files when you save it](https://github.com/alexsorokoletov/XamarinStudio.SortRemoveUsings)
@@ -25,4 +29,4 @@ Twitter [@alexsorokoletov](https://twitter.com/alexsorokoletov)
 * [Xamarin.Android bindings for Material DateTime Picker](https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker)
 
 
-###Thanks for reading!
+### Thanks for reading!

@@ -9,7 +9,7 @@ tagline:             Good luck with this code
 url:                 http://sorokoletov.com
 paginate:            5
 baseurl:             ""
-gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap, jemoji]
+gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap, jemoji, jekyll-feed]
 
 # Assets
 #

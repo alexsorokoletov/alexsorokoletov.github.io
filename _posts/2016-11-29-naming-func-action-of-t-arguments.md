@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Named parameters in Func<T>/Action<T> type in C#?
+title: Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?
 comments: True
 ---
 If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 ... argN and so on...

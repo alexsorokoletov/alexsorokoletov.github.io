@@ -4,25 +4,17 @@
   <head>
   <meta charset="UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
-
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>
     
-      Named parameters in Func<T>/Action<T> type in C#? &middot; Alex Sorokoletov Notes
+      Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#? &middot; Alex Sorokoletov Notes
     
   </title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="/styles.css">
-
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
   <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/atom+xml" title="Alex Sorokoletov Notes" href="/atom.xml">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alex Sorokoletov Notes" />
 </head>
 
 
@@ -47,11 +39,11 @@
 
       <main>
         <article class="post">
-  <h1 class="post-title">Named parameters in Func<T>/Action<T> type in C#?</h1>
+  <h1 class="post-title">Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?</h1>
   <time datetime="2016-11-29T00:00:00-05:00" class="post-date">29 Nov 2016</time>
   <p>If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…</p>
 
-<p>Here is a common situation where somewhere in your library or helper class you have a method taking in <code>Func&lt;T&gt;</code> or <code>Action&lt;T&gt;</code>.
+<p>Here is a common situation where somewhere in your library or helper class you have a method taking in <code class="highlighter-rouge">Func&lt;T&gt;</code> or <code class="highlighter-rouge">Action&lt;T&gt;</code>.
 <img src="/assets/naming_func_of_t_declaration.png" alt="Definition of your method using Func/Action classes" />
 and then when you want to use this method VS suggests you following names: arg1 and arg2.
 Like there is nothing better than that :)
@@ -60,9 +52,9 @@ Like there is nothing better than that :)
 <p>There is a cheap and easy <strong>solution for that</strong>.</p>
 
 <ul>
-  <li>Define your own delegate with same signature as <code>Func&lt;T&gt;</code> or <code>Func&lt;T1,T2,T3&gt;</code> you are using already.</li>
+  <li>Define your own delegate with same signature as <code class="highlighter-rouge">Func&lt;T&gt;</code> or <code class="highlighter-rouge">Func&lt;T1,T2,T3&gt;</code> you are using already.</li>
   <li>Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).</li>
-  <li>In original method, replace Func<t> with this new delegate.</t></li>
+  <li>In original method, replace Func<T> with this new delegate.</T></li>
 </ul>
 
 <p><img src="/assets/naming_func_of_t_custom_named_delegate.png" alt="Defining custom delegate with correct names and using it in the original method" />
@@ -88,15 +80,15 @@ After these changes when you are going to use the method, you will see intellise
 </ul>
 
 <h4 id="bonus">Bonus</h4>
-<p>You can have optional <code>Func&lt;T&gt;</code> arguments!
-In the example below you can omit <code>token</code> argument completely.</p>
+<p>You can have optional <code class="highlighter-rouge">Func&lt;T&gt;</code> arguments!
+In the example below you can omit <code class="highlighter-rouge">token</code> argument completely.</p>
 
 <p><img src="/assets/naming_func_t_bonus.png" alt="Optional arguments in Func of T csharp" /></p>
 
 <hr />
 
 <p>If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;text=Named+parameters+in+Func%3CT%3E%2FAction%3CT%3E+type+in+C%23%3F&amp;via=alexsorokoletov" target="_blank">
+<a href="https://twitter.com/intent/tweet?url=http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/&amp;text=Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#? &amp;via=alexsorokoletov" target="_blank">
   share it with your followers</a> 
 or 
 <a href="https://twitter.com/alexsorokoletov">
@@ -147,9 +139,9 @@ or
 <script>
 /*
 var disqus_config = function () {
-this.page.url = 'https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/'; 
+this.page.url = 'http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/'; 
 this.page.identifier = '/2016/11/29/naming-func-action-of-t-arguments';
-this.page.title = 'Named parameters in Func<T>/Action<T> type in C#?';
+this.page.title = 'Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?';
 };
 */
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -166,7 +158,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2017-02-06T09:24:38-05:00">2017</time>. All rights reserved.
+          &copy; <time datetime="2017-02-10T16:33:19-05:00">2017</time>. All rights reserved.
         </small>
       </footer>
     </div>

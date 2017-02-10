@@ -4,25 +4,17 @@
   <head>
   <meta charset="UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
-
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>
     
       Contributing to .NET Core from OS X &middot; Alex Sorokoletov Notes
     
   </title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="/styles.css">
-
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
   <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/atom+xml" title="Alex Sorokoletov Notes" href="/atom.xml">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alex Sorokoletov Notes" />
 </head>
 
 
@@ -76,21 +68,21 @@
 
 <p>1) clone mono repository</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir monoci
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir monoci
 
 git clone --recursive git@github.com:mono/mono.git
 
-<span class="nb">cd </span>monoci/mono</code></pre></div>
+<span class="nb">cd </span>monoci/mono</code></pre></figure>
 
 <p>2) install required tools</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">brew install autoconf automake libtool pkg-config</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">brew install autoconf automake libtool pkg-config</code></pre></figure>
 
-<p>3) the compilation itself. In my case folder with mono was <code>~/work/monoci/mono</code></p>
+<p>3) the compilation itself. In my case folder with mono was <code class="highlighter-rouge">~/work/monoci/mono</code></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">CC</span><span class="o">=</span><span class="s1">&#39;cc -m32&#39;</span> ./autogen.sh --prefix<span class="o">=</span>~/work/monoci/mono --disable-nls --build<span class="o">=</span>i386-apple-darwin11.2.0
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">CC</span><span class="o">=</span><span class="s1">'cc -m32'</span> ./autogen.sh --prefix<span class="o">=</span>~/work/monoci/mono --disable-nls --build<span class="o">=</span>i386-apple-darwin11.2.0
 make
-make install</code></pre></div>
+make install</code></pre></figure>
 
 <p>These lines of code took around hour to execute on my wife’s old macbook.
 Take a nap or go to gym.</p>
@@ -99,14 +91,14 @@ Take a nap or go to gym.</p>
 
 <p>For example, modify ~/.bash_profile file and add line like that</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/theuser/work/monoci/mono/bin:$PATH&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/Users/theuser/work/monoci/mono/bin:</span><span class="nv">$PATH</span><span class="s2">"</span></code></pre></figure>
 
 <p>and then just quit and reopen terminal.</p>
 
-<p>5) try it out by running <code>mono --version</code> in the terminal</p>
+<p>5) try it out by running <code class="highlighter-rouge">mono --version</code> in the terminal</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Marias-MacBook-Pro:tests theuser<span class="nv">$ </span>mono --version
-Mono JIT compiler version 4.3.0 <span class="o">(</span>master/c278ead Thu Nov  <span class="m">5</span> 11:03:13 PST 2015<span class="o">)</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Marias-MacBook-Pro:tests theuser<span class="nv">$ </span>mono --version
+Mono JIT compiler version 4.3.0 <span class="o">(</span>master/c278ead Thu Nov  5 11:03:13 PST 2015<span class="o">)</span>
 Copyright <span class="o">(</span>C<span class="o">)</span> 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
 	TLS:           normal
 	SIGSEGV:       altstack
@@ -115,35 +107,35 @@ Copyright <span class="o">(</span>C<span class="o">)</span> 2002-2014 Novell, In
 	Disabled:      none
 	Misc:          softdebug 
 	LLVM:          supported, not enabled.
-	GC:            sgen</code></pre></div>
+	GC:            sgen</code></pre></figure>
 
 <p>6) last thing is to copy PCL reference libraries.
-<a href="https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0">Get it here 9.8mb</a> and unzip to folder <code>~/work/monoci/mono/lib/mono/xbuild-frameworks</code></p>
+<a href="https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0">Get it here 9.8mb</a> and unzip to folder <code class="highlighter-rouge">~/work/monoci/mono/lib/mono/xbuild-frameworks</code></p>
 
 <p>After doing that you should see two subfolders there:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Marias-MacBook-Pro:xbuild-frameworks theuser<span class="nv">$ </span>ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Marias-MacBook-Pro:xbuild-frameworks theuser<span class="nv">$ </span>ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
 total 0
-drwxr-xr-x   <span class="m">4</span> theuser  staff  <span class="m">136</span> Nov  <span class="m">5</span> 11:53 .
-drwxr-xr-x  <span class="m">12</span> theuser  staff  <span class="m">408</span> Nov  <span class="m">5</span> 11:24 ..
-drwxr-xr-x   <span class="m">9</span> theuser  staff  <span class="m">306</span> Nov  <span class="m">5</span> 11:24 .NETFramework
-drwxr-xr-x   <span class="m">6</span> theuser  staff  <span class="m">204</span> Aug <span class="m">13</span> 01:35 .NETPortable</code></pre></div>
+drwxr-xr-x   4 theuser  staff  136 Nov  5 11:53 .
+drwxr-xr-x  12 theuser  staff  408 Nov  5 11:24 ..
+drwxr-xr-x   9 theuser  staff  306 Nov  5 11:24 .NETFramework
+drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable</code></pre></figure>
 
 <h3 id="compiling-net-core-on-os-x">Compiling .NET Core on OS X</h3>
 
 <p>1) clone your fork of corefx</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone --recursive https://github.com/alexsorokoletov/corefx.git
-<span class="nb">cd </span>corefx</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone --recursive https://github.com/alexsorokoletov/corefx.git
+<span class="nb">cd </span>corefx</code></pre></figure>
 
 <p>2) run the build script (yay!)</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">./build.sh /p:SkipTests<span class="o">=</span><span class="nb">true</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./build.sh /p:SkipTests<span class="o">=</span><span class="nb">true</span></code></pre></figure>
 
 <p>The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.</p>
 
 <p>The build process first gets some Nuget packages, then spins number of parallel compiler processes.
-On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal <code>ulimit -n 2048</code> to make sure system can spin more procesess - my limit was 256.</p>
+On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal <code class="highlighter-rouge">ulimit -n 2048</code> to make sure system can spin more procesess - my limit was 256.</p>
 
 <p>So if you have the same problem, just do the magic and restart the build. Probably, the build.sh should handle that process limit better</p>
 
@@ -173,8 +165,8 @@ On my machine it failed at some point to spin new processes. To overcome that, I
 
 <p>1) Let’s create a branch for changes</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git branch fix2699
-git checkout fix2699</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git branch fix2699
+git checkout fix2699</code></pre></figure>
 
 <p>2) Open VS Code and change something.</p>
 
@@ -183,55 +175,55 @@ git checkout fix2699</code></pre></div>
 <p>To make life easier, it’s good to create an alias to the msbuild run by mono, so let’s do that.
 Edit ~/.bash_profile and add a line like that</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">mbuild</span><span class="o">=</span><span class="s1">&#39;mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe&#39;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">mbuild</span><span class="o">=</span><span class="s1">'mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe'</span></code></pre></figure>
 
 <p>.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
-If it is, look it up in the <code>build.sh</code> file around line 190</p>
+If it is, look it up in the <code class="highlighter-rouge">build.sh</code> file around line 190</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">__msbuildpackageid</span><span class="o">=</span><span class="s2">&quot;Microsoft.Build.Mono.Debug&quot;</span>
-<span class="nv">__msbuildpackageversion</span><span class="o">=</span><span class="s2">&quot;14.1.0.0-prerelease&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">__msbuildpackageid</span><span class="o">=</span><span class="s2">"Microsoft.Build.Mono.Debug"</span>
+<span class="nv">__msbuildpackageversion</span><span class="o">=</span><span class="s2">"14.1.0.0-prerelease"</span></code></pre></figure>
 
-<p>Restart the terminal (or do <code>source ~/.bash_profile</code>) and let’s go into the folder of the exact package you’re touching.</p>
+<p>Restart the terminal (or do <code class="highlighter-rouge">source ~/.bash_profile</code>) and let’s go into the folder of the exact package you’re touching.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>src/System.IO.Packaging/tests/</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>src/System.IO.Packaging/tests/</code></pre></figure>
 
 <p>and then run</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mbuild /t:rebuildandtest /p:OSGroup<span class="o">=</span>OSX</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mbuild /t:rebuildandtest /p:OSGroup<span class="o">=</span>OSX</code></pre></figure>
 
 <p>This code will compile whatever it sees (either whole .NET Core or just a package). If the changes are local to the package, there is no reason to recompile whole framework.</p>
 
 <p>You should see:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">xUnit.net console <span class="nb">test </span>runner <span class="o">(</span>64-bit .NET Core<span class="o">)</span>
-  Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2014</span> Outercurve Foundation.
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  xUnit.net console <span class="nb">test </span>runner <span class="o">(</span>64-bit .NET Core<span class="o">)</span>
+  Copyright <span class="o">(</span>C<span class="o">)</span> 2014 Outercurve Foundation.
   
   Discovering: System.IO.Packaging.Tests
   Discovered:  System.IO.Packaging.Tests
   Starting:    System.IO.Packaging.Tests
   Finished:    System.IO.Packaging.Tests
   
-  <span class="o">===</span> TEST EXECUTION <span class="nv">SUMMARY</span> <span class="o">===</span>
+  <span class="o">===</span> TEST EXECUTION SUMMARY <span class="o">===</span>
      System.IO.Packaging.Tests  Total: 122, Errors: 0, Failed: 0, Skipped: 0, Time: 2.080s
-  Touching <span class="s2">&quot;/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing&quot;</span>.
-Done Building Project <span class="s2">&quot;/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj&quot;</span> <span class="o">(</span>rebuildandtest target<span class="o">(</span>s<span class="o">))</span>.
+  Touching <span class="s2">"/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing"</span>.
+Done Building Project <span class="s2">"/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj"</span> <span class="o">(</span>rebuildandtest target<span class="o">(</span>s<span class="o">))</span>.
 
 Build succeeded.
-    <span class="m">0</span> Warning<span class="o">(</span>s<span class="o">)</span>
-    <span class="m">0</span> Error<span class="o">(</span>s<span class="o">)</span>
+    0 Warning<span class="o">(</span>s<span class="o">)</span>
+    0 Error<span class="o">(</span>s<span class="o">)</span>
 
-Time Elapsed 00:00:22.61</code></pre></div>
+Time Elapsed 00:00:22.61</code></pre></figure>
 
 <p>Nice, everything works!</p>
 
 <p>4) Commiting the change. 
 As the contributing guide suggest, you commit message should look like</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Code cleanup in System.IO.Packaging
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Code cleanup <span class="k">in </span>System.IO.Packaging
 
-This request has several changes in ContentType.cs to make sure I understand the contribution workflow
+This request has several changes <span class="k">in </span>ContentType.cs to make sure I understand the contribution workflow
 
-Related to <span class="c">#2699</span></code></pre></div>
+Related to <span class="c">#2699</span></code></pre></figure>
 
 <p>The empty lines are required because of the way github handles commits and pull requests.
 As my commit doesn’t really fixes anything, I wrote in the last line “Related to #issue_number” and not “Fixed #issue_number”.</p>
@@ -249,8 +241,8 @@ After you do the changes, you might want to create a new commit, but there is a 
 
 <p>Easy in the terminal:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git commit --amend
-git push origin +fix2699</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git commit --amend
+git push origin +fix2699</code></pre></figure>
 
 <p>Thanks for this tip, Stephen!</p>
 
@@ -276,7 +268,7 @@ Congratulations!</p>
 <hr />
 
 <p>If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;text=Contributing+to+.NET+Core+from+OS+X&amp;via=alexsorokoletov" target="_blank">
+<a href="https://twitter.com/intent/tweet?url=http://localhost:4000/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;text=Contributing to .NET Core from OS X &amp;via=alexsorokoletov" target="_blank">
   share it with your followers</a> 
 or 
 <a href="https://twitter.com/alexsorokoletov">
@@ -327,7 +319,7 @@ or
 <script>
 /*
 var disqus_config = function () {
-this.page.url = 'https://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/'; 
+this.page.url = 'http://localhost:4000/2015/11/05/contributing-to-dotnet-on-mac-osx/'; 
 this.page.identifier = '/2015/11/05/contributing-to-dotnet-on-mac-osx';
 this.page.title = 'Contributing to .NET Core from OS X';
 };
@@ -346,7 +338,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2017-02-06T09:24:38-05:00">2017</time>. All rights reserved.
+          &copy; <time datetime="2017-02-10T16:33:19-05:00">2017</time>. All rights reserved.
         </small>
       </footer>
     </div>

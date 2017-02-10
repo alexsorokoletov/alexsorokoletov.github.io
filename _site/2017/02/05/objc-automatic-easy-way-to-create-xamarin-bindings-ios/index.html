@@ -4,25 +4,17 @@
   <head>
   <meta charset="UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
-
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>
     
       Easy way to create Xamarin.iOS binding from CocoaPods &middot; Alex Sorokoletov Notes
     
   </title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="/styles.css">
-
-  <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
   <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/atom+xml" title="Alex Sorokoletov Notes" href="/atom.xml">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alex Sorokoletov Notes" />
 </head>
 
 
@@ -51,10 +43,10 @@
   <time datetime="2017-02-05T00:00:00-05:00" class="post-date">05 Feb 2017</time>
   <p>Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
-This was 100% manual process until <code>ObjectiveSharpie</code>. After, <code>ObjectiveSharpie</code> began supporting <code>CocoaPods</code> (it is NuGet for iOS developers, so everything is in there). 
+This was 100% manual process until <code class="highlighter-rouge">ObjectiveSharpie</code>. After, <code class="highlighter-rouge">ObjectiveSharpie</code> began supporting <code class="highlighter-rouge">CocoaPods</code> (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).</p>
 
-<p>Also, <code>sharpie</code> doesn’t support dependencies within pods. This is where the new <a href="https://github.com/alexsorokoletov/objc-automatic"><code>objc-automatic</code></a> started.</p>
+<p>Also, <code class="highlighter-rouge">sharpie</code> doesn’t support dependencies within pods. This is where the new <a href="https://github.com/alexsorokoletov/objc-automatic"><code class="highlighter-rouge">objc-automatic</code></a> started.</p>
 
 <p>But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.
 <!--more--></p>
@@ -62,14 +54,14 @@ However, it doesn’t work in many cases (it can’t build something or reflect 
 
 <h3 id="prelude">Prelude</h3>
 
-<p>Imagine you have to use <a href="https://cocoapods.org/pods/FirebaseAnalytics"><code>Firebase/Analytics</code></a> in your Xamarin app (Now, there is a NuGet for that, but let’s rewind to the point where there wasn’t one).
-You would go ahead and create binding for that library, right. Unfortunately, <code>Firebase/Analytics</code> is what I call an umbrella pod. It has no code, just dependencies.</p>
+<p>Imagine you have to use <a href="https://cocoapods.org/pods/FirebaseAnalytics"><code class="highlighter-rouge">Firebase/Analytics</code></a> in your Xamarin app (Now, there is a NuGet for that, but let’s rewind to the point where there wasn’t one).
+You would go ahead and create binding for that library, right. Unfortunately, <code class="highlighter-rouge">Firebase/Analytics</code> is what I call an umbrella pod. It has no code, just dependencies.</p>
 
-<p>So, instead, you need to go and create bindings for pods like: <code>FirebaseCore</code>, <code>FirebaseInstanceID</code>, <code>GoogleInterchangeUtilities</code>, <code>GoogleSymbolUtilities</code> and <code>GoogleToolboxForMac/NSData+zlib</code>.
+<p>So, instead, you need to go and create bindings for pods like: <code class="highlighter-rouge">FirebaseCore</code>, <code class="highlighter-rouge">FirebaseInstanceID</code>, <code class="highlighter-rouge">GoogleInterchangeUtilities</code>, <code class="highlighter-rouge">GoogleSymbolUtilities</code> and <code class="highlighter-rouge">GoogleToolboxForMac/NSData+zlib</code>.
 Literally, out of nowhere amount of work exploded. Now you need 5 bindings instead of just one. ObjectiveSharpie won’t help us with that.</p>
 
-<p>Interesting, <a href="https://cocoapods.org/pods/FirebaseCore"><code>FirebaseCore</code></a> also has dependencies. 
-So, you need to create 5 Xamarin.iOS binding projects, do the code, reference them correspondingly and then you will have a binding for <code>Firebase/Analytics</code>.</p>
+<p>Interesting, <a href="https://cocoapods.org/pods/FirebaseCore"><code class="highlighter-rouge">FirebaseCore</code></a> also has dependencies. 
+So, you need to create 5 Xamarin.iOS binding projects, do the code, reference them correspondingly and then you will have a binding for <code class="highlighter-rouge">Firebase/Analytics</code>.</p>
 
 <p>Few questions arise: 
 - How do you distribute that?
@@ -77,12 +69,12 @@ So, you need to create 5 Xamarin.iOS binding projects, do the code, reference th
     Many binaries?
     NuGet package or packages?
 - How do you version that?
-    1.0.0 is not an option, and <code>Firebase/Analytics</code> is updated often.
+    1.0.0 is not an option, and <code class="highlighter-rouge">Firebase/Analytics</code> is updated often.
     Oh, yes. Each of these pods has it’s own version.</p>
 
 <p>If you choose NuGet packages, then you also need to reference packages same way as pods and Xamarin.iOS projects.</p>
 
-<p>Frankly, I tried to do that manually. After <code>Firebase/Core</code> and <code>Firebase/Analytics</code> I understood this is hard.
+<p>Frankly, I tried to do that manually. After <code class="highlighter-rouge">Firebase/Core</code> and <code class="highlighter-rouge">Firebase/Analytics</code> I understood this is hard.
 I couldn’t imagine I will do that again when version 3.7.x of Firebase is released. Not mentioning sometimes you have to redo bindings to fix incorrect signature or binary</p>
 
 <h3 id="automate-all-the-things">Automate all the things.</h3>
@@ -93,19 +85,19 @@ I decided to try F# FAKE with this problem as well.</p>
 <p>First, the tool generates correct tree of dependencies.
 Downloads all metadata about pods. Versions, frameworks, linker flags, dependencies, etc.</p>
 
-<p>Then, for each of the pods it create a subfolder inside <code>bindings</code> and puts there Xamarin.iOS binding project with C# API surface generated by <code>sharpie</code>.
+<p>Then, for each of the pods it create a subfolder inside <code class="highlighter-rouge">bindings</code> and puts there Xamarin.iOS binding project with C# API surface generated by <code class="highlighter-rouge">sharpie</code>.
 It adds all linker flags, puts the iOS binary in there, adjusts the references to the dependencies (other Xamarin.iOS binding projects).</p>
 
 <p>Now, you can build these Xamarin.iOS bindings using Xamarin Studio.</p>
 
-<p>Turns out, it takes quite a time for XS, so the tool also creates <code>podname.build.sh</code> script to go ahead and <code>MSBuild</code> all the projects in correct order.</p>
+<p>Turns out, it takes quite a time for XS, so the tool also creates <code class="highlighter-rouge">podname.build.sh</code> script to go ahead and <code class="highlighter-rouge">MSBuild</code> all the projects in correct order.</p>
 
 <p>So the flow would be: run the script, see the errors, fix the errors, run it again (you can probably put it on –watch do run continously).</p>
 
-<p>Now you have the .dll files with bindings. (pss, there is also a linker side of that story, take a look at <code>Linker.cs</code> files)</p>
+<p>Now you have the .dll files with bindings. (pss, there is also a linker side of that story, take a look at <code class="highlighter-rouge">Linker.cs</code> files)</p>
 
 <h3 id="demo-time">Demo time!</h3>
-<p>Here are few videos showing how to use <code>objc-automatic</code> and how it works internally.</p>
+<p>Here are few videos showing how to use <code class="highlighter-rouge">objc-automatic</code> and how it works internally.</p>
 
 <p><a href="https://www.useloom.com/share/7679bec0ec3911e6b8fde34d395e0c71">Binding Firebase/Analytics using objc-automatic</a></p>
 <iframe width="630" height="394" src="https://www.useloom.com/embed/7679bec0ec3911e6b8fde34d395e0c71" frameborder="0" allowfullscreen=""></iframe>
@@ -116,31 +108,31 @@ It adds all linker flags, puts the iOS binary in there, adjusts the references t
 <h3 id="nuget-side-of-things">NuGet side of things</h3>
 <p>For the NuGet distribution, you want to have same tree of packages with same versioning.</p>
 
-<p><code>objc-automatic</code> tool does that for you. Along with projects, it generates <code>packages.config</code> and <code>.nuspec</code> files for each of the CocoaPods.
-It also enhances <code>podname.build.sh</code> script to build packages and restore packages in correct order when building Xamarin.iOS binding projects.
+<p><code class="highlighter-rouge">objc-automatic</code> tool does that for you. Along with projects, it generates <code class="highlighter-rouge">packages.config</code> and <code class="highlighter-rouge">.nuspec</code> files for each of the CocoaPods.
+It also enhances <code class="highlighter-rouge">podname.build.sh</code> script to build packages and restore packages in correct order when building Xamarin.iOS binding projects.
 For this goal tool creates local temporary NuGet feed and publishes built packages and restores dependencies from this source.</p>
 
 <p>You want to be sure people can later restore our packages and have everything working (at least - compiling).</p>
 
-<p><code>.nuspec</code> files will contain versions, metadata, everything needed.</p>
+<p><code class="highlighter-rouge">.nuspec</code> files will contain versions, metadata, everything needed.</p>
 
 <h3 id="does-it-work">Does it work?</h3>
 <p>It worked for quite many cocoapods I used to test it with. More importantly, it worked with Firebase pods. 
-For the <code>lottie-ios</code> it took around 1 minute to generate the <code>bindings</code> infrastructure (projects, NuGet package specs).
-Around 1 more minute to run <code>lottie-ios.build.sh</code> and have NuGet package ready for publishing.</p>
+For the <code class="highlighter-rouge">lottie-ios</code> it took around 1 minute to generate the <code class="highlighter-rouge">bindings</code> infrastructure (projects, NuGet package specs).
+Around 1 more minute to run <code class="highlighter-rouge">lottie-ios.build.sh</code> and have NuGet package ready for publishing.</p>
 
 <p>I’m not trying to brag here, just saying that basically compiling lottie manually and launching Xamarin Studio would take around that time.
-In first place, the <code>objc-automatic</code> tool aims for complex pod bindings with dependencies.</p>
+In first place, the <code class="highlighter-rouge">objc-automatic</code> tool aims for complex pod bindings with dependencies.</p>
 
 <p>One binding sometimes is really hard to crack. Having 6 of them is even harder.</p>
 
 <h4 id="dicsoveries">Dicsoveries</h4>
 <ul>
-  <li>Turns out, <code>ObjectiveSharpie</code> can’t bind all the cocoapods.</li>
-  <li><code>ObjectiveSharpie</code> doesn’t bind correctly some of the classes from iOS frameworks (misses casign of the managed class name)</li>
-  <li>Sometimes you need to direct <code>ObjectiveSharpie</code> into correct set of header files, otherwise it skips some classes. C# API surface shows less than it should</li>
+  <li>Turns out, <code class="highlighter-rouge">ObjectiveSharpie</code> can’t bind all the cocoapods.</li>
+  <li><code class="highlighter-rouge">ObjectiveSharpie</code> doesn’t bind correctly some of the classes from iOS frameworks (misses casign of the managed class name)</li>
+  <li>Sometimes you need to direct <code class="highlighter-rouge">ObjectiveSharpie</code> into correct set of header files, otherwise it skips some classes. C# API surface shows less than it should</li>
   <li>Xamarin.iOS linker doesn’t understand that Xamarin.iOS app might be using a binding that might be using another binding. The latter one gets lost durign compilation process.</li>
-  <li>Xamarin.iOS binding projects are actually very smart with <code>.framework</code>s.</li>
+  <li>Xamarin.iOS binding projects are actually very smart with <code class="highlighter-rouge">.framework</code>s.</li>
   <li>You can test complex NuGet package dependency scenario locally using local NuGet source</li>
   <li>You can create Xamarin.iOS binding with just Terminal and VS Code. Nice.</li>
   <li>It is so hard to debug F# FAKE scripts (ionide-fake VSCode extension doesn’t help)</li>
@@ -165,12 +157,12 @@ Tool is opensourced and everyone is welcome to use it and improve it.</p>
 Thanks for F# FAKE team, this is a great tool to start with.</p>
 
 <p>And thank you for your interest and feedback. 
-I appreciate any positive or negative feedback about <code>objc-automatic</code> and value any success or failure story using this tool.</p>
+I appreciate any positive or negative feedback about <code class="highlighter-rouge">objc-automatic</code> and value any success or failure story using this tool.</p>
 
 <hr />
 
 <p>If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;text=Easy+way+to+create+Xamarin.iOS+binding+from+CocoaPods&amp;via=alexsorokoletov" target="_blank">
+<a href="https://twitter.com/intent/tweet?url=http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;text=Easy way to create Xamarin.iOS binding from CocoaPods &amp;via=alexsorokoletov" target="_blank">
   share it with your followers</a> 
 or 
 <a href="https://twitter.com/alexsorokoletov">
@@ -204,7 +196,7 @@ or
       <li>
         <h3>
           <a href="/2016/11/29/naming-func-action-of-t-arguments/">
-            Named parameters in Func<T>/Action<T> type in C#?
+            Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?
             <small><time datetime="2016-11-29T00:00:00-05:00">29 Nov 2016</time></small>
           </a>
         </h3>
@@ -221,7 +213,7 @@ or
 <script>
 /*
 var disqus_config = function () {
-this.page.url = 'https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/'; 
+this.page.url = 'http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/'; 
 this.page.identifier = '/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios';
 this.page.title = 'Easy way to create Xamarin.iOS binding from CocoaPods';
 };
@@ -240,7 +232,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2017-02-06T09:24:38-05:00">2017</time>. All rights reserved.
+          &copy; <time datetime="2017-02-10T16:33:19-05:00">2017</time>. All rights reserved.
         </small>
       </footer>
     </div>
