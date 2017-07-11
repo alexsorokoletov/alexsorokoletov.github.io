@@ -4,7 +4,7 @@ title: About
 ---
 
 
-I'm a [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/5000197?fullName=Alexandr%20%20Sorokoletov).
+Hey!
 
 I enjoy developing mobile and desktop apps. 
 My interests are: C#/F#/.NET, Xamarin and native mobile apps and everything else what is new and edge.
@@ -14,6 +14,13 @@ I like snowboarding, kitesurfing, travel, books and crazy hackathons.
 Washington, DC. 
 
 Twitter [@alexsorokoletov](https://twitter.com/alexsorokoletov) 
+
+Other credentials:
+
+* Certified Xamarin Mobile Developer
+* Ex-Microsoft MVP in Visual Studio Tools & Technologies (including Xamarin)
+* Certified .NET Web Developer
+
 
 ## Projects
 
