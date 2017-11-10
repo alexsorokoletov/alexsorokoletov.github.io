@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://0.0.0.0:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2017-07-10T20:56:31-05:00</updated><id>http://0.0.0.0:4000//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00-06:00</published><updated>2017-02-05T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-10T02:33:32-05:00</updated><id>http://localhost:4000//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="http://localhost:4000/2017/11/10/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2017-11-10T00:00:00-05:00</published><updated>2017-11-10T00:00:00-05:00</updated><id>http://localhost:4000/2017/11/10/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="http://localhost:4000/2017/11/10/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;4 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+Each of them, when discovered, allowed me to save my time and simplify my workflow.
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;nuget-package-management&quot;&gt;1. NuGet Package Management&lt;/h3&gt;
+&lt;p&gt;This one I found out quite recently. If you ever used VS 2017, you know that it has much nicer and comfortable UI to manage NuGet packagets.
+You can install and update multiple selected packages at once.&lt;/p&gt;
+
+&lt;p&gt;I found it very useful, especially when installing next MvvmCross update and keeping all other packages unchanged.&lt;/p&gt;
+
+&lt;p&gt;VS4Mac team, you should have that built in!
+Thanks to @brent.l for the tip.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mrward/monodevelop-nuget-extensions&quot;&gt;Download NuGet Package Management extensions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Github repo: &lt;a href=&quot;https://github.com/mrward/monodevelop-addins&quot;&gt;https://github.com/mrward/monodevelop-addins&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;defaultdesigner&quot;&gt;2. DefaultDesigner&lt;/h3&gt;
+&lt;p&gt;This is a Xamarin Studio &amp;amp; Visual Studio for Mac add-in to open .xib and .storyboard files with Xcode Interface Builder by default.
+By double clicking it.&lt;/p&gt;
+
+&lt;p&gt;Awesome timesaver. Since I edit all storyboards in XCode only, this is a must for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/colbylwilliams/DefaultDesigner&quot;&gt;Download DefaultDesigner for Visual Studio for Mac&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Github repo: &lt;a href=&quot;https://github.com/colbylwilliams/DefaultDesigner&quot;&gt;https://github.com/colbylwilliams/DefaultDesigner&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mfractor&quot;&gt;3. MFractor&lt;/h3&gt;
+&lt;p&gt;Kudos to Matthew for this amazing mega-extension (comes in two flavors, lite and pro).
+I can’t even start to describe what you can do with it, instead go and check the website https://www.mfractor.com/&lt;/p&gt;
+
+&lt;p&gt;Some of the features I like:
+- XAML helpers essential for any Xamarin.Forms developer
+- Android Resource intellinsense and help with navigation and replace with resource lookup
+- Point out missing constructors for Xamarin.Android views/classes
+- many other things I have not learned yet&lt;/p&gt;
+
+&lt;p&gt;MFactor Pro: &lt;a href=&quot;https://www.mfractor.com/pages/download&quot;&gt;https://www.mfractor.com/products/mfractor-for-visual-studio-mac&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;MFractor Lite: &lt;a href=&quot;https://www.mfractor.com/pages/download&quot;&gt;https://www.mfractor.com/pages/download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;sortandremoveusings&quot;&gt;4. SortAndRemoveUsings&lt;/h3&gt;
+&lt;p&gt;Shameless plug - this is my own extension. It helps you by automatically sort and remove usings when you save a C# file.
+Extending VS4Mac was moderately easy, and I do that action anyway before commit since I like to keep my code clean.&lt;/p&gt;
+
+&lt;p&gt;No magic involved regarding usings here, instead of going through context menu this add-in does that on file save.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings/releases/tag/1.1&quot;&gt;Download SortAndRemoveUsings for Visual Studio 4 Mac&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Github repo: &lt;a href=&quot;https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings&quot;&gt;https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;your-recommendations&quot;&gt;Your recommendations?&lt;/h3&gt;
+
+&lt;p&gt;Which extensions do you use? Let me know in the comments!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2017/11/10/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My favorite extensions for Visual Studio for Mac &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">4 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+Each of them, when discovered, allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00-05:00</published><updated>2017-02-05T00:00:00-05:00</updated><id>http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
 This was 100% manual process until &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).&lt;/p&gt;
@@ -119,7 +182,7 @@ I appreciate any positive or negative feedback about &lt;code class=&quot;highli
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy way to create Xamarin.iOS binding from CocoaPods &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy way to create Xamarin.iOS binding from CocoaPods &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -130,7 +193,7 @@ However, it doesn’t work in many cases (it can’t build something or reflect 
 
 Also, sharpie doesn’t support dependencies within pods. This is where the new objc-automatic started.
 
-But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.</summary></entry><entry><title type="html">Android Maps Utils for Xamarin updated with new features and NuGet</title><link href="http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/" rel="alternate" type="text/html" title="Android Maps Utils for Xamarin updated with new features and NuGet" /><published>2016-12-12T00:00:00-06:00</published><updated>2016-12-12T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget</id><content type="html" xml:base="http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
+But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.</summary></entry><entry><title type="html">Android Maps Utils for Xamarin updated with new features and NuGet</title><link href="http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget/" rel="alternate" type="text/html" title="Android Maps Utils for Xamarin updated with new features and NuGet" /><published>2016-12-12T00:00:00-05:00</published><updated>2016-12-12T00:00:00-05:00</updated><id>http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget</id><content type="html" xml:base="http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget/">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Install-Package Xamarin.Android.Maps.Utils -Pre&lt;/code&gt;&lt;/p&gt;
 
@@ -174,13 +237,13 @@ Besides NuGet, project has now latest (0.4.4) java code inside bringing more new
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android Maps Utils for Xamarin updated with new features and NuGet &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android Maps Utils for Xamarin updated with new features and NuGet &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">I’ve updated Xamarin Android Maps Utils recently and now one can get this as a NuGet package.
 
-Install-Package Xamarin.Android.Maps.Utils -Pre</summary></entry><entry><title type="html">Easiest way to migrate from Xamarin.Insights to HockeyApp</title><link href="http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/" rel="alternate" type="text/html" title="Easiest way to migrate from Xamarin.Insights to HockeyApp" /><published>2016-12-11T00:00:00-06:00</published><updated>2016-12-11T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id><content type="html" xml:base="http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
+Install-Package Xamarin.Android.Maps.Utils -Pre</summary></entry><entry><title type="html">Easiest way to migrate from Xamarin.Insights to HockeyApp</title><link href="http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/" rel="alternate" type="text/html" title="Easiest way to migrate from Xamarin.Insights to HockeyApp" /><published>2016-12-11T00:00:00-05:00</published><updated>2016-12-11T00:00:00-05:00</updated><id>http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id><content type="html" xml:base="http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;… Do also note that Xamarin Insights is now considered to be end of life: since the acquisition by Microsoft, Insights has been deprecated in favour of HockeyApp.&lt;/p&gt;
@@ -249,7 +312,7 @@ It is very powerful way to see and analyze events coming from your app. &lt;a hr
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest way to migrate from Xamarin.Insights to HockeyApp &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest way to migrate from Xamarin.Insights to HockeyApp &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -262,7 +325,7 @@ or
 Many of us have apps integrated with Xamarin.Insights. Now it’s time to ditch Xamarin.Insights and put HockeyApp SDK instead.
 HockeyApp has different integration points and API and some of the features from Insights are missing.
 
-What would be the easiest way to migrate from Xamarin Insights to HockeyApp?</summary></entry><entry><title type="html">Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?</title><link href="http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/" rel="alternate" type="text/html" title="Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?" /><published>2016-11-29T00:00:00-06:00</published><updated>2016-11-29T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
+What would be the easiest way to migrate from Xamarin Insights to HockeyApp?</summary></entry><entry><title type="html">Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?</title><link href="http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/" rel="alternate" type="text/html" title="Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?" /><published>2016-11-29T00:00:00-05:00</published><updated>2016-11-29T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments</id><content type="html" xml:base="http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
 
 &lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
 &lt;img src=&quot;/assets/naming_func_of_t_declaration.png&quot; alt=&quot;Definition of your method using Func/Action classes&quot; /&gt;
@@ -309,7 +372,7 @@ In the example below you can omit &lt;code class=&quot;highlighter-rouge&quot;&g
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#? &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#? &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -330,7 +393,7 @@ There is a cheap and easy solution for that.
 
 
 
-After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.</summary></entry><entry><title type="html">.editorconfig support in Visual Studio 2017</title><link href="http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/" rel="alternate" type="text/html" title=".editorconfig support in Visual Studio 2017" /><published>2016-11-28T00:00:00-06:00</published><updated>2016-11-28T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
+After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.</summary></entry><entry><title type="html">.editorconfig support in Visual Studio 2017</title><link href="http://localhost:4000/2016/11/28/editorconfig-in-visualstudio/" rel="alternate" type="text/html" title=".editorconfig support in Visual Studio 2017" /><published>2016-11-28T00:00:00-05:00</published><updated>2016-11-28T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/28/editorconfig-in-visualstudio</id><content type="html" xml:base="http://localhost:4000/2016/11/28/editorconfig-in-visualstudio/">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
 
 &lt;p&gt;It’s .editorconfig support.
 What’s so great about this?
@@ -382,14 +445,14 @@ What’s so great about this?
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig support in Visual Studio 2017 &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig support in Visual Studio 2017 &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Just recently, Visual Studio team published a post on great features coming to the VS 2017 that will increase your productivity. Among those, one small but powerful feature coming to the Visual Studio.
 
 It’s .editorconfig support.
-What’s so great about this?</summary></entry><entry><title type="html">C# Standard Style - single source of formatting truth</title><link href="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/" rel="alternate" type="text/html" title="C# Standard Style - single source of formatting truth" /><published>2016-11-13T00:00:00-06:00</published><updated>2016-11-13T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/11/13/csharp-standard-style</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
+What’s so great about this?</summary></entry><entry><title type="html">C# Standard Style - single source of formatting truth</title><link href="http://localhost:4000/2016/11/13/csharp-standard-style/" rel="alternate" type="text/html" title="C# Standard Style - single source of formatting truth" /><published>2016-11-13T00:00:00-05:00</published><updated>2016-11-13T00:00:00-05:00</updated><id>http://localhost:4000/2016/11/13/csharp-standard-style</id><content type="html" xml:base="http://localhost:4000/2016/11/13/csharp-standard-style/">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Absolutely amazing.&lt;/p&gt;
 
@@ -462,7 +525,7 @@ And what about VS Code?&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/13/csharp-standard-style/&amp;amp;text=C# Standard Style - single source of formatting truth &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/11/13/csharp-standard-style/&amp;amp;text=C# Standard Style - single source of formatting truth &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -474,7 +537,7 @@ What it does is just formats code with one pre-configured, non-changeable, non-c
 
 After that, all discussions about curly braces, tabs and spaces go to void. Done.
 
-I’d like to have this for C#.</summary></entry><entry><title type="html">MaterialDateTimePicker bindings for Xamarin.Android apps</title><link href="http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/" rel="alternate" type="text/html" title="MaterialDateTimePicker bindings for Xamarin.Android apps" /><published>2016-02-29T00:00:00-06:00</published><updated>2016-02-29T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id><content type="html" xml:base="http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/">&lt;h3 id=&quot;bindings-for-materialdatetimepicker-for-xamarinandroid-apps&quot;&gt;Bindings for MaterialDateTimePicker for Xamarin.Android apps&lt;/h3&gt;
+I’d like to have this for C#.</summary></entry><entry><title type="html">MaterialDateTimePicker bindings for Xamarin.Android apps</title><link href="http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/" rel="alternate" type="text/html" title="MaterialDateTimePicker bindings for Xamarin.Android apps" /><published>2016-02-29T00:00:00-05:00</published><updated>2016-02-29T00:00:00-05:00</updated><id>http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id><content type="html" xml:base="http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/">&lt;h3 id=&quot;bindings-for-materialdatetimepicker-for-xamarinandroid-apps&quot;&gt;Bindings for MaterialDateTimePicker for Xamarin.Android apps&lt;/h3&gt;
 
 &lt;p&gt;One of the good libraries for Android apps made in Material design is the &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker&quot;&gt;“Material DateTime Picker”&lt;/a&gt; from &lt;a href=&quot;https://github.com/wdullaer&quot;&gt;@wdullaer&lt;/a&gt;.
 Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.
@@ -629,14 +692,14 @@ Clone it and use it or just add as a submodule.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker bindings for Xamarin.Android apps &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker bindings for Xamarin.Android apps &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Bindings for MaterialDateTimePicker for Xamarin.Android apps
 
 One of the good libraries for Android apps made in Material design is the “Material DateTime Picker” from @wdullaer.
-Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.</summary></entry><entry><title type="html">gMaps for Windows Phone got 100k reviews!</title><link href="http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store/" rel="alternate" type="text/html" title="gMaps for Windows Phone got 100k reviews!" /><published>2016-02-22T00:00:00-06:00</published><updated>2016-02-22T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store</id><content type="html" xml:base="http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store/">&lt;p&gt;Monitoring app reviews with Reviews Reader app &lt;a href=&quot;http://twitter.com/winreviews&quot;&gt;@winreviews&lt;/a&gt;, I finally noticed gMaps got 100k of reviews!&lt;/p&gt;
+Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.</summary></entry><entry><title type="html">gMaps for Windows Phone got 100k reviews!</title><link href="http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store/" rel="alternate" type="text/html" title="gMaps for Windows Phone got 100k reviews!" /><published>2016-02-22T00:00:00-05:00</published><updated>2016-02-22T00:00:00-05:00</updated><id>http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store</id><content type="html" xml:base="http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store/">&lt;p&gt;Monitoring app reviews with Reviews Reader app &lt;a href=&quot;http://twitter.com/winreviews&quot;&gt;@winreviews&lt;/a&gt;, I finally noticed gMaps got 100k of reviews!&lt;/p&gt;
 
 &lt;p&gt;Thank you, users! We are reading all of them, believe it or not!
 &lt;!--more--&gt;
@@ -648,13 +711,13 @@ Here is a short article how to create Xamarin.Android bindings library to consum
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store/&amp;amp;text=gMaps for Windows Phone got 100k reviews! &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/02/22/gmaps-got-100000-reviews-in-store/&amp;amp;text=gMaps for Windows Phone got 100k reviews! &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Monitoring app reviews with Reviews Reader app @winreviews, I finally noticed gMaps got 100k of reviews!
 
-Thank you, users! We are reading all of them, believe it or not!</summary></entry><entry><title type="html">Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV</title><link href="http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/" rel="alternate" type="text/html" title="Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV" /><published>2016-01-05T00:00:00-06:00</published><updated>2016-01-05T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
+Thank you, users! We are reading all of them, believe it or not!</summary></entry><entry><title type="html">Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV</title><link href="http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/" rel="alternate" type="text/html" title="Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV" /><published>2016-01-05T00:00:00-05:00</published><updated>2016-01-05T00:00:00-05:00</updated><id>http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id><content type="html" xml:base="http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
 Driving there takes up to 5 hours.
 As long as you drive off the interstate you loose your cell signal.&lt;/p&gt;
 
@@ -731,7 +794,7 @@ Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage res
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/&amp;amp;text=Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://localhost:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/&amp;amp;text=Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -744,155 +807,4 @@ Last year we had to learn how to drive and communicate in a disconnected world. 
 Honestly, I was always wondering why T-Mobile was so bad in this area. This spring I switched to AT&amp;amp;T to compare the coverage on Outer Banks (where T-Mobile is also failing to get you even basic coverage).
 Now it`s winter and it’s time to check out AT&amp;amp;T coverage in our favorite skiing area.
 
-Let’s see how we do that and what we find</summary></entry><entry><title type="html">Android-maps-utils bindings for Xamarin.Android apps</title><link href="http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/" rel="alternate" type="text/html" title="Android-maps-utils bindings for Xamarin.Android apps" /><published>2015-12-28T00:00:00-06:00</published><updated>2015-12-28T00:00:00-06:00</updated><id>http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id><content type="html" xml:base="http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/">&lt;h3 id=&quot;bindings-for-android-maps-utils-for-xamarinandroid-apps&quot;&gt;Bindings for android-maps-utils for Xamarin.Android apps&lt;/h3&gt;
-
-&lt;p&gt;Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.&lt;/p&gt;
-
-&lt;p&gt;Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. 
-However, there is a solution!&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;To address this problem, Google Maps team shared so called &lt;code class=&quot;highlighter-rouge&quot;&gt;android-maps-utils&lt;/code&gt; extensions to the Android maps SDK which allows you do following:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Marker clustering — handles the display of a large number of points&lt;/li&gt;
-  &lt;li&gt;Heat maps — display a large number of points as a heat map&lt;/li&gt;
-  &lt;li&gt;IconGenerator — display text on your Markers (see screenshot to the right)&lt;/li&gt;
-  &lt;li&gt;Poly decoding and encoding — compact encoding for paths, interoperability with Maps API web services&lt;/li&gt;
-  &lt;li&gt;Spherical geometry — for example: computeDistance, computeHeading, computeArea&lt;/li&gt;
-  &lt;li&gt;KML — displays KML data (Caution: Beta!)&lt;/li&gt;
-  &lt;li&gt;GeoJSON — displays and styles GeoJSON data&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(Please read more on the official website: &lt;a href=&quot;http://googlemaps.github.io/android-maps-utils/&quot;&gt;http://googlemaps.github.io/android-maps-utils/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;Down the road you can find steps and details how the bindings for quite complex java library could be created and how these fresh bindings for Android Maps utils could be consumed in the Xamarin Android application.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;To get to the how to part, scroll down&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;existing-xamarinandroid-bindings&quot;&gt;Existing Xamarin.Android bindings&lt;/h3&gt;
-&lt;p&gt;Particularly I was interesting about clustering, as the application has to display around 500 markers in a dense area.&lt;/p&gt;
-
-&lt;p&gt;Looking for existing solution to the problem, one can find &lt;a href=&quot;https://github.com/oystehei/MapsUtilityDemo&quot;&gt;bindings made by Øystein Heimark&lt;/a&gt;. But these are quite old. To practice and to get the freshest code, I’ve created the updated bindings:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils&quot;&gt;github.com/alexsorokoletov/Xamarin.Android.Maps.Utils&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;creating-java-library-bindings-for-xamarinandroid&quot;&gt;Creating java library bindings for Xamarin.Android&lt;/h3&gt;
-
-&lt;p&gt;There is an official guide from Xamarin: 
-&lt;a href=&quot;https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/&quot;&gt;Binding a Java Library - Consuming Java libraries from C#&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Following the guide, one can sometimes see warnings or erros on the bindings.
-For example, 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name 'IGeoJsonStyle' does not exist in the namespace 'Com.Google.Maps.Android.Geojson'. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;To fix this error all you need is to manually &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml#L15&quot;&gt;edit Metadata.xml file and introduce these changes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;As you proceed, there will be a few more errors and several warnings. Fixes for them are documented in the &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml&quot;&gt;Metadata.xml file&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;More than helpful were comments and examples from &lt;a href=&quot;https://github.com/brendanzagaeski&quot;&gt;brendanzagaeski&lt;/a&gt; with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.&lt;/p&gt;
-
-&lt;h3 id=&quot;jaraar-dependencies&quot;&gt;JAR/AAR dependencies&lt;/h3&gt;
-&lt;p&gt;Case with &lt;code class=&quot;highlighter-rouge&quot;&gt;android-maps-utils&lt;/code&gt; is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
-Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
-With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.&lt;/p&gt;
-
-&lt;p&gt;One of the questions one might have - which version of google-play-services.jar should we use?
-&lt;a href=&quot;https://github.com/googlemaps/android-maps-utils/blob/master/library/build.gradle#L19&quot;&gt;The android-maps-utils library is compiled against google-play-services 7.8.0&lt;/a&gt;, so, basically, we can use anything &amp;gt;=7.8.0&lt;/p&gt;
-
-&lt;h3 id=&quot;how-to-use-this-library-examples&quot;&gt;How to use this library (examples)&lt;/h3&gt;
-
-&lt;p&gt;On C# side what you need to do is following:
-0) reference the bindings
-1) instantiate cluster manager&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//on MapReady
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetOnCameraChangeListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetOnMarkerClickListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you already have custom handlers to map CameraChange/MarkerClick, you can do following (specifics of Xamarin.Android events subscriptions)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;        
-&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map_MarkerClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GoogleMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MarkerClickEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;OnMarkerClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Marker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//your custom code
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map_CameraChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GoogleMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CameraChangeEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;OnCameraChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//your custom code
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-		&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;2) implement custom IClusterItem object&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ServiceClusterItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IClusterItem&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;LatLng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;serviceItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IntPtr&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Android&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Runtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JniHandleOwnership&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transfer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transfer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LatLng&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;3) add items to the clusterer and enjoy&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusterItem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ServiceClusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;AddItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusterItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;What if you have another version of Google Play Services already linked to your main project?
-In that case fork the repo and remove references that it has currently and then add references to the same packages and versions you have in your main project.&lt;/p&gt;
-
-&lt;h3 id=&quot;helpful-links&quot;&gt;Helpful links&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;My other Xamarin bindings:
-&lt;a href=&quot;http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/&quot;&gt;Tutorial – Android float label binding for Xamarin.Android&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;“Maps Shortcuts: Android Maps Utility Library” youtube video
-  &lt;a href=&quot;https://www.youtube.com/watch?v=nb2X9IjjZpM&quot;&gt;Maps Shortcuts: Android Maps Utility Library&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;example of use for original android maps util library
-&lt;a href=&quot;https://github.com/googlemaps/android-maps-utils/tree/master/demo&quot;&gt;github.com/googlemaps/android-maps-utils/tree/master/demo&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;brendanzagaeski Metadata.xml examples:&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&quot;&gt;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&quot;&gt;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&quot;&gt;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&quot;&gt;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9834034&quot;&gt;https://gist.github.com/brendanzagaeski/9834034&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9607158&quot;&gt;https://gist.github.com/brendanzagaeski/9607158&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&amp;amp;text=Android-maps-utils bindings for Xamarin.Android apps &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Bindings for android-maps-utils for Xamarin.Android apps
-
-Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.
-
-Javascript SDK for Google Maps has clustering and other neat stuff built in. Android Maps SDK has none of this included. 
-However, there is a solution!</summary></entry></feed>
+Let’s see how we do that and what we find</summary></entry></feed>

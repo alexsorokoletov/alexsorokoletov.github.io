@@ -46,15 +46,15 @@ title: Handy list of restaurants to try out in Washington, DC area
 ☐ [Piola [Pizza, 2$]](http://www.yelp.com/biz/piola-arlington-3)
 
 #### Live music ####
-☐ [Georgetown piano bar](http://www.georgetownpianobar.com/)
+✓  [Georgetown piano bar](http://www.georgetownpianobar.com/)
 
 ☐ [Jefferson DC, Quill](http://www.jeffersondc.com/dining/quill/)
 
-☐ [Mr Smith's](http://mrsmiths.com/v1/index)
+✓  [Mr Smith's](http://mrsmiths.com/v1/index)
 
 ☐ [Bombay club DC](http://bombayclubdc.com/about/live-music/)
 
-☐ [Shaw's tavern](http://www.shawstavern.com/events/)
+✓  [Shaw's tavern](http://www.shawstavern.com/events/)
 
 ☐ [701](http://701restaurant.com/)
 
