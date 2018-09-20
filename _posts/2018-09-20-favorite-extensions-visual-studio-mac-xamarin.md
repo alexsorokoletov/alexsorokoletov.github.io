@@ -3,8 +3,8 @@ layout: post
 title: My favorite extensions for Visual Studio for Mac
 comments: True
 ---
-4 extensions to transform Visual Studio for Mac to even more powerful IDE. 
-Each of them, when discovered, allowed me to save my time and simplify my workflow.
+5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 <!--more-->
 
 ### 1. NuGet Package Management 
@@ -45,14 +45,26 @@ MFactor Pro: [https://www.mfractor.com/products/mfractor-for-visual-studio-mac](
 MFractor Lite: [https://www.mfractor.com/pages/download](https://www.mfractor.com/pages/download)
 
 ### 4. SortAndRemoveUsings
-Shameless plug - this is my own extension. It helps you by automatically sort and remove usings when you save a C# file.
+Disclaimer: this is my own extension. It helps me by automatically sort and remove usings when you save a C# file.
 Extending VS4Mac was moderately easy, and I do that action anyway before commit since I like to keep my code clean.
 
 No magic involved regarding usings here, instead of going through context menu this add-in does that on file save.
 
-[Download SortAndRemoveUsings for Visual Studio 4 Mac](https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings/releases/tag/1.1)
+![Screenshot of VS4Mac extension to sort/remove C# usings automatically](https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings/raw/master/Meta/xamarin-save-sort.gif?raw=true)
+
+
+[Download SortAndRemoveUsings for Visual Studio for Mac](https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings/releases/tag/1.1)
 
 Github repo: [https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings](https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings)
+
+### 5. SolutionName
+Disclaimer: this is my own extension. This extension helps me easily determine which solution is open right now if I have several Visual Studio instances open. In a way, this is a cheap replacement for Windows 10 task switcher which shows icon and solution name when switching between VS 2017 instances.
+
+![Screenshot of VS4Mac extension to show solution name](https://github.com/DreamTeamMobile/VS4Mac.SolutionName/raw/master/Meta/screenshot.png?raw=true)
+
+[Download VS4Mac.SolutionName for Visual Studio for Mac](https://github.com/DreamTeamMobile/VS4Mac.SolutionName/releases)
+
+Github repo: [https://github.com/DreamTeamMobile/VS4Mac.SolutionName](https://github.com/DreamTeamMobile/VS4Mac.SolutionName)
 
 
 ### Your recommendations?
