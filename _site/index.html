@@ -42,6 +42,22 @@
   
   <article class="post">
     <h1 class="post-title">
+      <a href="/2018/09/20/reply-all/">
+        Why Reply All is an essential skill
+      </a>
+    </h1>
+
+    <time datetime="2018-09-20T00:00:00-04:00" class="post-date">20 Sep 2018</time>
+
+    <p>One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</p>
+
+
+    
+    <a href="/2018/09/20/reply-all/">Read more...</a>
+  </article>
+  
+  <article class="post">
+    <h1 class="post-title">
       <a href="/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">
         My favorite extensions for Visual Studio for Mac
       </a>
@@ -123,40 +139,6 @@ HockeyApp has different integration points and API and some of the features from
     <a href="/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/">Read more...</a>
   </article>
   
-  <article class="post">
-    <h1 class="post-title">
-      <a href="/2016/11/29/naming-func-action-of-t-arguments/">
-        Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?
-      </a>
-    </h1>
-
-    <time datetime="2016-11-29T00:00:00-05:00" class="post-date">29 Nov 2016</time>
-
-    <p>If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…</p>
-
-<p>Here is a common situation where somewhere in your library or helper class you have a method taking in <code class="highlighter-rouge">Func&lt;T&gt;</code> or <code class="highlighter-rouge">Action&lt;T&gt;</code>.
-<img src="/assets/naming_func_of_t_declaration.png" alt="Definition of your method using Func/Action classes" />
-and then when you want to use this method VS suggests you following names: arg1 and arg2.
-Like there is nothing better than that :)
-<img src="/assets/naming_func_of_t_default_behavior.png" alt="Definition of your method using Func/Action classes" /></p>
-
-<p>There is a cheap and easy <strong>solution for that</strong>.</p>
-
-<ul>
-  <li>Define your own delegate with same signature as <code class="highlighter-rouge">Func&lt;T&gt;</code> or <code class="highlighter-rouge">Func&lt;T1,T2,T3&gt;</code> you are using already.</li>
-  <li>Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).</li>
-  <li>In original method, replace Func<T> with this new delegate.</T></li>
-</ul>
-
-<p><img src="/assets/naming_func_of_t_custom_named_delegate.png" alt="Defining custom delegate with correct names and using it in the original method" />
-After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.
-<img src="/assets/naming_func_of_t_improved_names.png" alt="Now you get better names from VS as a suggestion" /></p>
-
-
-    
-    <a href="/2016/11/29/naming-func-action-of-t-arguments/">Read more...</a>
-  </article>
-  
 </div>
 
 <div class="pagination">
@@ -174,7 +156,7 @@ After these changes when you are going to use the method, you will see intellise
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2018-09-20T19:33:43-04:00">2018</time>. All rights reserved.
+          &copy; <time datetime="2018-09-20T20:15:27-04:00">2018</time>. All rights reserved.
         </small>
       </footer>
     </div>

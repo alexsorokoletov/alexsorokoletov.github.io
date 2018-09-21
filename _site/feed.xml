@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://sorokoletov.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="https://sorokoletov.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sorokoletov.com/" rel="alternate" type="text/html" /><updated>2018-09-20T19:33:43-04:00</updated><id>https://sorokoletov.com//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00-04:00</published><updated>2018-09-20T00:00:00-04:00</updated><id>https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://sorokoletov.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="https://sorokoletov.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sorokoletov.com/" rel="alternate" type="text/html" /><updated>2018-09-20T20:15:27-04:00</updated><id>https://sorokoletov.com//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Why Reply All is an essential skill</title><link href="https://sorokoletov.com/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00-04:00</published><updated>2018-09-20T00:00:00-04:00</updated><id>https://sorokoletov.com/2018/09/20/reply-all</id><content type="html" xml:base="https://sorokoletov.com/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
+Here is my take on how that applies to a team.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-background&quot;&gt;Some background&lt;/h3&gt;
+&lt;p&gt;As some of you know, I like remote work.
+Mainly because of 192 million benefits :)
+&lt;img src=&quot;/assets/remoteworkbenefits.png&quot; alt=&quot;Remote work has a lot of benefits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Working remotely teaches how to work in a team. Working in an office not always means working in a team, sometimes it is just working around other people.
+Once you are remote for any of the reasons, it is so hard to be in the loop unless there are some practices in the team to prevent this disconnect.
+Today I would like to share my points about Reply All.&lt;/p&gt;
+
+&lt;h3 id=&quot;simple-rules&quot;&gt;Simple rules&lt;/h3&gt;
+&lt;p&gt;Reply All is there for a reason. You have to think whether reply or reply all. Yes. Think :) 
+And I am going to make it easy for you. 
+Here is my gift.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/replyall.png&quot; alt=&quot;Reply All decision maker&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3 of 4 branches lead to Reply All. Only 1 of 4 needs Reply.
+Now, let me give you a few examples.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Your PM sends an email with an issue from your client to you and the rest of the team asking to create a task and investigate. Email has you, team members and a PM as a sender.
+All of these are interested in your response. Reply All. No brainer&lt;/li&gt;
+  &lt;li&gt;Someone from the team leaves the company and sends farewell email to your team and whole company. You would like to wish him/her well. 
+Private response. Reply. No brainer&lt;/li&gt;
+  &lt;li&gt;You report a bug to another team1 and include their PM, team1 alias. Turns out, the team responsible for this issue is another one. PM of team1 fixes that by adding PM2 and team2 aliases and asking them to help you. Someone from team2 asks for an additional info.
+Your response is only interesting now for PM2 and team2. Hit Reply All and edit recipients to remove PM1 and team1. No brainer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With a bit of practice it will be a natural skill.&lt;/p&gt;
+
+&lt;p&gt;Where is that button?
+Good question. All mail apps, even on your phone, have it. Google and find it. Here is what you can do specifically for Gmail.&lt;/p&gt;
+
+&lt;h5 id=&quot;how-to-make-reply-all-your-default-response-in-gmail&quot;&gt;How To Make Reply All Your Default Response in Gmail&lt;/h5&gt;
+&lt;p&gt;Go to Gmail settings -&amp;gt; General tab -&amp;gt; Default reply behavior. Set it to Reply all. Enjoy. It is &lt;em&gt;that&lt;/em&gt; easy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/reply-all/&amp;amp;text=Why Reply All is an essential skill &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00-04:00</published><updated>2018-09-20T00:00:00-04:00</updated><id>https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
 Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 &lt;!--more--&gt;&lt;/p&gt;
 
@@ -728,94 +777,4 @@ or
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Monitoring app reviews with Reviews Reader app @winreviews, I finally noticed gMaps got 100k of reviews!
 
-Thank you, users! We are reading all of them, believe it or not!</summary></entry><entry><title type="html">Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV</title><link href="https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/" rel="alternate" type="text/html" title="Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV" /><published>2016-01-05T00:00:00-05:00</published><updated>2016-01-05T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id><content type="html" xml:base="https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
-Driving there takes up to 5 hours.
-As long as you drive off the interstate you loose your cell signal.&lt;/p&gt;
-
-&lt;p&gt;Last year we had to learn how to drive and communicate in a disconnected world. We now know the route by heart, we know stops, we know which restaurants or gas stations have Wi-Fi. We also got some low-power FRS radios to have more flexibility during our trips.&lt;/p&gt;
-
-&lt;p&gt;Honestly, I was always wondering why T-Mobile was so bad in this area. This spring I switched to AT&amp;amp;T to compare the coverage on Outer Banks (where T-Mobile is also failing to get you even basic coverage).
-Now it`s winter and it’s time to check out AT&amp;amp;T coverage in our favorite skiing area.&lt;/p&gt;
-
-&lt;p&gt;Let’s see how we do that and what we find
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;why&quot;&gt;Why&lt;/h3&gt;
-&lt;p&gt;As the article says, point is get some code just for fun. And see, if switching from T-Mobile to AT&amp;amp;T makes any sense.
-And see, maybe there is a reason why we have almost no coverage off the interstates.&lt;/p&gt;
-
-&lt;h3 id=&quot;technical-details&quot;&gt;Technical details&lt;/h3&gt;
-&lt;p&gt;So, I had macbook with OS X and Windows 10, iPhone 6 and Lumia 950 and Lumia 925. First idea was to have Lumia 950 with AT&amp;amp;T and Lumia 925 with T-Mobile run same app along the route and then compare results. Unfortunately, I forgot my USB C cable so 950 died on the way there. 
-So plan changed and I got an iOS app and did a AT&amp;amp;T cellular network signal level log on the way back.&lt;/p&gt;
-
-&lt;p&gt;Interesting that iOS has no public API to get cellular service signal level. There was some way in iOS 4.2 days &lt;a href=&quot;https://github.com/valexa/VAFieldTest&quot;&gt;VAFieldTest&lt;/a&gt;. Doesn’t work now.
-However, there is a way to get a signal level on iOS 9 devices. Kind gentleman shared the idea on Stack Overflow: &lt;a href=&quot;http://stackoverflow.com/a/34389611/883738&quot;&gt;Measuring cellular signal strength&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;That was enough for the first version.&lt;/p&gt;
-
-&lt;p&gt;You can get the app from github - &lt;a href=&quot;https://github.com/alexsorokoletov/SignalLogger&quot;&gt;github.com/alexsorokoletov/SignalLogger&lt;/a&gt;. App tracks GPS and signal level every 10 seconds, while tracking screen stays active, all results are exported to CSV and emailed to you after you stop tracking. Keep it simple.&lt;/p&gt;
-
-&lt;h3 id=&quot;results&quot;&gt;Results&lt;/h3&gt;
-&lt;p&gt;Gist with raw CSV data: &lt;a href=&quot;https://gist.github.com/alexsorokoletov/0ce68926804dee671563&quot;&gt;DC to Snowshoe ATT signal strength data.csv&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Using QGIS I was able to get the results on the map:&lt;/p&gt;
-
-&lt;p&gt;This is a complete route from DC to Snowshoe, WV with AT&amp;amp;T signal level. Green - available, red - unavailable.
-I have no idea yet how to make the route colorful with orange where the signal is low and green where it is good.
-&lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-complete.png&quot; alt=&quot;Complete route from DC to Snowshoe, WV with AT&amp;amp;T signal level&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Part of the route where the service is available.
-&lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-available.png&quot; alt=&quot;Route from DC to Snowshoe, WV where AT&amp;amp;T is available&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Part of the route where the service is &lt;strong&gt;not&lt;/strong&gt; available.
-&lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-unavailable.png&quot; alt=&quot;Route from DC to Snowshoe, WV without AT&amp;amp;T service&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And also a terrain based part of the map where the AT&amp;amp;T service is interrupted.
-&lt;img src=&quot;/assets/dc-snowshoe-att-signal-level-terrain.png&quot; alt=&quot;AT&amp;amp;T service with terrain map as a base&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Looks like the rule for the AT&amp;amp;T service is simple. Inside park areas (forests, national and state parks - green on the terrain map) service is absent. Otherwise AT&amp;amp;T gives some coverage.&lt;/p&gt;
-
-&lt;p&gt;I was surprised to find out that the coverage is not actually related to &lt;a href=&quot;https://en.wikipedia.org/wiki/United_States_National_Radio_Quiet_Zone&quot;&gt;the US NRQZ area&lt;/a&gt; or distance to &lt;a href=&quot;https://en.wikipedia.org/wiki/Green_Bank_Telescope&quot;&gt;the Green Bank Radio Observatory&lt;/a&gt;. 
-One can get some details about that in the NPR article &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned&quot;&gt;Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned&lt;/a&gt;
-### Next steps
-Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage results and then compare and see if it makes sense to have one or another.&lt;/p&gt;
-
-&lt;h3 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;What is wrong with Apple not providing API for cellular service signal strength?&lt;/p&gt;
-
-    &lt;p&gt;I guess it would benefit if Apple would be more open in terms of APIs available.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;There are interesting ways of getting data through private Apple APIs and from private UIView classes &lt;a href=&quot;stackoverflow.com/questions/754824/get-an-object-properties-list-in-objective-c&quot;&gt;Get an object properties list in Objective-C&lt;/a&gt; and &lt;a href=&quot;https://github.com/valexa/VAFieldTest/blob/master/CoreTelephony.txt&quot;&gt;CoreTelephony.h file&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;These ways will stop your app from being published in the App Store, but for experiments like this are good alternative.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Let’s see if Microsoft is more open with cellular&lt;/p&gt;
-
-    &lt;p&gt;Probably, there are different ways to access this data just because MS had different API sets for WP7, WP8, WinRT (WPA81) and Windows 10 UWP. Let’s see who is the winner.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I want to render same data in the Microsoft Power BI. Presumably, this is the kind of tasks to be handled by the Power BI.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/&amp;amp;text=Coding for fun - AT&amp;amp;T signal levels on route from DC to Snowshoe, WV &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">We go the Snowshoe ski resort almost every weekend when there is snow.
-Driving there takes up to 5 hours.
-As long as you drive off the interstate you loose your cell signal.
-
-Last year we had to learn how to drive and communicate in a disconnected world. We now know the route by heart, we know stops, we know which restaurants or gas stations have Wi-Fi. We also got some low-power FRS radios to have more flexibility during our trips.
-
-Honestly, I was always wondering why T-Mobile was so bad in this area. This spring I switched to AT&amp;amp;T to compare the coverage on Outer Banks (where T-Mobile is also failing to get you even basic coverage).
-Now it`s winter and it’s time to check out AT&amp;amp;T coverage in our favorite skiing area.
-
-Let’s see how we do that and what we find</summary></entry></feed>
+Thank you, users! We are reading all of them, believe it or not!</summary></entry></feed>

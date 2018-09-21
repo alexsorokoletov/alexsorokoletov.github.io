@@ -4,13 +4,72 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="https://sorokoletov.com/atom.xml" rel="self"/>
  <link href="https://sorokoletov.com/"/>
- <updated>2018-09-20T19:33:43-04:00</updated>
+ <updated>2018-09-20T20:15:27-04:00</updated>
  <id>https://sorokoletov.com</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Why Reply All is an essential skill
+</title>
+   <link href="https://sorokoletov.com/2018/09/20/reply-all/"/>
+   <updated>2018-09-20T00:00:00-04:00</updated>
+   <id>https://sorokoletov.com/2018/09/20/reply-all</id>
+   <content type="html">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
+Here is my take on how that applies to a team.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-background&quot;&gt;Some background&lt;/h3&gt;
+&lt;p&gt;As some of you know, I like remote work.
+Mainly because of 192 million benefits :)
+&lt;img src=&quot;/assets/remoteworkbenefits.png&quot; alt=&quot;Remote work has a lot of benefits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Working remotely teaches how to work in a team. Working in an office not always means working in a team, sometimes it is just working around other people.
+Once you are remote for any of the reasons, it is so hard to be in the loop unless there are some practices in the team to prevent this disconnect.
+Today I would like to share my points about Reply All.&lt;/p&gt;
+
+&lt;h3 id=&quot;simple-rules&quot;&gt;Simple rules&lt;/h3&gt;
+&lt;p&gt;Reply All is there for a reason. You have to think whether reply or reply all. Yes. Think :) 
+And I am going to make it easy for you. 
+Here is my gift.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/replyall.png&quot; alt=&quot;Reply All decision maker&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3 of 4 branches lead to Reply All. Only 1 of 4 needs Reply.
+Now, let me give you a few examples.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Your PM sends an email with an issue from your client to you and the rest of the team asking to create a task and investigate. Email has you, team members and a PM as a sender.
+All of these are interested in your response. Reply All. No brainer&lt;/li&gt;
+  &lt;li&gt;Someone from the team leaves the company and sends farewell email to your team and whole company. You would like to wish him/her well. 
+Private response. Reply. No brainer&lt;/li&gt;
+  &lt;li&gt;You report a bug to another team1 and include their PM, team1 alias. Turns out, the team responsible for this issue is another one. PM of team1 fixes that by adding PM2 and team2 aliases and asking them to help you. Someone from team2 asks for an additional info.
+Your response is only interesting now for PM2 and team2. Hit Reply All and edit recipients to remove PM1 and team1. No brainer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With a bit of practice it will be a natural skill.&lt;/p&gt;
+
+&lt;p&gt;Where is that button?
+Good question. All mail apps, even on your phone, have it. Google and find it. Here is what you can do specifically for Gmail.&lt;/p&gt;
+
+&lt;h5 id=&quot;how-to-make-reply-all-your-default-response-in-gmail&quot;&gt;How To Make Reply All Your Default Response in Gmail&lt;/h5&gt;
+&lt;p&gt;Go to Gmail settings -&amp;gt; General tab -&amp;gt; Default reply behavior. Set it to Reply all. Enjoy. It is &lt;em&gt;that&lt;/em&gt; easy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/reply-all/&amp;amp;text=Why Reply All is an essential skill &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>My favorite extensions for Visual Studio for Mac
