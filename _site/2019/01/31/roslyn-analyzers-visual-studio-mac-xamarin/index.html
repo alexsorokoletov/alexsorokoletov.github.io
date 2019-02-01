@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    
+      C# Analyzers and Xamarin (Visual Studio for Mac) &middot; Alex Sorokoletov Notes
+    
+  </title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link type="application/atom+xml" rel="alternate" href="https://sorokoletov.com/feed.xml" title="Alex Sorokoletov Notes" />
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Alex Sorokoletov Notes</a>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/about">About</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/archive">Archive</a></small>
+            
+                &nbsp;&nbsp;&nbsp;
+                <small><a href="/atom.xml">Feed</a></small>
+            
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">C# Analyzers and Xamarin (Visual Studio for Mac)</h1>
+  <time datetime="2019-01-31T00:00:00-05:00" class="post-date">31 Jan 2019</time>
+  <p>The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it.
+One of the great features that came with Roslyn compiler was support for analyzers.</p>
+
+<p>Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation.</p>
+
+<p>It’s a powerful addition and there are hundreds of <em>GREAT</em> analyzers on GitHub already.</p>
+
+<p>How do we use that greatness with Xamarin apps?</p>
+
+<!--more-->
+
+<p>Visual Studio for Mac is still a main tool for anyone working with Xamarin and iOS and Android apps.
+While we have Roslyn-based compiler there and .NET Core and .NET Standard support, analyzers are not yet first-class citizen</p>
+
+<h3 id="so-what-do-we-do">So what do we do?</h3>
+<p>We need to do some manual actions to add analyzers to your Xamarin project.
+I’ll guide you through</p>
+
+<ol>
+  <li>
+    <p>Download analyzers that you want to use and place it in the folder at the solution level. Say, <code class="highlighter-rouge">Analyzers</code>.
+ Look for any dependencies that these analyzers require.</p>
+
+    <p>VS4Mac does not download analyzers automatically if you add Nuget package with an analyzer and there is also an issue to get together all dependencies.</p>
+
+    <p>So we do it ourselves.
+ Here I downloaded <a href="https://github.com/Microsoft/vs-threading">VS Threading analyzers</a> since they provide warnings for <code class="highlighter-rouge">async void</code> methods and lambdas.</p>
+
+    <p><img src="/assets/analyzers-download-manually.png" alt="Do it yourself - get analyzers and dependencies together" /></p>
+  </li>
+  <li>
+    <p>Open your project file <code class="highlighter-rouge">App.Core.csproj</code> and include your analyzer. Here is an example:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;ItemGroup&gt;
+    &lt;Analyzer Include="..\Analyzers\Microsoft.VisualStudio.Threading.Analyzers.dll" /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Reload the project and enjoy</p>
+
+    <p>These simple steps work for .NET Standard libraries and for Xamarin.Android projects. Xamarin.iOS projects seems to ignore <code class="highlighter-rouge">&lt;Analyzer&gt;</code> tag altogether.</p>
+
+    <p>If you miss something from the dependencies, build log will have few warnings (not compilation warnings) saying the analyzer can’t be loaded.
+Watch for these during setup!</p>
+  </li>
+  <li>
+    <p><em>Optional</em> - setup some of the warnings analyzers produce as errors.</p>
+
+    <p>This is a nice addition you can have. While analyzers usually produce warnings, you can force them to be errors.
+ For example, I really try to stick to the golden rule <code class="highlighter-rouge">avoid async void</code>.
+ So, the threading analyzer would produce a warning with the code <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD100.md">VSTHRD100</a>.
+ I’d like to make that a compilation error instead.</p>
+
+    <p>It’s as simple as step 2 - open the project file and add a line:
+ <code class="highlighter-rouge">
+     &lt;WarningsAsErrors&gt;VSTHRD100;VSTHRD101;&lt;/WarningsAsErrors&gt;
+</code>
+ The example also includes <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD101.md">VSTHRD101</a> which is even more tricky - async void lambdas are hard to spot and easy to come by these days.</p>
+
+    <p>If you want to ignore some warnigns (an analyzer can be noise, can’t it?), here is another line to add to the project:</p>
+
+    <p><code class="highlighter-rouge">
+     &lt;NoWarn&gt;VSTHRD200&lt;/NoWarn&gt;
+</code>
+ This one says do not warn me about making all async methods end with <code class="highlighter-rouge">Async</code> <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD200.md">VSTHRD200</a></p>
+  </li>
+</ol>
+
+<h3 id="any-good-analyzers-you-know">Any good analyzers you know?</h3>
+
+<p>My goal was to make sure there is an automatic safeguard against <code class="highlighter-rouge">async void</code> methods, anonymous or no. 
+Thanks to Roslyn analyzers one can have it on 2 of 3 projects in a typical iOS/Android crossplat app.</p>
+
+<p>Here are some good ones I’ve came through:</p>
+
+<p><a href="https://github.com/DotNetAnalyzers">DotNetAnalyzers</a> - the most known collection of analyzers</p>
+
+<p><a href="https://github.com/Microsoft/vs-threading/">Microsoft/vs-threading/</a> - great help with async void and overall async/await usage</p>
+
+<p><a href="https://github.com/ironcev/awesome-roslyn">ironcev/awesome-roslyn</a> - more like an overview of analyzers you can get</p>
+
+<p>Let me know which rules you specifically use in your projects, I’d be glad to try them as well and share with my readers.</p>
+
+<h3 id="visual-studio-not-for-mac">Visual Studio (not for Mac)</h3>
+<p>VS 2017 supports analyzers just fine, allowing you to install them from Nuget packages.
+To be honest, I’m not sure why the Mac version does not support them yet.</p>
+
+<p>It’s a great technology basically wasted on Xamarin side.</p>
+
+<h3 id="hidden-candy">Hidden candy</h3>
+
+<p>Nice thing about these analyzers - AppCenter.ms respects them. So if you follow steps 1 to 4, your builds in pull requests or branches will fail once someone uses <code class="highlighter-rouge">async void</code>. I like that.</p>
+
+<p>That’s it for today, thank you for reading!</p>
+
+<hr />
+
+<p>If you liked this post, you can
+<a href="https://twitter.com/intent/tweet?url=https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;text=C# Analyzers and Xamarin (Visual Studio for Mac) &amp;via=alexsorokoletov" target="_blank">
+  share it with your followers</a> 
+or 
+<a href="https://twitter.com/alexsorokoletov">
+  follow me on Twitter</a>!</p>
+
+</article>
+
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2018/09/20/reply-all/">
+            Why Reply All is an essential skill
+            <small><time datetime="2018-09-20T00:00:00-04:00">20 Sep 2018</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">
+            My favorite extensions for Visual Studio for Mac
+            <small><time datetime="2018-09-20T00:00:00-04:00">20 Sep 2018</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">
+            Easy way to create Xamarin.iOS binding from CocoaPods
+            <small><time datetime="2017-02-05T00:00:00-05:00">05 Feb 2017</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      
+<div id="disqus_thread"></div>
+<script>
+/*
+var disqus_config = function () {
+this.page.url = 'https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/'; 
+this.page.identifier = '/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin';
+this.page.title = 'C# Analyzers and Xamarin (Visual Studio for Mac)';
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//sorokoletovcom.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      <footer class="footer">
+        <small>
+          &copy; <time datetime="2019-02-01T00:32:02-05:00">2019</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69801505-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
