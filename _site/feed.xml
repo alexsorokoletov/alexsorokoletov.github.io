@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://sorokoletov.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="https://sorokoletov.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sorokoletov.com/" rel="alternate" type="text/html" /><updated>2019-02-01T00:32:02-05:00</updated><id>https://sorokoletov.com//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">C# Analyzers and Xamarin (Visual Studio for Mac)</title><link href="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="C# Analyzers and Xamarin (Visual Studio for Mac)" /><published>2019-01-31T00:00:00-05:00</published><updated>2019-01-31T00:00:00-05:00</updated><id>https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin</id><content type="html" xml:base="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/">&lt;p&gt;The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://sorokoletov.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="https://sorokoletov.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sorokoletov.com/" rel="alternate" type="text/html" /><updated>2019-02-01T00:39:35-05:00</updated><id>https://sorokoletov.com//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">C# Analyzers and Xamarin (Visual Studio for Mac)</title><link href="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="C# Analyzers and Xamarin (Visual Studio for Mac)" /><published>2019-01-31T00:00:00-05:00</published><updated>2019-01-31T00:00:00-05:00</updated><id>https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin</id><content type="html" xml:base="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/">&lt;p&gt;The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it.
 One of the great features that came with Roslyn compiler was support for analyzers.&lt;/p&gt;
 
 &lt;p&gt;Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation.&lt;/p&gt;
@@ -98,7 +98,7 @@ To be honest, I’m not sure why the Mac version does not support them yet.&lt;/
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;amp;text=C# Analyzers and Xamarin (Visual Studio for Mac) &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;amp;text=C%23+Analyzers+and+Xamarin+%28Visual+Studio+for+Mac%29%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -158,7 +158,7 @@ Good question. All mail apps, even on your phone, have it. Google and find it. H
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/reply-all/&amp;amp;text=Why Reply All is an essential skill &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -231,7 +231,7 @@ Extending VS4Mac was moderately easy, and I do that action anyway before commit 
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My favorite extensions for Visual Studio for Mac &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My+favorite+extensions+for+Visual+Studio+for+Mac%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -357,7 +357,7 @@ I appreciate any positive or negative feedback about &lt;code class=&quot;highli
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy way to create Xamarin.iOS binding from CocoaPods &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy+way+to+create+Xamarin.iOS+binding+from+CocoaPods%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -412,7 +412,7 @@ Besides NuGet, project has now latest (0.4.4) java code inside bringing more new
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android Maps Utils for Xamarin updated with new features and NuGet &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android+Maps+Utils+for+Xamarin+updated+with+new+features+and+NuGet%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -487,7 +487,7 @@ It is very powerful way to see and analyze events coming from your app. &lt;a hr
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest way to migrate from Xamarin.Insights to HockeyApp &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest+way+to+migrate+from+Xamarin.Insights+to+HockeyApp%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -547,7 +547,7 @@ In the example below you can omit &lt;code class=&quot;highlighter-rouge&quot;&g
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#? &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named+parameters+in+Func%26lt%3BT%26gt%3B%2FAction%26lt%3BT%26gt%3B+type+in+C%23%3F%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -620,7 +620,7 @@ What’s so great about this?
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig support in Visual Studio 2017 &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig+support+in+Visual+Studio+2017%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -700,7 +700,7 @@ And what about VS Code?&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/13/csharp-standard-style/&amp;amp;text=C# Standard Style - single source of formatting truth &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -867,7 +867,7 @@ Clone it and use it or just add as a submodule.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker bindings for Xamarin.Android apps &amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker+bindings+for+Xamarin.Android+apps%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
