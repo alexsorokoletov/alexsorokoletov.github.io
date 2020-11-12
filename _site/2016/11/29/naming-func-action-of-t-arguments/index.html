@@ -43,7 +43,7 @@
   <time datetime="2016-11-29T00:00:00+00:00" class="post-date">29 Nov 2016</time>
   <p>If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…</p>
 
-<p>Here is a common situation where somewhere in your library or helper class you have a method taking in <code class="highlighter-rouge">Func&lt;T&gt;</code> or <code class="highlighter-rouge">Action&lt;T&gt;</code>.
+<p>Here is a common situation where somewhere in your library or helper class you have a method taking in <code class="language-plaintext highlighter-rouge">Func&lt;T&gt;</code> or <code class="language-plaintext highlighter-rouge">Action&lt;T&gt;</code>.
 <img src="/assets/naming_func_of_t_declaration.png" alt="Definition of your method using Func/Action classes" />
 and then when you want to use this method VS suggests you following names: arg1 and arg2.
 Like there is nothing better than that :)
@@ -52,7 +52,7 @@ Like there is nothing better than that :)
 <p>There is a cheap and easy <strong>solution for that</strong>.</p>
 
 <ul>
-  <li>Define your own delegate with same signature as <code class="highlighter-rouge">Func&lt;T&gt;</code> or <code class="highlighter-rouge">Func&lt;T1,T2,T3&gt;</code> you are using already.</li>
+  <li>Define your own delegate with same signature as <code class="language-plaintext highlighter-rouge">Func&lt;T&gt;</code> or <code class="language-plaintext highlighter-rouge">Func&lt;T1,T2,T3&gt;</code> you are using already.</li>
   <li>Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).</li>
   <li>In original method, replace Func<T> with this new delegate.</T></li>
 </ul>
@@ -80,8 +80,8 @@ After these changes when you are going to use the method, you will see intellise
 </ul>
 
 <h4 id="bonus">Bonus</h4>
-<p>You can have optional <code class="highlighter-rouge">Func&lt;T&gt;</code> arguments!
-In the example below you can omit <code class="highlighter-rouge">token</code> argument completely.</p>
+<p>You can have optional <code class="language-plaintext highlighter-rouge">Func&lt;T&gt;</code> arguments!
+In the example below you can omit <code class="language-plaintext highlighter-rouge">token</code> argument completely.</p>
 
 <p><img src="/assets/naming_func_t_bonus.png" alt="Optional arguments in Func of T csharp" /></p>
 
@@ -158,7 +158,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2020-11-12T03:14:42+00:00">2020</time>. All rights reserved.
+          &copy; <time datetime="2020-11-12T03:18:17+00:00">2020</time>. All rights reserved.
         </small>
       </footer>
     </div>

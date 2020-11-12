@@ -61,29 +61,28 @@ I’ll guide you through</p>
 
 <ol>
   <li>
-    <p>Download analyzers that you want to use and place it in the folder at the solution level. Say, <code class="highlighter-rouge">Analyzers</code>.
+    <p>Download analyzers that you want to use and place it in the folder at the solution level. Say, <code class="language-plaintext highlighter-rouge">Analyzers</code>.
  Look for any dependencies that these analyzers require.</p>
 
     <p>VS4Mac does not download analyzers automatically if you add Nuget package with an analyzer and there is also an issue to get together all dependencies.</p>
 
     <p>So we do it ourselves.
- Here I downloaded <a href="https://github.com/Microsoft/vs-threading">VS Threading analyzers</a> since they provide warnings for <code class="highlighter-rouge">async void</code> methods and lambdas.</p>
+ Here I downloaded <a href="https://github.com/Microsoft/vs-threading">VS Threading analyzers</a> since they provide warnings for <code class="language-plaintext highlighter-rouge">async void</code> methods and lambdas.</p>
 
     <p><img src="/assets/analyzers-download-manually.png" alt="Do it yourself - get analyzers and dependencies together" /></p>
   </li>
   <li>
-    <p>Open your project file <code class="highlighter-rouge">App.Core.csproj</code> and include your analyzer. Here is an example:</p>
+    <p>Open your project file <code class="language-plaintext highlighter-rouge">App.Core.csproj</code> and include your analyzer. Here is an example:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>&lt;ItemGroup&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ItemGroup&gt;
     &lt;Analyzer Include="..\Analyzers\Microsoft.VisualStudio.Threading.Analyzers.dll" /&gt;
 &lt;/ItemGroup&gt;
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Reload the project and enjoy</p>
 
-    <p>These simple steps work for .NET Standard libraries and for Xamarin.Android projects. Xamarin.iOS projects seems to ignore <code class="highlighter-rouge">&lt;Analyzer&gt;</code> tag altogether.</p>
+    <p>These simple steps work for .NET Standard libraries and for Xamarin.Android projects. Xamarin.iOS projects seems to ignore <code class="language-plaintext highlighter-rouge">&lt;Analyzer&gt;</code> tag altogether.</p>
 
     <p>If you miss something from the dependencies, build log will have few warnings (not compilation warnings) saying the analyzer can’t be loaded.
 Watch for these during setup!</p>
@@ -92,28 +91,26 @@ Watch for these during setup!</p>
     <p><em>Optional</em> - setup some of the warnings analyzers produce as errors.</p>
 
     <p>This is a nice addition you can have. While analyzers usually produce warnings, you can force them to be errors.
- For example, I really try to stick to the golden rule <code class="highlighter-rouge">avoid async void</code>.
+ For example, I really try to stick to the golden rule <code class="language-plaintext highlighter-rouge">avoid async void</code>.
  So, the threading analyzer would produce a warning with the code <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD100.md">VSTHRD100</a>.
  I’d like to make that a compilation error instead.</p>
 
-    <p>It’s as simple as step 2 - open the project file and add a line:
- <code class="highlighter-rouge">
-     &lt;WarningsAsErrors&gt;VSTHRD100;VSTHRD101;&lt;/WarningsAsErrors&gt;
-</code>
- The example also includes <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD101.md">VSTHRD101</a> which is even more tricky - async void lambdas are hard to spot and easy to come by these days.</p>
+    <p>It’s as simple as step 2 - open the project file and add a line:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     &lt;WarningsAsErrors&gt;VSTHRD100;VSTHRD101;&lt;/WarningsAsErrors&gt;
+</code></pre></div>    </div>
+    <p>The example also includes <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD101.md">VSTHRD101</a> which is even more tricky - async void lambdas are hard to spot and easy to come by these days.</p>
 
     <p>If you want to ignore some warnigns (an analyzer can be noise, can’t it?), here is another line to add to the project:</p>
 
-    <p><code class="highlighter-rouge">
-     &lt;NoWarn&gt;VSTHRD200&lt;/NoWarn&gt;
-</code>
- This one says do not warn me about making all async methods end with <code class="highlighter-rouge">Async</code> <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD200.md">VSTHRD200</a></p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     &lt;NoWarn&gt;VSTHRD200&lt;/NoWarn&gt;
+</code></pre></div>    </div>
+    <p>This one says do not warn me about making all async methods end with <code class="language-plaintext highlighter-rouge">Async</code> <a href="https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD200.md">VSTHRD200</a></p>
   </li>
 </ol>
 
 <h3 id="any-good-analyzers-you-know">Any good analyzers you know?</h3>
 
-<p>My goal was to make sure there is an automatic safeguard against <code class="highlighter-rouge">async void</code> methods, anonymous or no. 
+<p>My goal was to make sure there is an automatic safeguard against <code class="language-plaintext highlighter-rouge">async void</code> methods, anonymous or no. 
 Thanks to Roslyn analyzers one can have it on 2 of 3 projects in a typical iOS/Android crossplat app.</p>
 
 <p>Here are some good ones I’ve came through:</p>
@@ -134,7 +131,7 @@ To be honest, I’m not sure why the Mac version does not support them yet.</p>
 
 <h3 id="hidden-candy">Hidden candy</h3>
 
-<p>Nice thing about these analyzers - AppCenter.ms respects them. So if you follow steps 1 to 4, your builds in pull requests or branches will fail once someone uses <code class="highlighter-rouge">async void</code>. I like that.</p>
+<p>Nice thing about these analyzers - AppCenter.ms respects them. So if you follow steps 1 to 4, your builds in pull requests or branches will fail once someone uses <code class="language-plaintext highlighter-rouge">async void</code>. I like that.</p>
 
 <p>That’s it for today, thank you for reading!</p>
 
@@ -211,7 +208,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2020-11-12T03:14:42+00:00">2020</time>. All rights reserved.
+          &copy; <time datetime="2020-11-12T03:18:17+00:00">2020</time>. All rights reserved.
         </small>
       </footer>
     </div>

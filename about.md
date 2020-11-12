@@ -35,6 +35,7 @@ Twitter [@alexsorokoletov](https://twitter.com/alexsorokoletov)
 * [Xamarin iOS C# port of DatePickerDialog](https://github.com/alexsorokoletov/Xamarin.iOS.DatePickerDialog)
 * [Xamarin.iOS binding for Logentris lelib (LELog)](https://github.com/alexsorokoletov/Xamarin.Logentries.iOS)
 * [Xamarin.Android bindings for Material DateTime Picker](https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker)
+* [URL Opener - a bulk url opener tool when you need to open multiple urls in new tab](https://url-opener.org)
 
 
 ### Thanks for reading!

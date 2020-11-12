@@ -4,7 +4,7 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://0.0.0.0:4000/atom.xml" rel="self"/>
  <link href="http://0.0.0.0:4000/"/>
- <updated>2020-11-12T03:14:42+00:00</updated>
+ <updated>2020-11-12T03:18:17+00:00</updated>
  <id>http://0.0.0.0:4000</id>
  <author>
    <name>Alex Sorokoletov</name>
@@ -43,7 +43,7 @@ Good thing about any of the ways below is they support any content, not just tex
 
 &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink&quot;&gt;MDN recommends a blink HTML polyfill using CSS&lt;/a&gt; which uses keyframes and will make blink HTML tag blink again.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink {
   animation: 2s linear infinite condemned_blink_effect;
 }
 
@@ -52,29 +52,26 @@ Good thing about any of the ways below is they support any content, not just tex
   50% { visibility: hidden; }
   100% { visibility: visible; }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Wikipedia’s way to make blink HTML work again:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink, .blink {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink, .blink {
   animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
   67% { opacity: 0 }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;JavaScript way to make a blinking HTML element (not only text)&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const blink = document.getElementById('blink');
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const blink = document.getElementById('blink');
 setInterval(() =&amp;gt; {
     blink.style.opacity = (blink.style.opacity === 0 ? 1 : 0);
 }, 1000);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;obsolete-blink-html-ways&quot;&gt;Obsolete blink HTML ways&lt;/h3&gt;
 
@@ -82,7 +79,7 @@ setInterval(() =&amp;gt; {
 
 &lt;ol&gt;
   &lt;li&gt;&amp;lt;blink&amp;gt; HTML tag itself&lt;/li&gt;
-  &lt;li&gt;CSS style &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration: blink;&lt;/code&gt; - does not make your HTML blink&lt;/li&gt;
+  &lt;li&gt;CSS style &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;text-decoration: blink;&lt;/code&gt; - does not make your HTML blink&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;P.S.: Anybody remembers marquee? :D&lt;/p&gt;
@@ -138,29 +135,28 @@ I’ll guide you through&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Download analyzers that you want to use and place it in the folder at the solution level. Say, &lt;code class=&quot;highlighter-rouge&quot;&gt;Analyzers&lt;/code&gt;.
+    &lt;p&gt;Download analyzers that you want to use and place it in the folder at the solution level. Say, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Analyzers&lt;/code&gt;.
  Look for any dependencies that these analyzers require.&lt;/p&gt;
 
     &lt;p&gt;VS4Mac does not download analyzers automatically if you add Nuget package with an analyzer and there is also an issue to get together all dependencies.&lt;/p&gt;
 
     &lt;p&gt;So we do it ourselves.
- Here I downloaded &lt;a href=&quot;https://github.com/Microsoft/vs-threading&quot;&gt;VS Threading analyzers&lt;/a&gt; since they provide warnings for &lt;code class=&quot;highlighter-rouge&quot;&gt;async void&lt;/code&gt; methods and lambdas.&lt;/p&gt;
+ Here I downloaded &lt;a href=&quot;https://github.com/Microsoft/vs-threading&quot;&gt;VS Threading analyzers&lt;/a&gt; since they provide warnings for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async void&lt;/code&gt; methods and lambdas.&lt;/p&gt;
 
     &lt;p&gt;&lt;img src=&quot;/assets/analyzers-download-manually.png&quot; alt=&quot;Do it yourself - get analyzers and dependencies together&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Open your project file &lt;code class=&quot;highlighter-rouge&quot;&gt;App.Core.csproj&lt;/code&gt; and include your analyzer. Here is an example:&lt;/p&gt;
+    &lt;p&gt;Open your project file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App.Core.csproj&lt;/code&gt; and include your analyzer. Here is an example:&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ItemGroup&amp;gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ItemGroup&amp;gt;
     &amp;lt;Analyzer Include=&quot;..\Analyzers\Microsoft.VisualStudio.Threading.Analyzers.dll&quot; /&amp;gt;
 &amp;lt;/ItemGroup&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Reload the project and enjoy&lt;/p&gt;
 
-    &lt;p&gt;These simple steps work for .NET Standard libraries and for Xamarin.Android projects. Xamarin.iOS projects seems to ignore &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Analyzer&amp;gt;&lt;/code&gt; tag altogether.&lt;/p&gt;
+    &lt;p&gt;These simple steps work for .NET Standard libraries and for Xamarin.Android projects. Xamarin.iOS projects seems to ignore &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Analyzer&amp;gt;&lt;/code&gt; tag altogether.&lt;/p&gt;
 
     &lt;p&gt;If you miss something from the dependencies, build log will have few warnings (not compilation warnings) saying the analyzer can’t be loaded.
 Watch for these during setup!&lt;/p&gt;
@@ -169,28 +165,26 @@ Watch for these during setup!&lt;/p&gt;
     &lt;p&gt;&lt;em&gt;Optional&lt;/em&gt; - setup some of the warnings analyzers produce as errors.&lt;/p&gt;
 
     &lt;p&gt;This is a nice addition you can have. While analyzers usually produce warnings, you can force them to be errors.
- For example, I really try to stick to the golden rule &lt;code class=&quot;highlighter-rouge&quot;&gt;avoid async void&lt;/code&gt;.
+ For example, I really try to stick to the golden rule &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;avoid async void&lt;/code&gt;.
  So, the threading analyzer would produce a warning with the code &lt;a href=&quot;https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD100.md&quot;&gt;VSTHRD100&lt;/a&gt;.
  I’d like to make that a compilation error instead.&lt;/p&gt;
 
-    &lt;p&gt;It’s as simple as step 2 - open the project file and add a line:
- &lt;code class=&quot;highlighter-rouge&quot;&gt;
-     &amp;lt;WarningsAsErrors&amp;gt;VSTHRD100;VSTHRD101;&amp;lt;/WarningsAsErrors&amp;gt;
-&lt;/code&gt;
- The example also includes &lt;a href=&quot;https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD101.md&quot;&gt;VSTHRD101&lt;/a&gt; which is even more tricky - async void lambdas are hard to spot and easy to come by these days.&lt;/p&gt;
+    &lt;p&gt;It’s as simple as step 2 - open the project file and add a line:&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     &amp;lt;WarningsAsErrors&amp;gt;VSTHRD100;VSTHRD101;&amp;lt;/WarningsAsErrors&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;The example also includes &lt;a href=&quot;https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD101.md&quot;&gt;VSTHRD101&lt;/a&gt; which is even more tricky - async void lambdas are hard to spot and easy to come by these days.&lt;/p&gt;
 
     &lt;p&gt;If you want to ignore some warnigns (an analyzer can be noise, can’t it?), here is another line to add to the project:&lt;/p&gt;
 
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-     &amp;lt;NoWarn&amp;gt;VSTHRD200&amp;lt;/NoWarn&amp;gt;
-&lt;/code&gt;
- This one says do not warn me about making all async methods end with &lt;code class=&quot;highlighter-rouge&quot;&gt;Async&lt;/code&gt; &lt;a href=&quot;https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD200.md&quot;&gt;VSTHRD200&lt;/a&gt;&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     &amp;lt;NoWarn&amp;gt;VSTHRD200&amp;lt;/NoWarn&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;This one says do not warn me about making all async methods end with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt; &lt;a href=&quot;https://github.com/Microsoft/vs-threading/blob/master/doc/analyzers/VSTHRD200.md&quot;&gt;VSTHRD200&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;any-good-analyzers-you-know&quot;&gt;Any good analyzers you know?&lt;/h3&gt;
 
-&lt;p&gt;My goal was to make sure there is an automatic safeguard against &lt;code class=&quot;highlighter-rouge&quot;&gt;async void&lt;/code&gt; methods, anonymous or no. 
+&lt;p&gt;My goal was to make sure there is an automatic safeguard against &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async void&lt;/code&gt; methods, anonymous or no. 
 Thanks to Roslyn analyzers one can have it on 2 of 3 projects in a typical iOS/Android crossplat app.&lt;/p&gt;
 
 &lt;p&gt;Here are some good ones I’ve came through:&lt;/p&gt;
@@ -211,7 +205,7 @@ To be honest, I’m not sure why the Mac version does not support them yet.&lt;/
 
 &lt;h3 id=&quot;hidden-candy&quot;&gt;Hidden candy&lt;/h3&gt;
 
-&lt;p&gt;Nice thing about these analyzers - AppCenter.ms respects them. So if you follow steps 1 to 4, your builds in pull requests or branches will fail once someone uses &lt;code class=&quot;highlighter-rouge&quot;&gt;async void&lt;/code&gt;. I like that.&lt;/p&gt;
+&lt;p&gt;Nice thing about these analyzers - AppCenter.ms respects them. So if you follow steps 1 to 4, your builds in pull requests or branches will fail once someone uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async void&lt;/code&gt;. I like that.&lt;/p&gt;
 
 &lt;p&gt;That’s it for today, thank you for reading!&lt;/p&gt;
 
@@ -299,7 +293,7 @@ or
 Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 &lt;!--more--&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;nuget-package-management&quot;&gt;1. NuGet Package Management&lt;/h3&gt;
+&lt;h3 id=&quot;1-nuget-package-management&quot;&gt;1. NuGet Package Management&lt;/h3&gt;
 &lt;p&gt;This one I found out quite recently. If you ever used VS 2017, you know that it has much nicer and comfortable UI to manage NuGet packagets.
 You can install and update multiple selected packages at once.&lt;/p&gt;
 
@@ -312,7 +306,7 @@ Thanks to @brent.l for the tip.&lt;/p&gt;
 
 &lt;p&gt;Github repo: &lt;a href=&quot;https://github.com/mrward/monodevelop-addins&quot;&gt;https://github.com/mrward/monodevelop-addins&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;defaultdesigner&quot;&gt;2. DefaultDesigner&lt;/h3&gt;
+&lt;h3 id=&quot;2-defaultdesigner&quot;&gt;2. DefaultDesigner&lt;/h3&gt;
 &lt;p&gt;This is a Xamarin Studio &amp;amp; Visual Studio for Mac add-in to open .xib and .storyboard files with Xcode Interface Builder by default.
 By double clicking it.&lt;/p&gt;
 
@@ -322,21 +316,23 @@ By double clicking it.&lt;/p&gt;
 
 &lt;p&gt;Github repo: &lt;a href=&quot;https://github.com/colbylwilliams/DefaultDesigner&quot;&gt;https://github.com/colbylwilliams/DefaultDesigner&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;mfractor&quot;&gt;3. MFractor&lt;/h3&gt;
+&lt;h3 id=&quot;3-mfractor&quot;&gt;3. MFractor&lt;/h3&gt;
 &lt;p&gt;Kudos to Matthew for this amazing mega-extension (comes in two flavors, lite and pro).
 I can’t even start to describe what you can do with it, instead go and check the website https://www.mfractor.com/&lt;/p&gt;
 
-&lt;p&gt;Some of the features I like:
-- XAML helpers essential for any Xamarin.Forms developer
-- Android Resource intellinsense and help with navigation and replace with resource lookup
-- Point out missing constructors for Xamarin.Android views/classes
-- many other things I have not learned yet&lt;/p&gt;
+&lt;p&gt;Some of the features I like:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;XAML helpers essential for any Xamarin.Forms developer&lt;/li&gt;
+  &lt;li&gt;Android Resource intellinsense and help with navigation and replace with resource lookup&lt;/li&gt;
+  &lt;li&gt;Point out missing constructors for Xamarin.Android views/classes&lt;/li&gt;
+  &lt;li&gt;many other things I have not learned yet&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;MFactor Pro: &lt;a href=&quot;https://www.mfractor.com/pages/download&quot;&gt;https://www.mfractor.com/products/mfractor-for-visual-studio-mac&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;MFractor Lite: &lt;a href=&quot;https://www.mfractor.com/pages/download&quot;&gt;https://www.mfractor.com/pages/download&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;sortandremoveusings&quot;&gt;4. SortAndRemoveUsings&lt;/h3&gt;
+&lt;h3 id=&quot;4-sortandremoveusings&quot;&gt;4. SortAndRemoveUsings&lt;/h3&gt;
 &lt;p&gt;Disclaimer: this is my own extension. It helps me by automatically sort and remove usings when you save a C# file.
 Extending VS4Mac was moderately easy, and I do that action anyway before commit since I like to keep my code clean.&lt;/p&gt;
 
@@ -348,7 +344,7 @@ Extending VS4Mac was moderately easy, and I do that action anyway before commit 
 
 &lt;p&gt;Github repo: &lt;a href=&quot;https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings&quot;&gt;https://github.com/alexsorokoletov/VisualStudioMac.SortRemoveUsings&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;solutionname&quot;&gt;5. SolutionName&lt;/h3&gt;
+&lt;h3 id=&quot;5-solutionname&quot;&gt;5. SolutionName&lt;/h3&gt;
 &lt;p&gt;Disclaimer: this is my own extension. This extension helps me easily determine which solution is open right now if I have several Visual Studio instances open. In a way, this is a cheap replacement for Windows 10 task switcher which shows icon and solution name when switching between VS 2017 instances.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/DreamTeamMobile/VS4Mac.SolutionName/raw/master/Meta/screenshot.png?raw=true&quot; alt=&quot;Screenshot of VS4Mac extension to show solution name&quot; /&gt;&lt;/p&gt;
@@ -380,10 +376,10 @@ or
    <id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id>
    <content type="html">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
-This was 100% manual process until &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
+This was 100% manual process until &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).&lt;/p&gt;
 
-&lt;p&gt;Also, &lt;code class=&quot;highlighter-rouge&quot;&gt;sharpie&lt;/code&gt; doesn’t support dependencies within pods. This is where the new &lt;a href=&quot;https://github.com/alexsorokoletov/objc-automatic&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt;&lt;/a&gt; started.&lt;/p&gt;
+&lt;p&gt;Also, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sharpie&lt;/code&gt; doesn’t support dependencies within pods. This is where the new &lt;a href=&quot;https://github.com/alexsorokoletov/objc-automatic&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt;&lt;/a&gt; started.&lt;/p&gt;
 
 &lt;p&gt;But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.
 &lt;!--more--&gt;&lt;/p&gt;
@@ -391,27 +387,29 @@ However, it doesn’t work in many cases (it can’t build something or reflect 
 
 &lt;h3 id=&quot;prelude&quot;&gt;Prelude&lt;/h3&gt;
 
-&lt;p&gt;Imagine you have to use &lt;a href=&quot;https://cocoapods.org/pods/FirebaseAnalytics&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt;&lt;/a&gt; in your Xamarin app (Now, there is a NuGet for that, but let’s rewind to the point where there wasn’t one).
-You would go ahead and create binding for that library, right. Unfortunately, &lt;code class=&quot;highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt; is what I call an umbrella pod. It has no code, just dependencies.&lt;/p&gt;
+&lt;p&gt;Imagine you have to use &lt;a href=&quot;https://cocoapods.org/pods/FirebaseAnalytics&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt;&lt;/a&gt; in your Xamarin app (Now, there is a NuGet for that, but let’s rewind to the point where there wasn’t one).
+You would go ahead and create binding for that library, right. Unfortunately, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt; is what I call an umbrella pod. It has no code, just dependencies.&lt;/p&gt;
 
-&lt;p&gt;So, instead, you need to go and create bindings for pods like: &lt;code class=&quot;highlighter-rouge&quot;&gt;FirebaseCore&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;FirebaseInstanceID&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;GoogleInterchangeUtilities&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;GoogleSymbolUtilities&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GoogleToolboxForMac/NSData+zlib&lt;/code&gt;.
+&lt;p&gt;So, instead, you need to go and create bindings for pods like: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FirebaseCore&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FirebaseInstanceID&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GoogleInterchangeUtilities&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GoogleSymbolUtilities&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GoogleToolboxForMac/NSData+zlib&lt;/code&gt;.
 Literally, out of nowhere amount of work exploded. Now you need 5 bindings instead of just one. ObjectiveSharpie won’t help us with that.&lt;/p&gt;
 
-&lt;p&gt;Interesting, &lt;a href=&quot;https://cocoapods.org/pods/FirebaseCore&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FirebaseCore&lt;/code&gt;&lt;/a&gt; also has dependencies. 
-So, you need to create 5 Xamarin.iOS binding projects, do the code, reference them correspondingly and then you will have a binding for &lt;code class=&quot;highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Interesting, &lt;a href=&quot;https://cocoapods.org/pods/FirebaseCore&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FirebaseCore&lt;/code&gt;&lt;/a&gt; also has dependencies. 
+So, you need to create 5 Xamarin.iOS binding projects, do the code, reference them correspondingly and then you will have a binding for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Few questions arise: 
-- How do you distribute that?
-    Single binary? 
-    Many binaries?
-    NuGet package or packages?
-- How do you version that?
-    1.0.0 is not an option, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt; is updated often.
-    Oh, yes. Each of these pods has it’s own version.&lt;/p&gt;
+&lt;p&gt;Few questions arise:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;How do you distribute that?
+  Single binary? 
+  Many binaries?
+  NuGet package or packages?&lt;/li&gt;
+  &lt;li&gt;How do you version that?
+  1.0.0 is not an option, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt; is updated often.
+  Oh, yes. Each of these pods has it’s own version.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;If you choose NuGet packages, then you also need to reference packages same way as pods and Xamarin.iOS projects.&lt;/p&gt;
 
-&lt;p&gt;Frankly, I tried to do that manually. After &lt;code class=&quot;highlighter-rouge&quot;&gt;Firebase/Core&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt; I understood this is hard.
+&lt;p&gt;Frankly, I tried to do that manually. After &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase/Core&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Firebase/Analytics&lt;/code&gt; I understood this is hard.
 I couldn’t imagine I will do that again when version 3.7.x of Firebase is released. Not mentioning sometimes you have to redo bindings to fix incorrect signature or binary&lt;/p&gt;
 
 &lt;h3 id=&quot;automate-all-the-things&quot;&gt;Automate all the things.&lt;/h3&gt;
@@ -422,19 +420,19 @@ I decided to try F# FAKE with this problem as well.&lt;/p&gt;
 &lt;p&gt;First, the tool generates correct tree of dependencies.
 Downloads all metadata about pods. Versions, frameworks, linker flags, dependencies, etc.&lt;/p&gt;
 
-&lt;p&gt;Then, for each of the pods it create a subfolder inside &lt;code class=&quot;highlighter-rouge&quot;&gt;bindings&lt;/code&gt; and puts there Xamarin.iOS binding project with C# API surface generated by &lt;code class=&quot;highlighter-rouge&quot;&gt;sharpie&lt;/code&gt;.
+&lt;p&gt;Then, for each of the pods it create a subfolder inside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bindings&lt;/code&gt; and puts there Xamarin.iOS binding project with C# API surface generated by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sharpie&lt;/code&gt;.
 It adds all linker flags, puts the iOS binary in there, adjusts the references to the dependencies (other Xamarin.iOS binding projects).&lt;/p&gt;
 
 &lt;p&gt;Now, you can build these Xamarin.iOS bindings using Xamarin Studio.&lt;/p&gt;
 
-&lt;p&gt;Turns out, it takes quite a time for XS, so the tool also creates &lt;code class=&quot;highlighter-rouge&quot;&gt;podname.build.sh&lt;/code&gt; script to go ahead and &lt;code class=&quot;highlighter-rouge&quot;&gt;MSBuild&lt;/code&gt; all the projects in correct order.&lt;/p&gt;
+&lt;p&gt;Turns out, it takes quite a time for XS, so the tool also creates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;podname.build.sh&lt;/code&gt; script to go ahead and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MSBuild&lt;/code&gt; all the projects in correct order.&lt;/p&gt;
 
 &lt;p&gt;So the flow would be: run the script, see the errors, fix the errors, run it again (you can probably put it on –watch do run continously).&lt;/p&gt;
 
-&lt;p&gt;Now you have the .dll files with bindings. (pss, there is also a linker side of that story, take a look at &lt;code class=&quot;highlighter-rouge&quot;&gt;Linker.cs&lt;/code&gt; files)&lt;/p&gt;
+&lt;p&gt;Now you have the .dll files with bindings. (pss, there is also a linker side of that story, take a look at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Linker.cs&lt;/code&gt; files)&lt;/p&gt;
 
 &lt;h3 id=&quot;demo-time&quot;&gt;Demo time!&lt;/h3&gt;
-&lt;p&gt;Here are few videos showing how to use &lt;code class=&quot;highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; and how it works internally.&lt;/p&gt;
+&lt;p&gt;Here are few videos showing how to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; and how it works internally.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.useloom.com/share/7679bec0ec3911e6b8fde34d395e0c71&quot;&gt;Binding Firebase/Analytics using objc-automatic&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width=&quot;630&quot; height=&quot;394&quot; src=&quot;https://www.useloom.com/embed/7679bec0ec3911e6b8fde34d395e0c71&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -445,31 +443,31 @@ It adds all linker flags, puts the iOS binary in there, adjusts the references t
 &lt;h3 id=&quot;nuget-side-of-things&quot;&gt;NuGet side of things&lt;/h3&gt;
 &lt;p&gt;For the NuGet distribution, you want to have same tree of packages with same versioning.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; tool does that for you. Along with projects, it generates &lt;code class=&quot;highlighter-rouge&quot;&gt;packages.config&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.nuspec&lt;/code&gt; files for each of the CocoaPods.
-It also enhances &lt;code class=&quot;highlighter-rouge&quot;&gt;podname.build.sh&lt;/code&gt; script to build packages and restore packages in correct order when building Xamarin.iOS binding projects.
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; tool does that for you. Along with projects, it generates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;packages.config&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.nuspec&lt;/code&gt; files for each of the CocoaPods.
+It also enhances &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;podname.build.sh&lt;/code&gt; script to build packages and restore packages in correct order when building Xamarin.iOS binding projects.
 For this goal tool creates local temporary NuGet feed and publishes built packages and restores dependencies from this source.&lt;/p&gt;
 
 &lt;p&gt;You want to be sure people can later restore our packages and have everything working (at least - compiling).&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.nuspec&lt;/code&gt; files will contain versions, metadata, everything needed.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.nuspec&lt;/code&gt; files will contain versions, metadata, everything needed.&lt;/p&gt;
 
 &lt;h3 id=&quot;does-it-work&quot;&gt;Does it work?&lt;/h3&gt;
 &lt;p&gt;It worked for quite many cocoapods I used to test it with. More importantly, it worked with Firebase pods. 
-For the &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie-ios&lt;/code&gt; it took around 1 minute to generate the &lt;code class=&quot;highlighter-rouge&quot;&gt;bindings&lt;/code&gt; infrastructure (projects, NuGet package specs).
-Around 1 more minute to run &lt;code class=&quot;highlighter-rouge&quot;&gt;lottie-ios.build.sh&lt;/code&gt; and have NuGet package ready for publishing.&lt;/p&gt;
+For the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lottie-ios&lt;/code&gt; it took around 1 minute to generate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bindings&lt;/code&gt; infrastructure (projects, NuGet package specs).
+Around 1 more minute to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lottie-ios.build.sh&lt;/code&gt; and have NuGet package ready for publishing.&lt;/p&gt;
 
 &lt;p&gt;I’m not trying to brag here, just saying that basically compiling lottie manually and launching Xamarin Studio would take around that time.
-In first place, the &lt;code class=&quot;highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; tool aims for complex pod bindings with dependencies.&lt;/p&gt;
+In first place, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; tool aims for complex pod bindings with dependencies.&lt;/p&gt;
 
 &lt;p&gt;One binding sometimes is really hard to crack. Having 6 of them is even harder.&lt;/p&gt;
 
 &lt;h4 id=&quot;dicsoveries&quot;&gt;Dicsoveries&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;Turns out, &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; can’t bind all the cocoapods.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; doesn’t bind correctly some of the classes from iOS frameworks (misses casign of the managed class name)&lt;/li&gt;
-  &lt;li&gt;Sometimes you need to direct &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; into correct set of header files, otherwise it skips some classes. C# API surface shows less than it should&lt;/li&gt;
+  &lt;li&gt;Turns out, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; can’t bind all the cocoapods.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; doesn’t bind correctly some of the classes from iOS frameworks (misses casign of the managed class name)&lt;/li&gt;
+  &lt;li&gt;Sometimes you need to direct &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; into correct set of header files, otherwise it skips some classes. C# API surface shows less than it should&lt;/li&gt;
   &lt;li&gt;Xamarin.iOS linker doesn’t understand that Xamarin.iOS app might be using a binding that might be using another binding. The latter one gets lost durign compilation process.&lt;/li&gt;
-  &lt;li&gt;Xamarin.iOS binding projects are actually very smart with &lt;code class=&quot;highlighter-rouge&quot;&gt;.framework&lt;/code&gt;s.&lt;/li&gt;
+  &lt;li&gt;Xamarin.iOS binding projects are actually very smart with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.framework&lt;/code&gt;s.&lt;/li&gt;
   &lt;li&gt;You can test complex NuGet package dependency scenario locally using local NuGet source&lt;/li&gt;
   &lt;li&gt;You can create Xamarin.iOS binding with just Terminal and VS Code. Nice.&lt;/li&gt;
   &lt;li&gt;It is so hard to debug F# FAKE scripts (ionide-fake VSCode extension doesn’t help)&lt;/li&gt;
@@ -494,7 +492,7 @@ Tool is opensourced and everyone is welcome to use it and improve it.&lt;/p&gt;
 Thanks for F# FAKE team, this is a great tool to start with.&lt;/p&gt;
 
 &lt;p&gt;And thank you for your interest and feedback. 
-I appreciate any positive or negative feedback about &lt;code class=&quot;highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; and value any success or failure story using this tool.&lt;/p&gt;
+I appreciate any positive or negative feedback about &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objc-automatic&lt;/code&gt; and value any success or failure story using this tool.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -515,7 +513,7 @@ or
    <id>http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget</id>
    <content type="html">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Install-Package Xamarin.Android.Maps.Utils -Pre&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Install-Package Xamarin.Android.Maps.Utils -Pre&lt;/code&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -656,7 +654,7 @@ or
    <id>http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments</id>
    <content type="html">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
 
-&lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
+&lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
 &lt;img src=&quot;/assets/naming_func_of_t_declaration.png&quot; alt=&quot;Definition of your method using Func/Action classes&quot; /&gt;
 and then when you want to use this method VS suggests you following names: arg1 and arg2.
 Like there is nothing better than that :)
@@ -665,7 +663,7 @@ Like there is nothing better than that :)
 &lt;p&gt;There is a cheap and easy &lt;strong&gt;solution for that&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Define your own delegate with same signature as &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T1,T2,T3&amp;gt;&lt;/code&gt; you are using already.&lt;/li&gt;
+  &lt;li&gt;Define your own delegate with same signature as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Func&amp;lt;T1,T2,T3&amp;gt;&lt;/code&gt; you are using already.&lt;/li&gt;
   &lt;li&gt;Specify intended names for these arguments (in my case arg1 could be better described as service, where arg2 is actually a token).&lt;/li&gt;
   &lt;li&gt;In original method, replace Func&lt;T&gt; with this new delegate.&lt;/T&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -693,8 +691,8 @@ After these changes when you are going to use the method, you will see intellise
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;bonus&quot;&gt;Bonus&lt;/h4&gt;
-&lt;p&gt;You can have optional &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; arguments!
-In the example below you can omit &lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt; argument completely.&lt;/p&gt;
+&lt;p&gt;You can have optional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; arguments!
+In the example below you can omit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;token&lt;/code&gt; argument completely.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/naming_func_t_bonus.png&quot; alt=&quot;Optional arguments in Func of T csharp&quot; /&gt;&lt;/p&gt;
 
@@ -888,25 +886,22 @@ Looking at &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker&q
 
 &lt;p&gt;Next, following the Xamarin guide, we will see 3 errors:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(34,34): 
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(34,34): 
   Error CS0533: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)' 
   hides inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)'
   (CS0533) (MaterialDateTimePickerBinding)
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
- Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(36,36): Error CS0534: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper' does not implement inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)' (CS0534) (MaterialDateTimePickerBinding)
-&lt;/code&gt;
- and&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(36,36): Error CS0534: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper' does not implement inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)' (CS0534) (MaterialDateTimePickerBinding)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;and&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
- Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: `Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member `Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: `Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member `Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;1st and 2nd are pretty simple. As these methods most definitely will not be consumed from C# side, we can just remove these methods from bindings.&lt;/p&gt;
 
-&lt;p&gt;For that we use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;remove-node /&amp;gt;&lt;/code&gt; instruction in Metadata.xml.&lt;/p&gt;
+&lt;p&gt;For that we use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;remove-node /&amp;gt;&lt;/code&gt; instruction in Metadata.xml.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;remove-node&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&amp;amp;lt;java.lang.Integer&amp;amp;gt;']]&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;remove-node&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -938,7 +933,7 @@ Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materi
 &lt;p&gt;This library we are binding now has only one dependency:
 &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23&quot;&gt;https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;It is a &lt;code class=&quot;highlighter-rouge&quot;&gt;com.android.support:support-v4:23.1.1&lt;/code&gt; which translates to Xamarin Nuget package called Xamarin.Android.Support.v4 of version 23.1.1.&lt;/p&gt;
+&lt;p&gt;It is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;com.android.support:support-v4:23.1.1&lt;/code&gt; which translates to Xamarin Nuget package called Xamarin.Android.Support.v4 of version 23.1.1.&lt;/p&gt;
 
 &lt;p&gt;So we will just add this Nuget package to our bindings project and that’s it.
 Clean and Build the project and you should see 0 errors.
@@ -956,8 +951,8 @@ Yaay!&lt;/p&gt;
 
 &lt;p&gt;These steps are described in the &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker/blob/master/README.md&quot;&gt;Readme.md file of the original library&lt;/a&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//implement OnDateSetListener
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HomeView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseActionBarView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HomeViewModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;,&lt;/span&gt;  
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//implement OnDateSetListener&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HomeView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseActionBarView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HomeViewModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;,&lt;/span&gt;  
 &lt;span class=&quot;n&quot;&gt;Com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wdullaer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Materialdatetimepicker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DatePickerDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IOnDateSetListener&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;        
@@ -1043,7 +1038,7 @@ or
 &lt;!--more--&gt;
 &lt;img src=&quot;/assets/gmaps-got-100k-reviews.png&quot; alt=&quot;gMaps is top free navigation app for Windows Phone&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#103;&amp;#109;&amp;#097;&amp;#112;&amp;#115;&amp;#046;&amp;#102;&amp;#101;&amp;#101;&amp;#100;&amp;#098;&amp;#097;&amp;#099;&amp;#107;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;gmaps feedback email&lt;/a&gt;
+&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;mailto:gmaps.feedback@gmail.com&quot;&gt;gmaps feedback email&lt;/a&gt;
  address or &lt;a href=&quot;https://gmaps.uservoice.com/&quot;&gt;gMaps uservoice&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -1111,9 +1106,9 @@ I have no idea yet how to make the route colorful with orange where the signal i
 &lt;p&gt;Looks like the rule for the AT&amp;amp;T service is simple. Inside park areas (forests, national and state parks - green on the terrain map) service is absent. Otherwise AT&amp;amp;T gives some coverage.&lt;/p&gt;
 
 &lt;p&gt;I was surprised to find out that the coverage is not actually related to &lt;a href=&quot;https://en.wikipedia.org/wiki/United_States_National_Radio_Quiet_Zone&quot;&gt;the US NRQZ area&lt;/a&gt; or distance to &lt;a href=&quot;https://en.wikipedia.org/wiki/Green_Bank_Telescope&quot;&gt;the Green Bank Radio Observatory&lt;/a&gt;. 
-One can get some details about that in the NPR article &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned&quot;&gt;Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned&lt;/a&gt;
-### Next steps
-Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage results and then compare and see if it makes sense to have one or another.&lt;/p&gt;
+One can get some details about that in the NPR article &lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2013/10/08/218976699/enter-the-quiet-zone-where-cell-service-wi-fi-are-banned&quot;&gt;Enter The Quiet Zone: Where Cell Service, Wi-Fi Are Banned&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;next-steps&quot;&gt;Next steps&lt;/h3&gt;
+&lt;p&gt;Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage results and then compare and see if it makes sense to have one or another.&lt;/p&gt;
 
 &lt;h3 id=&quot;thoughts&quot;&gt;Thoughts&lt;/h3&gt;
 &lt;ul&gt;
@@ -1163,7 +1158,7 @@ However, there is a solution!&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;To address this problem, Google Maps team shared so called &lt;code class=&quot;highlighter-rouge&quot;&gt;android-maps-utils&lt;/code&gt; extensions to the Android maps SDK which allows you do following:&lt;/p&gt;
+&lt;p&gt;To address this problem, Google Maps team shared so called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;android-maps-utils&lt;/code&gt; extensions to the Android maps SDK which allows you do following:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Marker clustering — handles the display of a large number of points&lt;/li&gt;
@@ -1195,7 +1190,7 @@ However, there is a solution!&lt;/p&gt;
 
 &lt;p&gt;Following the guide, one can sometimes see warnings or erros on the bindings.
 For example, 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name 'IGeoJsonStyle' does not exist in the namespace 'Com.Google.Maps.Android.Geojson'. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)&lt;/code&gt;&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name 'IGeoJsonStyle' does not exist in the namespace 'Com.Google.Maps.Android.Geojson'. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;To fix this error all you need is to manually &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml#L15&quot;&gt;edit Metadata.xml file and introduce these changes&lt;/a&gt;&lt;/p&gt;
 
@@ -1204,7 +1199,7 @@ For example,
 &lt;p&gt;More than helpful were comments and examples from &lt;a href=&quot;https://github.com/brendanzagaeski&quot;&gt;brendanzagaeski&lt;/a&gt; with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.&lt;/p&gt;
 
 &lt;h3 id=&quot;jaraar-dependencies&quot;&gt;JAR/AAR dependencies&lt;/h3&gt;
-&lt;p&gt;Case with &lt;code class=&quot;highlighter-rouge&quot;&gt;android-maps-utils&lt;/code&gt; is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
+&lt;p&gt;Case with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;android-maps-utils&lt;/code&gt; is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
 Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
 With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.&lt;/p&gt;
 
@@ -1217,8 +1212,8 @@ With that change,C# bindings generator will generate correct code an generated C
 0) reference the bindings
 1) instantiate cluster manager&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//on MapReady
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//on MapReady&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetOnCameraChangeListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;_map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SetOnMarkerClickListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1230,13 +1225,13 @@ With that change,C# bindings generator will generate correct code an generated C
     &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;OnMarkerClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Marker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//your custom code
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//your custom code&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map_CameraChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GoogleMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CameraChangeEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;_clusterManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;OnCameraChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//your custom code
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//your custom code&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 		&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;2) implement custom IClusterItem object&lt;/p&gt;
@@ -1328,7 +1323,7 @@ Turns out, after so many years, gMaps is still the best navigation app out there
 
 &lt;p&gt;We put a lot of energy into gMaps and are striving for the quality and features.&lt;/p&gt;
 
-&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#103;&amp;#109;&amp;#097;&amp;#112;&amp;#115;&amp;#046;&amp;#102;&amp;#101;&amp;#101;&amp;#100;&amp;#098;&amp;#097;&amp;#099;&amp;#107;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;gmaps feedback email&lt;/a&gt;
+&lt;p&gt;If you have any ideas how to make the app better, or any other feedback, feel free to contact us using &lt;a href=&quot;mailto:gmaps.feedback@gmail.com&quot;&gt;gmaps feedback email&lt;/a&gt;
  address or &lt;a href=&quot;https://gmaps.uservoice.com/&quot;&gt;gMaps uservoice&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -1375,21 +1370,21 @@ or
 
 &lt;p&gt;1) clone mono repository&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir monoci
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;monoci
 
-git clone --recursive git@github.com:mono/mono.git
+git clone &lt;span class=&quot;nt&quot;&gt;--recursive&lt;/span&gt; git@github.com:mono/mono.git
 
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;monoci/mono&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;2) install required tools&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew install autoconf automake libtool pkg-config&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;autoconf automake libtool pkg-config&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;3) the compilation itself. In my case folder with mono was &lt;code class=&quot;highlighter-rouge&quot;&gt;~/work/monoci/mono&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3) the compilation itself. In my case folder with mono was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/work/monoci/mono&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cc -m32'&lt;/span&gt; ./autogen.sh --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/work/monoci/mono --disable-nls --build&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;i386-apple-darwin11.2.0
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cc -m32'&lt;/span&gt; ./autogen.sh &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/work/monoci/mono &lt;span class=&quot;nt&quot;&gt;--disable-nls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;i386-apple-darwin11.2.0
 make
-make install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;These lines of code took around hour to execute on my wife’s old macbook.
 Take a nap or go to gym.&lt;/p&gt;
@@ -1402,9 +1397,9 @@ Take a nap or go to gym.&lt;/p&gt;
 
 &lt;p&gt;and then just quit and reopen terminal.&lt;/p&gt;
 
-&lt;p&gt;5) try it out by running &lt;code class=&quot;highlighter-rouge&quot;&gt;mono --version&lt;/code&gt; in the terminal&lt;/p&gt;
+&lt;p&gt;5) try it out by running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mono --version&lt;/code&gt; in the terminal&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:tests theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mono --version
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:tests theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mono &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
 Mono JIT compiler version 4.3.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master/c278ead Thu Nov  5 11:03:13 PST 2015&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 2002-2014 Novell, Inc, Xamarin Inc and Contributors. www.mono-project.com
 	TLS:           normal
@@ -1417,13 +1412,13 @@ Copyright &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;C&lt;span class=&quot;o&
 	GC:            sgen&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;6) last thing is to copy PCL reference libraries.
-&lt;a href=&quot;https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0&quot;&gt;Get it here 9.8mb&lt;/a&gt; and unzip to folder &lt;code class=&quot;highlighter-rouge&quot;&gt;~/work/monoci/mono/lib/mono/xbuild-frameworks&lt;/code&gt;&lt;/p&gt;
+&lt;a href=&quot;https://www.dropbox.com/s/6eg6diva5j33vus/mono-pcl-bits.tgz?dl=0&quot;&gt;Get it here 9.8mb&lt;/a&gt; and unzip to folder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/work/monoci/mono/lib/mono/xbuild-frameworks&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After doing that you should see two subfolders there:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:xbuild-frameworks theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la ~/work/monoci/mono/lib/mono/xbuild-frameworks
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Marias-MacBook-Pro:xbuild-frameworks theuser&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-la&lt;/span&gt; ~/work/monoci/mono/lib/mono/xbuild-frameworks
 total 0
-drwxr-xr-x   4 theuser  staff  136 Nov  5 11:53 .
+drwxr-xr-x   4 theuser  staff  136 Nov  5 11:53 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 drwxr-xr-x  12 theuser  staff  408 Nov  5 11:24 ..
 drwxr-xr-x   9 theuser  staff  306 Nov  5 11:24 .NETFramework
 drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1432,7 +1427,7 @@ drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable&lt;/code&gt;&lt;/pr
 
 &lt;p&gt;1) clone your fork of corefx&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone --recursive https://github.com/alexsorokoletov/corefx.git
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone &lt;span class=&quot;nt&quot;&gt;--recursive&lt;/span&gt; https://github.com/alexsorokoletov/corefx.git
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;corefx&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;2) run the build script (yay!)&lt;/p&gt;
@@ -1442,7 +1437,7 @@ drwxr-xr-x   6 theuser  staff  204 Aug 13 01:35 .NETPortable&lt;/code&gt;&lt;/pr
 &lt;p&gt;The parameter is telling build script to skip tests for now, let’s first make sure the code compiles. Also, this part will take around 30 minutes to compile.&lt;/p&gt;
 
 &lt;p&gt;The build process first gets some Nuget packages, then spins number of parallel compiler processes.
-On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal &lt;code class=&quot;highlighter-rouge&quot;&gt;ulimit -n 2048&lt;/code&gt; to make sure system can spin more procesess - my limit was 256.&lt;/p&gt;
+On my machine it failed at some point to spin new processes. To overcome that, I had to run this command in the terminal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ulimit -n 2048&lt;/code&gt; to make sure system can spin more procesess - my limit was 256.&lt;/p&gt;
 
 &lt;p&gt;So if you have the same problem, just do the magic and restart the build. Probably, the build.sh should handle that process limit better&lt;/p&gt;
 
@@ -1485,12 +1480,12 @@ Edit ~/.bash_profile and add a line like that&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;mbuild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'mono ~/work/corefx/packages/Microsoft.Build.Mono.Debug.14.1.0.0-prerelease/lib/MSBuild.exe'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;.NET Core picks up the msbuild.exe from the Nuget package, so the exact package version could be different. 
-If it is, look it up in the &lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; file around line 190&lt;/p&gt;
+If it is, look it up in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; file around line 190&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;__msbuildpackageid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Microsoft.Build.Mono.Debug&quot;&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;__msbuildpackageversion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;14.1.0.0-prerelease&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Restart the terminal (or do &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bash_profile&lt;/code&gt;) and let’s go into the folder of the exact package you’re touching.&lt;/p&gt;
+&lt;p&gt;Restart the terminal (or do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source ~/.bash_profile&lt;/code&gt;) and let’s go into the folder of the exact package you’re touching.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;src/System.IO.Packaging/tests/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1512,8 +1507,8 @@ If it is, look it up in the &lt;code class=&quot;highlighter-rouge&quot;&gt;buil
   
   &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; TEST EXECUTION SUMMARY &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;
      System.IO.Packaging.Tests  Total: 122, Errors: 0, Failed: 0, Skipped: 0, Time: 2.080s
-  Touching &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing&quot;&lt;/span&gt;.
-Done Building Project &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rebuildandtest target&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.
+  Touching &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/bin/tests/OSX.AnyCPU.Debug/System.IO.Packaging.Tests/dnxcore50/tests.passed.without.OuterLoop.failing&quot;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Done Building Project &lt;span class=&quot;s2&quot;&gt;&quot;/Users/theuser/work/corefx/src/System.IO.Packaging/tests/System.IO.Packaging.Tests.csproj&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;rebuildandtest target&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 
 Build succeeded.
     0 Warning&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -1548,7 +1543,7 @@ After you do the changes, you might want to create a new commit, but there is a 
 
 &lt;p&gt;Easy in the terminal:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git commit --amend
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git commit &lt;span class=&quot;nt&quot;&gt;--amend&lt;/span&gt;
 git push origin +fix2699&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Thanks for this tip, Stephen!&lt;/p&gt;

@@ -61,25 +61,22 @@ Looking at <a href="https://github.com/wdullaer/MaterialDateTimePicker">github p
 
 <p>Next, following the Xamarin guide, we will see 3 errors:</p>
 
-<p><code class="highlighter-rouge">
-Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(34,34): 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(34,34): 
   Error CS0533: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)' 
   hides inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)'
   (CS0533) (MaterialDateTimePickerBinding)
-</code></p>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">
- Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(36,36): Error CS0534: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper' does not implement inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)' (CS0534) (MaterialDateTimePickerBinding)
-</code>
- and</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(36,36): Error CS0534: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper' does not implement inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&lt;Java.Lang.Integer&gt;)' (CS0534) (MaterialDateTimePickerBinding)
+</code></pre></div></div>
+<p>and</p>
 
-<p><code class="highlighter-rouge">
- Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: `Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member `Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
-</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: `Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member `Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
+</code></pre></div></div>
 
 <p>1st and 2nd are pretty simple. As these methods most definitely will not be consumed from C# side, we can just remove these methods from bindings.</p>
 
-<p>For that we use <code class="highlighter-rouge">&lt;remove-node /&gt;</code> instruction in Metadata.xml.</p>
+<p>For that we use <code class="language-plaintext highlighter-rouge">&lt;remove-node /&gt;</code> instruction in Metadata.xml.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;remove-node</span> <span class="na">path=</span><span class="s">"/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&amp;lt;java.lang.Integer&amp;gt;']]"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;remove-node</span> <span class="na">path=</span><span class="s">"/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']"</span> <span class="nt">/&gt;</span></code></pre></figure>
@@ -111,7 +108,7 @@ Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materi
 <p>This library we are binding now has only one dependency:
 <a href="https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23">https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23</a></p>
 
-<p>It is a <code class="highlighter-rouge">com.android.support:support-v4:23.1.1</code> which translates to Xamarin Nuget package called Xamarin.Android.Support.v4 of version 23.1.1.</p>
+<p>It is a <code class="language-plaintext highlighter-rouge">com.android.support:support-v4:23.1.1</code> which translates to Xamarin Nuget package called Xamarin.Android.Support.v4 of version 23.1.1.</p>
 
 <p>So we will just add this Nuget package to our bindings project and that’s it.
 Clean and Build the project and you should see 0 errors.
@@ -129,8 +126,8 @@ Yaay!</p>
 
 <p>These steps are described in the <a href="https://github.com/wdullaer/MaterialDateTimePicker/blob/master/README.md">Readme.md file of the original library</a></p>
 
-<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">//implement OnDateSetListener
-</span><span class="k">public</span> <span class="k">class</span> <span class="nc">HomeView</span> <span class="p">:</span> <span class="n">BaseActionBarView</span><span class="p">&lt;</span><span class="n">HomeViewModel</span><span class="p">&gt;,</span>  
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">//implement OnDateSetListener</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">HomeView</span> <span class="p">:</span> <span class="n">BaseActionBarView</span><span class="p">&lt;</span><span class="n">HomeViewModel</span><span class="p">&gt;,</span>  
 <span class="n">Com</span><span class="p">.</span><span class="n">Wdullaer</span><span class="p">.</span><span class="n">Materialdatetimepicker</span><span class="p">.</span><span class="n">Date</span><span class="p">.</span><span class="n">DatePickerDialog</span><span class="p">.</span><span class="n">IOnDateSetListener</span></code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-csharp" data-lang="csharp">        
@@ -266,7 +263,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2020-11-12T03:14:42+00:00">2020</time>. All rights reserved.
+          &copy; <time datetime="2020-11-12T03:18:17+00:00">2020</time>. All rights reserved.
         </small>
       </footer>
     </div>

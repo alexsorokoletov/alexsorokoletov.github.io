@@ -50,7 +50,7 @@ However, there is a solution!</p>
 
 <!--more-->
 
-<p>To address this problem, Google Maps team shared so called <code class="highlighter-rouge">android-maps-utils</code> extensions to the Android maps SDK which allows you do following:</p>
+<p>To address this problem, Google Maps team shared so called <code class="language-plaintext highlighter-rouge">android-maps-utils</code> extensions to the Android maps SDK which allows you do following:</p>
 
 <ul>
   <li>Marker clustering — handles the display of a large number of points</li>
@@ -82,7 +82,7 @@ However, there is a solution!</p>
 
 <p>Following the guide, one can sometimes see warnings or erros on the bindings.
 For example, 
-<code class="highlighter-rouge">/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name 'IGeoJsonStyle' does not exist in the namespace 'Com.Google.Maps.Android.Geojson'. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)</code></p>
+<code class="language-plaintext highlighter-rouge">/GoogleMapsUtilityBinding/obj/Debug/generated/src/Com.Google.Maps.Android.Geojson.GeoJsonLineStringStyle.cs(118,118): Error CS0234: The type or namespace name 'IGeoJsonStyle' does not exist in the namespace 'Com.Google.Maps.Android.Geojson'. Are you missing an assembly reference? (CS0234) (GoogleMapsUtilityBinding)</code></p>
 
 <p>To fix this error all you need is to manually <a href="https://github.com/alexsorokoletov/Xamarin.Android.Maps.Utils/blob/master/Transforms/Metadata.xml#L15">edit Metadata.xml file and introduce these changes</a></p>
 
@@ -91,7 +91,7 @@ For example,
 <p>More than helpful were comments and examples from <a href="https://github.com/brendanzagaeski">brendanzagaeski</a> with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.</p>
 
 <h3 id="jaraar-dependencies">JAR/AAR dependencies</h3>
-<p>Case with <code class="highlighter-rouge">android-maps-utils</code> is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
+<p>Case with <code class="language-plaintext highlighter-rouge">android-maps-utils</code> is interesting because the jar/aar file depends on google-play-services.jar and android-support-v4.jar.
 Xamarin suggests to add these jar files as ReferenceJar items by setting Build Action to ReferenceJar. What is missing here for a successful compilation is a C# side of these reference jars. After adding the jars you need to add a Nuget packages or Xamarin components with C# bindings for these jars.
 With that change,C# bindings generator will generate correct code an generated C# code will be compilable, because you already have C# part of the referenced libraries.</p>
 
@@ -104,8 +104,8 @@ With that change,C# bindings generator will generate correct code an generated C
 0) reference the bindings
 1) instantiate cluster manager</p>
 
-<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">//on MapReady
-</span><span class="n">_clusterManager</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ClusterManager</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">_map</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="c1">//on MapReady</span>
+<span class="n">_clusterManager</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ClusterManager</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">_map</span><span class="p">);</span>
 <span class="n">_map</span><span class="p">.</span><span class="nf">SetOnCameraChangeListener</span><span class="p">(</span><span class="n">_clusterManager</span><span class="p">);</span>
 <span class="n">_map</span><span class="p">.</span><span class="nf">SetOnMarkerClickListener</span><span class="p">(</span><span class="n">_clusterManager</span><span class="p">);</span></code></pre></figure>
 
@@ -117,13 +117,13 @@ With that change,C# bindings generator will generate correct code an generated C
     <span class="kt">var</span> <span class="n">handled</span> <span class="p">=</span> <span class="n">_clusterManager</span><span class="p">.</span><span class="nf">OnMarkerClick</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Marker</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">handled</span><span class="p">)</span>
         <span class="k">return</span><span class="p">;</span>
-    <span class="c1">//your custom code
-</span><span class="p">}</span>
+    <span class="c1">//your custom code</span>
+<span class="p">}</span>
 <span class="k">private</span> <span class="k">void</span> <span class="nf">map_CameraChange</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">GoogleMap</span><span class="p">.</span><span class="n">CameraChangeEventArgs</span> <span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">_clusterManager</span><span class="p">.</span><span class="nf">OnCameraChange</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Position</span><span class="p">);</span>
-    <span class="c1">//your custom code
-</span><span class="p">}</span>
+    <span class="c1">//your custom code</span>
+<span class="p">}</span>
 		</code></pre></figure>
 
 <p>2) implement custom IClusterItem object</p>
@@ -253,7 +253,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2020-11-12T03:14:42+00:00">2020</time>. All rights reserved.
+          &copy; <time datetime="2020-11-12T03:18:17+00:00">2020</time>. All rights reserved.
         </small>
       </footer>
     </div>
