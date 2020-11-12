@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://sorokoletov.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="https://sorokoletov.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sorokoletov.com/" rel="alternate" type="text/html" /><updated>2019-02-01T00:39:35-05:00</updated><id>https://sorokoletov.com//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">C# Analyzers and Xamarin (Visual Studio for Mac)</title><link href="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="C# Analyzers and Xamarin (Visual Studio for Mac)" /><published>2019-01-31T00:00:00-05:00</published><updated>2019-01-31T00:00:00-05:00</updated><id>https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin</id><content type="html" xml:base="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/">&lt;p&gt;The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://0.0.0.0:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-12T03:14:42+00:00</updated><id>http://0.0.0.0:4000//</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Blink HTML - how to make blink HTML these days 😉</title><link href="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/" rel="alternate" type="text/html" title="Blink HTML - how to make blink HTML these days 😉" /><published>2020-11-11T00:00:00+00:00</published><updated>2020-11-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink</id><content type="html" xml:base="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/">&lt;p&gt;The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
+How that happened and how to make blink HTML nowadays (or blink HTML5)&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Alright, most of the people I know thing that blink HTML is annoying. It is a part of history now, modern HTML pages use nice CSS3 and JavaScript-based effects to make your HTML page blink and do all other kind of stuff (WebGL, WebXR, 3d, anything).&lt;/p&gt;
+
+&lt;p&gt;Lou Montulli is often credited as a creator of blink HTML tag, and he has an interesting story &lt;a href=&quot;http://www.montulli.org/theoriginofthe%3Cblink%3Etag&quot;&gt;about the origins on blink HTML tag&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My favorite quote there is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;and suddenly everything was blinking.    “Look here”, “buy this”, “check this out”, all blinking.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Reminds me &lt;a href=&quot;https://www.youtube.com/watch?v=YlGklt4BSQ8&quot;&gt;Futurama’s laugh at VR ads&lt;/a&gt;
+&lt;span class=&quot;blink&quot;&gt;😉&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-make-blink-html-work-nowadays&quot;&gt;How to make blink HTML work nowadays?&lt;/h3&gt;
+
+&lt;p&gt;Enough history!
+Good thing about any of the ways below is they support any content, not just text&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink&quot;&gt;MDN recommends a blink HTML polyfill using CSS&lt;/a&gt; which uses keyframes and will make blink HTML tag blink again.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink {
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+@keyframes condemned_blink_effect {
+  0% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Wikipedia’s way to make blink HTML work again:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink, .blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  67% { opacity: 0 }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;JavaScript way to make a blinking HTML element (not only text)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const blink = document.getElementById('blink');
+setInterval(() =&amp;gt; {
+    blink.style.opacity = (blink.style.opacity === 0 ? 1 : 0);
+}, 1000);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;obsolete-blink-html-ways&quot;&gt;Obsolete blink HTML ways&lt;/h3&gt;
+
+&lt;p&gt;What blink HTML ways do not work:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&amp;lt;blink&amp;gt; HTML tag itself&lt;/li&gt;
+  &lt;li&gt;CSS style &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration: blink;&lt;/code&gt; - does not make your HTML blink&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;P.S.: Anybody remembers marquee? :D&lt;/p&gt;
+
+&lt;style&gt;
+
+.blink {
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+
+@keyframes condemned_blink_effect {
+  0% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+&lt;/style&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/&amp;amp;text=Blink+HTML+-+how+to+make+blink+HTML+these+days+%F0%9F%98%89%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
+How that happened and how to make blink HTML nowadays (or blink HTML5)</summary></entry><entry><title type="html">C# Analyzers and Xamarin (Visual Studio for Mac)</title><link href="http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="C# Analyzers and Xamarin (Visual Studio for Mac)" /><published>2019-01-31T00:00:00+00:00</published><updated>2019-01-31T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin</id><content type="html" xml:base="http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/">&lt;p&gt;The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it.
 One of the great features that came with Roslyn compiler was support for analyzers.&lt;/p&gt;
 
 &lt;p&gt;Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation.&lt;/p&gt;
@@ -98,7 +189,7 @@ To be honest, I’m not sure why the Mac version does not support them yet.&lt;/
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;amp;text=C%23+Analyzers+and+Xamarin+%28Visual+Studio+for+Mac%29%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;amp;text=C%23+Analyzers+and+Xamarin+%28Visual+Studio+for+Mac%29%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -109,7 +200,7 @@ Analyzers are like a plugins for C# compilers. Easy to write and thus really fle
 
 It’s a powerful addition and there are hundreds of GREAT analyzers on GitHub already.
 
-How do we use that greatness with Xamarin apps?</summary></entry><entry><title type="html">Why Reply All is an essential skill</title><link href="https://sorokoletov.com/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00-04:00</published><updated>2018-09-20T00:00:00-04:00</updated><id>https://sorokoletov.com/2018/09/20/reply-all</id><content type="html" xml:base="https://sorokoletov.com/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
+How do we use that greatness with Xamarin apps?</summary></entry><entry><title type="html">Why Reply All is an essential skill</title><link href="http://0.0.0.0:4000/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/reply-all</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
 
 &lt;!--more--&gt;
 &lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
@@ -158,11 +249,11 @@ Good question. All mail apps, even on your phone, have it. Google and find it. H
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00-04:00</published><updated>2018-09-20T00:00:00-04:00</updated><id>https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
 Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 &lt;!--more--&gt;&lt;/p&gt;
 
@@ -231,12 +322,12 @@ Extending VS4Mac was moderately easy, and I do that action anyway before commit 
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My+favorite+extensions+for+Visual+Studio+for+Mac%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My+favorite+extensions+for+Visual+Studio+for+Mac%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
-Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00-05:00</published><updated>2017-02-05T00:00:00-05:00</updated><id>https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
+Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00+00:00</published><updated>2017-02-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
 This was 100% manual process until &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).&lt;/p&gt;
@@ -357,7 +448,7 @@ I appreciate any positive or negative feedback about &lt;code class=&quot;highli
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy+way+to+create+Xamarin.iOS+binding+from+CocoaPods%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy+way+to+create+Xamarin.iOS+binding+from+CocoaPods%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -368,7 +459,7 @@ However, it doesn’t work in many cases (it can’t build something or reflect 
 
 Also, sharpie doesn’t support dependencies within pods. This is where the new objc-automatic started.
 
-But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.</summary></entry><entry><title type="html">Android Maps Utils for Xamarin updated with new features and NuGet</title><link href="https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/" rel="alternate" type="text/html" title="Android Maps Utils for Xamarin updated with new features and NuGet" /><published>2016-12-12T00:00:00-05:00</published><updated>2016-12-12T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget</id><content type="html" xml:base="https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
+But first, let me show you a demo how easy it is to create Xamarin.iOS binding for cocoapod.</summary></entry><entry><title type="html">Android Maps Utils for Xamarin updated with new features and NuGet</title><link href="http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/" rel="alternate" type="text/html" title="Android Maps Utils for Xamarin updated with new features and NuGet" /><published>2016-12-12T00:00:00+00:00</published><updated>2016-12-12T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget</id><content type="html" xml:base="http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Install-Package Xamarin.Android.Maps.Utils -Pre&lt;/code&gt;&lt;/p&gt;
 
@@ -412,13 +503,13 @@ Besides NuGet, project has now latest (0.4.4) java code inside bringing more new
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android+Maps+Utils+for+Xamarin+updated+with+new+features+and+NuGet%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android+Maps+Utils+for+Xamarin+updated+with+new+features+and+NuGet%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">I’ve updated Xamarin Android Maps Utils recently and now one can get this as a NuGet package.
 
-Install-Package Xamarin.Android.Maps.Utils -Pre</summary></entry><entry><title type="html">Easiest way to migrate from Xamarin.Insights to HockeyApp</title><link href="https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/" rel="alternate" type="text/html" title="Easiest way to migrate from Xamarin.Insights to HockeyApp" /><published>2016-12-11T00:00:00-05:00</published><updated>2016-12-11T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id><content type="html" xml:base="https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
+Install-Package Xamarin.Android.Maps.Utils -Pre</summary></entry><entry><title type="html">Easiest way to migrate from Xamarin.Insights to HockeyApp</title><link href="http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/" rel="alternate" type="text/html" title="Easiest way to migrate from Xamarin.Insights to HockeyApp" /><published>2016-12-11T00:00:00+00:00</published><updated>2016-12-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id><content type="html" xml:base="http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;… Do also note that Xamarin Insights is now considered to be end of life: since the acquisition by Microsoft, Insights has been deprecated in favour of HockeyApp.&lt;/p&gt;
@@ -487,7 +578,7 @@ It is very powerful way to see and analyze events coming from your app. &lt;a hr
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest+way+to+migrate+from+Xamarin.Insights+to+HockeyApp%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest+way+to+migrate+from+Xamarin.Insights+to+HockeyApp%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -500,7 +591,7 @@ or
 Many of us have apps integrated with Xamarin.Insights. Now it’s time to ditch Xamarin.Insights and put HockeyApp SDK instead.
 HockeyApp has different integration points and API and some of the features from Insights are missing.
 
-What would be the easiest way to migrate from Xamarin Insights to HockeyApp?</summary></entry><entry><title type="html">Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?</title><link href="https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/" rel="alternate" type="text/html" title="Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?" /><published>2016-11-29T00:00:00-05:00</published><updated>2016-11-29T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments</id><content type="html" xml:base="https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
+What would be the easiest way to migrate from Xamarin Insights to HockeyApp?</summary></entry><entry><title type="html">Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?</title><link href="http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/" rel="alternate" type="text/html" title="Named parameters in Func&amp;lt;T&amp;gt;/Action&amp;lt;T&amp;gt; type in C#?" /><published>2016-11-29T00:00:00+00:00</published><updated>2016-11-29T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
 
 &lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
 &lt;img src=&quot;/assets/naming_func_of_t_declaration.png&quot; alt=&quot;Definition of your method using Func/Action classes&quot; /&gt;
@@ -547,7 +638,7 @@ In the example below you can omit &lt;code class=&quot;highlighter-rouge&quot;&g
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named+parameters+in+Func%26lt%3BT%26gt%3B%2FAction%26lt%3BT%26gt%3B+type+in+C%23%3F%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named+parameters+in+Func%26lt%3BT%26gt%3B%2FAction%26lt%3BT%26gt%3B+type+in+C%23%3F%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -568,7 +659,7 @@ There is a cheap and easy solution for that.
 
 
 
-After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.</summary></entry><entry><title type="html">.editorconfig support in Visual Studio 2017</title><link href="https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/" rel="alternate" type="text/html" title=".editorconfig support in Visual Studio 2017" /><published>2016-11-28T00:00:00-05:00</published><updated>2016-11-28T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio</id><content type="html" xml:base="https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
+After these changes when you are going to use the method, you will see intellisense suggesting correct names and not generic ones.</summary></entry><entry><title type="html">.editorconfig support in Visual Studio 2017</title><link href="http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/" rel="alternate" type="text/html" title=".editorconfig support in Visual Studio 2017" /><published>2016-11-28T00:00:00+00:00</published><updated>2016-11-28T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
 
 &lt;p&gt;It’s .editorconfig support.
 What’s so great about this?
@@ -620,14 +711,14 @@ What’s so great about this?
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig+support+in+Visual+Studio+2017%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig+support+in+Visual+Studio+2017%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
   follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Just recently, Visual Studio team published a post on great features coming to the VS 2017 that will increase your productivity. Among those, one small but powerful feature coming to the Visual Studio.
 
 It’s .editorconfig support.
-What’s so great about this?</summary></entry><entry><title type="html">C# Standard Style - single source of formatting truth</title><link href="https://sorokoletov.com/2016/11/13/csharp-standard-style/" rel="alternate" type="text/html" title="C# Standard Style - single source of formatting truth" /><published>2016-11-13T00:00:00-05:00</published><updated>2016-11-13T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/11/13/csharp-standard-style</id><content type="html" xml:base="https://sorokoletov.com/2016/11/13/csharp-standard-style/">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
+What’s so great about this?</summary></entry><entry><title type="html">C# Standard Style - single source of formatting truth</title><link href="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/" rel="alternate" type="text/html" title="C# Standard Style - single source of formatting truth" /><published>2016-11-13T00:00:00+00:00</published><updated>2016-11-13T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2016/11/13/csharp-standard-style</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Absolutely amazing.&lt;/p&gt;
 
@@ -700,7 +791,7 @@ And what about VS Code?&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -712,166 +803,4 @@ What it does is just formats code with one pre-configured, non-changeable, non-c
 
 After that, all discussions about curly braces, tabs and spaces go to void. Done.
 
-I’d like to have this for C#.</summary></entry><entry><title type="html">MaterialDateTimePicker bindings for Xamarin.Android apps</title><link href="https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/" rel="alternate" type="text/html" title="MaterialDateTimePicker bindings for Xamarin.Android apps" /><published>2016-02-29T00:00:00-05:00</published><updated>2016-02-29T00:00:00-05:00</updated><id>https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id><content type="html" xml:base="https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/">&lt;h3 id=&quot;bindings-for-materialdatetimepicker-for-xamarinandroid-apps&quot;&gt;Bindings for MaterialDateTimePicker for Xamarin.Android apps&lt;/h3&gt;
-
-&lt;p&gt;One of the good libraries for Android apps made in Material design is the &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker&quot;&gt;“Material DateTime Picker”&lt;/a&gt; from &lt;a href=&quot;https://github.com/wdullaer&quot;&gt;@wdullaer&lt;/a&gt;.
-Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.
-&lt;!--more--&gt;&lt;/p&gt;
-
-&lt;p&gt;TLDR:  &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker&quot;&gt;https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;creating-java-library-bindings-for-xamarinandroid&quot;&gt;Creating java library bindings for Xamarin.Android&lt;/h3&gt;
-
-&lt;p&gt;There is an official guide from Xamarin: 
-&lt;a href=&quot;https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/binding-a-java-library/&quot;&gt;Binding a Java Library - Consuming Java libraries from C#&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;First, we need to get the JAR/AAR file.
-Looking at &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker&quot;&gt;github page&lt;/a&gt;, we can see Maven banner. It means that we can grab a binary from Maven so let’s go there and do it:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://repo1.maven.org/maven2/com/wdullaer/materialdatetimepicker/2.2.0/&quot;&gt;https://repo1.maven.org/maven2/com/wdullaer/materialdatetimepicker/2.2.0/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, following the Xamarin guide, we will see 3 errors:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
-Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(34,34): 
-  Error CS0533: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)' 
-  hides inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)'
-  (CS0533) (MaterialDateTimePickerBinding)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
- Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Date.MonthView.cs(36,36): Error CS0534: `Com.Wdullaer.Materialdatetimepicker.Date.MonthView.MonthViewTouchHelper' does not implement inherited abstract member `Android.Support.V4.Widget.ExploreByTouchHelper.GetVisibleVirtualViews(System.Collections.Generic.IList&amp;lt;Java.Lang.Integer&amp;gt;)' (CS0534) (MaterialDateTimePickerBinding)
-&lt;/code&gt;
- and&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
- Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: `Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member `Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;1st and 2nd are pretty simple. As these methods most definitely will not be consumed from C# side, we can just remove these methods from bindings.&lt;/p&gt;
-
-&lt;p&gt;For that we use &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;remove-node /&amp;gt;&lt;/code&gt; instruction in Metadata.xml.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;remove-node&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']/method[@name='getVisibleVirtualViews' and count(parameter)=1 and parameter[1][@type='java.util.List&amp;amp;lt;java.lang.Integer&amp;amp;gt;']]&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;remove-node&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/api/package[@name='com.wdullaer.materialdatetimepicker.date']/class[@name='MonthView.MonthViewTouchHelper']&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To solve 3rd problem we need to add a partial class to Additions folder:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;    
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Com.Wdullaer.Materialdatetimepicker.Time&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;cm&quot;&gt;/*
-     * add partial class due to Java generics and IComparable interface in Xamarin.Android
-     * Vendor/MaterialDateTimePickerBinding/obj/Debug/generated/src/Com.Wdullaer.Materialdatetimepicker.Time.Timepoint.cs(23,23): Error CS0535: 'Com.Wdullaer.Materialdatetimepicker.Time.Timepoint' does not implement interface member 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (CS0535) (MaterialDateTimePickerBinding)
-     * https://forums.xamarin.com/discussion/1950/binding-jar-file-with-class-that-implements-java-lang-icomparable
-     */&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Timepoint&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IComparable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;CompareTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CompareTo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Timepoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Solution to this issue I found on &lt;a href=&quot;https://forums.xamarin.com/discussion/38247/binding-issue-with-android-support-v4-widget-explorebytouchhelper-getvisiblevirtualviews&quot;&gt;Xamarin Forums&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As usual, very helpful were comments and examples from &lt;a href=&quot;https://github.com/brendanzagaeski&quot;&gt;brendanzagaeski&lt;/a&gt; with different approaches to different java-to-csharp binding problems. Links to these examples are in the end of the page.&lt;/p&gt;
-
-&lt;h3 id=&quot;jaraar-dependencies&quot;&gt;JAR/AAR dependencies&lt;/h3&gt;
-&lt;p&gt;This library we are binding now has only one dependency:
-&lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23&quot;&gt;https://github.com/wdullaer/MaterialDateTimePicker/blob/master/library/build.gradle#L23&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It is a &lt;code class=&quot;highlighter-rouge&quot;&gt;com.android.support:support-v4:23.1.1&lt;/code&gt; which translates to Xamarin Nuget package called Xamarin.Android.Support.v4 of version 23.1.1.&lt;/p&gt;
-
-&lt;p&gt;So we will just add this Nuget package to our bindings project and that’s it.
-Clean and Build the project and you should see 0 errors.
-Yaay!&lt;/p&gt;
-
-&lt;h3 id=&quot;how-to-use-this-library-examples&quot;&gt;How to use this library (examples)&lt;/h3&gt;
-
-&lt;p&gt;On C# side what you need to do is following:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;reference the bindings project in your app project&lt;/li&gt;
-  &lt;li&gt;in your activity implement interface OnTimeSetListener/OnDateSetListener&lt;/li&gt;
-  &lt;li&gt;create a datepicker and show it&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;These steps are described in the &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker/blob/master/README.md&quot;&gt;Readme.md file of the original library&lt;/a&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//implement OnDateSetListener
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HomeView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseActionBarView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HomeViewModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;,&lt;/span&gt;  
-&lt;span class=&quot;n&quot;&gt;Com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wdullaer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Materialdatetimepicker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DatePickerDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IOnDateSetListener&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;        
-&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OnChooseDateButtonClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wdullaer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Materialdatetimepicker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DatePickerDialog&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dpd&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; 
-        &lt;span class=&quot;n&quot;&gt;Com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wdullaer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Materialdatetimepicker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DatePickerDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;NewInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CalendarField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CalendarField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CalendarField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DayOfMonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;dpd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FragmentManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Datepickerdialog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OnDateSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Wdullaer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Materialdatetimepicker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DatePickerDialog&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;p0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Dismiss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-		&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Make sure you are using the same version of Xamarin.Android.Support.v4 package in your application project.&lt;/p&gt;
-
-&lt;h3 id=&quot;demo&quot;&gt;Demo&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/material-date-time-picker-xamarin-android.png&quot; alt=&quot;Material Date Time Picker in Xamarin.Android app&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;source-code&quot;&gt;Source code&lt;/h3&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://github.com/alexsorokoletov/Xamarin.Wdullaer.MaterialDateTimePicker&quot;&gt;Xamarin.Wdullaer.MaterialDateTimePicker&lt;/a&gt; github repository. 
-Clone it and use it or just add as a submodule.&lt;/p&gt;
-
-&lt;h3 id=&quot;improving-further&quot;&gt;Improving further&lt;/h3&gt;
-
-&lt;p&gt;One thing definitely open for improvement is parameter names. Right now in many places it’s just p0, p1, p2, p3.&lt;/p&gt;
-
-&lt;p&gt;Naming them hour, minute, second, isAmPm would make code cleaner and easier to understand.&lt;/p&gt;
-
-&lt;p&gt;So if you feel like fixing something feel free to submit pull request. (Or if you know how to fix these names automaticall - let me know, please).&lt;/p&gt;
-
-&lt;h3 id=&quot;helpful-links&quot;&gt;Helpful links&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;My other Xamarin.Android bindings:&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://dreamteam-mobile.com/blog/2015/04/tutorial-android-float-label-binding-for-xamarin-android/&quot;&gt;Tutorial – Android float label binding for Xamarin.Android&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&quot;&gt;Tutorial – Android-maps-utils bindings for Xamarin.Android apps&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;brendanzagaeski Metadata.xml examples:&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&quot;&gt;https://gist.github.com/brendanzagaeski/c32d65c21e152799af69&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&quot;&gt;https://gist.github.com/brendanzagaeski/6d1052a8b76f9067548e&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&quot;&gt;https://gist.github.com/brendanzagaeski/69f490e31ca6a71136ff&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&quot;&gt;https://gist.github.com/brendanzagaeski/3868e30b85a1feb1181b&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9834034&quot;&gt;https://gist.github.com/brendanzagaeski/9834034&lt;/a&gt;
-&lt;a href=&quot;https://gist.github.com/brendanzagaeski/9607158&quot;&gt;https://gist.github.com/brendanzagaeski/9607158&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker+bindings+for+Xamarin.Android+apps%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Bindings for MaterialDateTimePicker for Xamarin.Android apps
-
-One of the good libraries for Android apps made in Material design is the “Material DateTime Picker” from @wdullaer.
-Here is a short article how to create Xamarin.Android bindings library to consume that awesome picker in your Xamarin.Android applications.</summary></entry></feed>
+I’d like to have this for C#.</summary></entry></feed>

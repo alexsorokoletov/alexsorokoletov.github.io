@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Alex Sorokoletov Notes</title>
- <link href="https://sorokoletov.com/atom.xml" rel="self"/>
- <link href="https://sorokoletov.com/"/>
- <updated>2019-02-01T00:39:35-05:00</updated>
- <id>https://sorokoletov.com</id>
+ <link href="http://0.0.0.0:4000/atom.xml" rel="self"/>
+ <link href="http://0.0.0.0:4000/"/>
+ <updated>2020-11-12T03:14:42+00:00</updated>
+ <id>http://0.0.0.0:4000</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
@@ -13,11 +13,111 @@
 
  
  <entry>
+   <title>Blink HTML - how to make blink HTML these days 😉
+</title>
+   <link href="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/"/>
+   <updated>2020-11-11T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink</id>
+   <content type="html">&lt;p&gt;The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
+How that happened and how to make blink HTML nowadays (or blink HTML5)&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Alright, most of the people I know thing that blink HTML is annoying. It is a part of history now, modern HTML pages use nice CSS3 and JavaScript-based effects to make your HTML page blink and do all other kind of stuff (WebGL, WebXR, 3d, anything).&lt;/p&gt;
+
+&lt;p&gt;Lou Montulli is often credited as a creator of blink HTML tag, and he has an interesting story &lt;a href=&quot;http://www.montulli.org/theoriginofthe%3Cblink%3Etag&quot;&gt;about the origins on blink HTML tag&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My favorite quote there is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;and suddenly everything was blinking.    “Look here”, “buy this”, “check this out”, all blinking.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Reminds me &lt;a href=&quot;https://www.youtube.com/watch?v=YlGklt4BSQ8&quot;&gt;Futurama’s laugh at VR ads&lt;/a&gt;
+&lt;span class=&quot;blink&quot;&gt;😉&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-make-blink-html-work-nowadays&quot;&gt;How to make blink HTML work nowadays?&lt;/h3&gt;
+
+&lt;p&gt;Enough history!
+Good thing about any of the ways below is they support any content, not just text&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink&quot;&gt;MDN recommends a blink HTML polyfill using CSS&lt;/a&gt; which uses keyframes and will make blink HTML tag blink again.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink {
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+@keyframes condemned_blink_effect {
+  0% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Wikipedia’s way to make blink HTML work again:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink, .blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  67% { opacity: 0 }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;JavaScript way to make a blinking HTML element (not only text)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const blink = document.getElementById('blink');
+setInterval(() =&amp;gt; {
+    blink.style.opacity = (blink.style.opacity === 0 ? 1 : 0);
+}, 1000);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;obsolete-blink-html-ways&quot;&gt;Obsolete blink HTML ways&lt;/h3&gt;
+
+&lt;p&gt;What blink HTML ways do not work:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&amp;lt;blink&amp;gt; HTML tag itself&lt;/li&gt;
+  &lt;li&gt;CSS style &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration: blink;&lt;/code&gt; - does not make your HTML blink&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;P.S.: Anybody remembers marquee? :D&lt;/p&gt;
+
+&lt;style&gt;
+
+.blink {
+  animation: 2s linear infinite condemned_blink_effect;
+}
+
+
+@keyframes condemned_blink_effect {
+  0% { visibility: hidden; }
+  50% { visibility: hidden; }
+  100% { visibility: visible; }
+}
+&lt;/style&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/&amp;amp;text=Blink+HTML+-+how+to+make+blink+HTML+these+days+%F0%9F%98%89%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>C# Analyzers and Xamarin (Visual Studio for Mac)
 </title>
-   <link href="https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/"/>
-   <updated>2019-01-31T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin</id>
+   <link href="http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/"/>
+   <updated>2019-01-31T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin</id>
    <content type="html">&lt;p&gt;The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it.
 One of the great features that came with Roslyn compiler was support for analyzers.&lt;/p&gt;
 
@@ -118,7 +218,7 @@ To be honest, I’m not sure why the Mac version does not support them yet.&lt;/
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;amp;text=C%23+Analyzers+and+Xamarin+%28Visual+Studio+for+Mac%29%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2019/01/31/roslyn-analyzers-visual-studio-mac-xamarin/&amp;amp;text=C%23+Analyzers+and+Xamarin+%28Visual+Studio+for+Mac%29%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -129,9 +229,9 @@ or
  <entry>
    <title>Why Reply All is an essential skill
 </title>
-   <link href="https://sorokoletov.com/2018/09/20/reply-all/"/>
-   <updated>2018-09-20T00:00:00-04:00</updated>
-   <id>https://sorokoletov.com/2018/09/20/reply-all</id>
+   <link href="http://0.0.0.0:4000/2018/09/20/reply-all/"/>
+   <updated>2018-09-20T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2018/09/20/reply-all</id>
    <content type="html">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -181,7 +281,7 @@ Good question. All mail apps, even on your phone, have it. Google and find it. H
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -192,9 +292,9 @@ or
  <entry>
    <title>My favorite extensions for Visual Studio for Mac
 </title>
-   <link href="https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/"/>
-   <updated>2018-09-20T00:00:00-04:00</updated>
-   <id>https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id>
+   <link href="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/"/>
+   <updated>2018-09-20T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id>
    <content type="html">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
 Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 &lt;!--more--&gt;&lt;/p&gt;
@@ -264,7 +364,7 @@ Extending VS4Mac was moderately easy, and I do that action anyway before commit 
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My+favorite+extensions+for+Visual+Studio+for+Mac%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/&amp;amp;text=My+favorite+extensions+for+Visual+Studio+for+Mac%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -275,9 +375,9 @@ or
  <entry>
    <title>Easy way to create Xamarin.iOS binding from CocoaPods
 </title>
-   <link href="https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/"/>
-   <updated>2017-02-05T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id>
+   <link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/"/>
+   <updated>2017-02-05T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id>
    <content type="html">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
 This was 100% manual process until &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
@@ -399,7 +499,7 @@ I appreciate any positive or negative feedback about &lt;code class=&quot;highli
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy+way+to+create+Xamarin.iOS+binding+from+CocoaPods%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/&amp;amp;text=Easy+way+to+create+Xamarin.iOS+binding+from+CocoaPods%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -410,9 +510,9 @@ or
  <entry>
    <title>Android Maps Utils for Xamarin updated with new features and NuGet
 </title>
-   <link href="https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/"/>
-   <updated>2016-12-12T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget</id>
+   <link href="http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/"/>
+   <updated>2016-12-12T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget</id>
    <content type="html">&lt;p&gt;I’ve updated Xamarin Android Maps Utils recently and now one can get this as a &lt;a href=&quot;https://www.nuget.org/packages/Xamarin.Android.Maps.Utils&quot;&gt;NuGet package&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Install-Package Xamarin.Android.Maps.Utils -Pre&lt;/code&gt;&lt;/p&gt;
@@ -457,7 +557,7 @@ Besides NuGet, project has now latest (0.4.4) java code inside bringing more new
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android+Maps+Utils+for+Xamarin+updated+with+new+features+and+NuGet%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/12/12/android-maps-utils-updated-published-nuget/&amp;amp;text=Android+Maps+Utils+for+Xamarin+updated+with+new+features+and+NuGet%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -468,9 +568,9 @@ or
  <entry>
    <title>Easiest way to migrate from Xamarin.Insights to HockeyApp
 </title>
-   <link href="https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/"/>
-   <updated>2016-12-11T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id>
+   <link href="http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/"/>
+   <updated>2016-12-11T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk</id>
    <content type="html">&lt;p&gt;Xamarin.Insights was and still is a great exception tracking system for Xamarin applications. However&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -540,7 +640,7 @@ It is very powerful way to see and analyze events coming from your app. &lt;a hr
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest+way+to+migrate+from+Xamarin.Insights+to+HockeyApp%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/12/11/migrating-from-xamarin-insights-to-hockeyapp-sdk/&amp;amp;text=Easiest+way+to+migrate+from+Xamarin.Insights+to+HockeyApp%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -551,9 +651,9 @@ or
  <entry>
    <title>Named parameters in Func&lt;T&gt;/Action&lt;T&gt; type in C#?
 </title>
-   <link href="https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/"/>
-   <updated>2016-11-29T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments</id>
+   <link href="http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/"/>
+   <updated>2016-11-29T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments</id>
    <content type="html">&lt;p&gt;If you ever wondered, why Visual Studio (and Visual Studio for Mac) suggest you to name your lambda arguments with names like arg1, arg2 … argN and so on…&lt;/p&gt;
 
 &lt;p&gt;Here is a common situation where somewhere in your library or helper class you have a method taking in &lt;code class=&quot;highlighter-rouge&quot;&gt;Func&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Action&amp;lt;T&amp;gt;&lt;/code&gt;.
@@ -601,7 +701,7 @@ In the example below you can omit &lt;code class=&quot;highlighter-rouge&quot;&g
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named+parameters+in+Func%26lt%3BT%26gt%3B%2FAction%26lt%3BT%26gt%3B+type+in+C%23%3F%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/29/naming-func-action-of-t-arguments/&amp;amp;text=Named+parameters+in+Func%26lt%3BT%26gt%3B%2FAction%26lt%3BT%26gt%3B+type+in+C%23%3F%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -612,9 +712,9 @@ or
  <entry>
    <title>.editorconfig support in Visual Studio 2017
 </title>
-   <link href="https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/"/>
-   <updated>2016-11-28T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio</id>
+   <link href="http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/"/>
+   <updated>2016-11-28T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio</id>
    <content type="html">&lt;p&gt;Just recently, Visual Studio team published a post on &lt;a href=&quot;https://blogs.msdn.microsoft.com/visualstudio/2016/11/28/productivity-in-visual-studio-2017-rc/&quot;&gt;great features coming to the VS 2017 that will increase your productivity&lt;/a&gt;. Among those, one small but powerful feature coming to the Visual Studio.&lt;/p&gt;
 
 &lt;p&gt;It’s .editorconfig support.
@@ -667,7 +767,7 @@ What’s so great about this?
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig+support+in+Visual+Studio+2017%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/28/editorconfig-in-visualstudio/&amp;amp;text=.editorconfig+support+in+Visual+Studio+2017%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -678,9 +778,9 @@ or
  <entry>
    <title>C# Standard Style - single source of formatting truth
 </title>
-   <link href="https://sorokoletov.com/2016/11/13/csharp-standard-style/"/>
-   <updated>2016-11-13T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/11/13/csharp-standard-style</id>
+   <link href="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/"/>
+   <updated>2016-11-13T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/11/13/csharp-standard-style</id>
    <content type="html">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Absolutely amazing.&lt;/p&gt;
@@ -754,7 +854,7 @@ And what about VS Code?&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -765,9 +865,9 @@ or
  <entry>
    <title>MaterialDateTimePicker bindings for Xamarin.Android apps
 </title>
-   <link href="https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/"/>
-   <updated>2016-02-29T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id>
+   <link href="http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/"/>
+   <updated>2016-02-29T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings</id>
    <content type="html">&lt;h3 id=&quot;bindings-for-materialdatetimepicker-for-xamarinandroid-apps&quot;&gt;Bindings for MaterialDateTimePicker for Xamarin.Android apps&lt;/h3&gt;
 
 &lt;p&gt;One of the good libraries for Android apps made in Material design is the &lt;a href=&quot;https://github.com/wdullaer/MaterialDateTimePicker&quot;&gt;“Material DateTime Picker”&lt;/a&gt; from &lt;a href=&quot;https://github.com/wdullaer&quot;&gt;@wdullaer&lt;/a&gt;.
@@ -923,7 +1023,7 @@ Clone it and use it or just add as a submodule.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker+bindings+for+Xamarin.Android+apps%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/02/29/material-date-time-picker-available-for-xamarin-android-apps-bindings/&amp;amp;text=MaterialDateTimePicker+bindings+for+Xamarin.Android+apps%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -934,9 +1034,9 @@ or
  <entry>
    <title>gMaps for Windows Phone got 100k reviews!
 </title>
-   <link href="https://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store/"/>
-   <updated>2016-02-22T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store</id>
+   <link href="http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store/"/>
+   <updated>2016-02-22T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store</id>
    <content type="html">&lt;p&gt;Monitoring app reviews with Reviews Reader app &lt;a href=&quot;http://twitter.com/winreviews&quot;&gt;@winreviews&lt;/a&gt;, I finally noticed gMaps got 100k of reviews!&lt;/p&gt;
 
 &lt;p&gt;Thank you, users! We are reading all of them, believe it or not!
@@ -949,7 +1049,7 @@ or
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/02/22/gmaps-got-100000-reviews-in-store/&amp;amp;text=gMaps+for+Windows+Phone+got+100k+reviews%21%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/02/22/gmaps-got-100000-reviews-in-store/&amp;amp;text=gMaps+for+Windows+Phone+got+100k+reviews%21%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -960,9 +1060,9 @@ or
  <entry>
    <title>Coding for fun - AT&amp;T signal levels on route from DC to Snowshoe, WV
 </title>
-   <link href="https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/"/>
-   <updated>2016-01-05T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id>
+   <link href="http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/"/>
+   <updated>2016-01-05T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios</id>
    <content type="html">&lt;p&gt;We go the &lt;a href=&quot;http://snowshoemtn.com&quot;&gt;Snowshoe ski resort&lt;/a&gt; almost every weekend when there is snow.
 Driving there takes up to 5 hours.
 As long as you drive off the interstate you loose your cell signal.&lt;/p&gt;
@@ -1040,7 +1140,7 @@ Next time we go to the Snowshoe resort, I’m going to get T-Mobile coverage res
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/&amp;amp;text=Coding+for+fun+-+AT%26amp%3BT+signal+levels+on+route+from+DC+to+Snowshoe%2C+WV%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/01/05/coding-for-fun-att-signal-strength-dc-to-snowshoe-ios/&amp;amp;text=Coding+for+fun+-+AT%26amp%3BT+signal+levels+on+route+from+DC+to+Snowshoe%2C+WV%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -1051,9 +1151,9 @@ or
  <entry>
    <title>Android-maps-utils bindings for Xamarin.Android apps
 </title>
-   <link href="https://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/"/>
-   <updated>2015-12-28T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id>
+   <link href="http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/"/>
+   <updated>2015-12-28T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings</id>
    <content type="html">&lt;h3 id=&quot;bindings-for-android-maps-utils-for-xamarinandroid-apps&quot;&gt;Bindings for android-maps-utils for Xamarin.Android apps&lt;/h3&gt;
 
 &lt;p&gt;Many developers use Google Maps for Android (Google Play Services) to display maps and related content in Xamarin-based Android apps.&lt;/p&gt;
@@ -1196,7 +1296,7 @@ In that case fork the repo and remove references that it has currently and then 
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&amp;amp;text=Android-maps-utils+bindings+for+Xamarin.Android+apps%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2015/12/28/android-maps-utils-available-for-xamarin-android-apps-bindings/&amp;amp;text=Android-maps-utils+bindings+for+Xamarin.Android+apps%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -1207,9 +1307,9 @@ or
  <entry>
    <title>gMaps is again best navigation app for Windows Phone
 </title>
-   <link href="https://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/"/>
-   <updated>2015-11-07T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone</id>
+   <link href="http://0.0.0.0:4000/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/"/>
+   <updated>2015-11-07T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone</id>
    <content type="html">&lt;p&gt;I recently opened Store app on Lumia 925 and was surprised.&lt;br /&gt;
 Turns out, after so many years, gMaps is still the best navigation app out there.&lt;/p&gt;
 
@@ -1234,7 +1334,7 @@ Turns out, after so many years, gMaps is still the best navigation app out there
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/&amp;amp;text=gMaps+is+again+best+navigation+app+for+Windows+Phone%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2015/11/07/gmaps-is-again-best-travel-app-for-windowsphone/&amp;amp;text=gMaps+is+again+best+navigation+app+for+Windows+Phone%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
@@ -1245,9 +1345,9 @@ or
  <entry>
    <title>Contributing to .NET Core from OS X
 </title>
-   <link href="https://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/"/>
-   <updated>2015-11-05T00:00:00-05:00</updated>
-   <id>https://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx</id>
+   <link href="http://0.0.0.0:4000/2015/11/05/contributing-to-dotnet-on-mac-osx/"/>
+   <updated>2015-11-05T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2015/11/05/contributing-to-dotnet-on-mac-osx</id>
    <content type="html">&lt;p&gt;Imagine you forgot your Windows laptop and have only old Macbook and you are on .NET hackathon. What do you do there?&lt;/p&gt;
 
 &lt;p&gt;Well, you have number of options. What you probably dont  know &lt;em&gt;yet&lt;/em&gt; is that you can develop using .NET also on your Macbook (or your spouse).&lt;/p&gt;
@@ -1475,7 +1575,7 @@ Congratulations!&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=https://sorokoletov.com/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;amp;text=Contributing+to+.NET+Core+from+OS+X%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2015/11/05/contributing-to-dotnet-on-mac-osx/&amp;amp;text=Contributing+to+.NET+Core+from+OS+X%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
