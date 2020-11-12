@@ -10,14 +10,13 @@ How that happened and how to make blink HTML nowadays (or blink HTML5)
 
 Alright, most of the people I know thing that blink HTML is annoying. It is a part of history now, modern HTML pages use nice CSS3 and JavaScript-based effects to make your HTML page blink and do all other kind of stuff (WebGL, WebXR, 3d, anything).
 
-Lou Montulli is often credited as a creator of blink HTML tag, and he has an interesting story [about the origins on blink HTML tag](http://www.montulli.org/theoriginofthe%3Cblink%3Etag).
+Lou Montulli is often credited as a creator of blink HTML tag, and he has an interesting story <a href="http://www.montulli.org/theoriginofthe%3Cblink%3Etag" target="_blank">about the origins on blink HTML tag</a>.
 
 My favorite quote there is: 
 
 >and suddenly everything was blinking.    "Look here", "buy this", "check this out", all blinking.  
 
-Reminds me [Futurama's laugh at VR ads](https://www.youtube.com/watch?v=YlGklt4BSQ8)
-<span class="blink">😉</span>
+Reminds me <a href="https://www.youtube.com/watch?v=YlGklt4BSQ8" target="_blank">Futurama's laugh at VR ads</a> <span class="blink">😉</span>
 
 
 ### How to make blink HTML work nowadays? 
@@ -25,7 +24,7 @@ Reminds me [Futurama's laugh at VR ads](https://www.youtube.com/watch?v=YlGklt4B
 Enough history!
 Good thing about any of the ways below is they support any content, not just text
 
-[MDN recommends a blink HTML polyfill using CSS](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink) which uses keyframes and will make blink HTML tag blink again.
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink" target="_blank">MDN recommends a blink HTML polyfill using CSS</a> which uses keyframes and will make blink HTML tag blink again.
 
 ```
 blink {

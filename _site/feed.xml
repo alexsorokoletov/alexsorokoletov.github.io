@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-12T03:18:17+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Blink HTML - how to make blink HTML these days 😉</title><link href="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/" rel="alternate" type="text/html" title="Blink HTML - how to make blink HTML these days 😉" /><published>2020-11-11T00:00:00+00:00</published><updated>2020-11-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink</id><content type="html" xml:base="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/">&lt;p&gt;The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-12T03:23:48+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Blink HTML - how to make blink HTML these days 😉</title><link href="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/" rel="alternate" type="text/html" title="Blink HTML - how to make blink HTML these days 😉" /><published>2020-11-11T00:00:00+00:00</published><updated>2020-11-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink</id><content type="html" xml:base="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/">&lt;p&gt;The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
 How that happened and how to make blink HTML nowadays (or blink HTML5)&lt;/p&gt;
 
 &lt;!--more--&gt;
 
 &lt;p&gt;Alright, most of the people I know thing that blink HTML is annoying. It is a part of history now, modern HTML pages use nice CSS3 and JavaScript-based effects to make your HTML page blink and do all other kind of stuff (WebGL, WebXR, 3d, anything).&lt;/p&gt;
 
-&lt;p&gt;Lou Montulli is often credited as a creator of blink HTML tag, and he has an interesting story &lt;a href=&quot;http://www.montulli.org/theoriginofthe%3Cblink%3Etag&quot;&gt;about the origins on blink HTML tag&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lou Montulli is often credited as a creator of blink HTML tag, and he has an interesting story &lt;a href=&quot;http://www.montulli.org/theoriginofthe%3Cblink%3Etag&quot; target=&quot;_blank&quot;&gt;about the origins on blink HTML tag&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;My favorite quote there is:&lt;/p&gt;
 
@@ -13,15 +13,14 @@ How that happened and how to make blink HTML nowadays (or blink HTML5)&lt;/p&gt;
   &lt;p&gt;and suddenly everything was blinking.    “Look here”, “buy this”, “check this out”, all blinking.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Reminds me &lt;a href=&quot;https://www.youtube.com/watch?v=YlGklt4BSQ8&quot;&gt;Futurama’s laugh at VR ads&lt;/a&gt;
-&lt;span class=&quot;blink&quot;&gt;😉&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Reminds me &lt;a href=&quot;https://www.youtube.com/watch?v=YlGklt4BSQ8&quot; target=&quot;_blank&quot;&gt;Futurama’s laugh at VR ads&lt;/a&gt; &lt;span class=&quot;blink&quot;&gt;😉&lt;/span&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;how-to-make-blink-html-work-nowadays&quot;&gt;How to make blink HTML work nowadays?&lt;/h3&gt;
 
 &lt;p&gt;Enough history!
 Good thing about any of the ways below is they support any content, not just text&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink&quot;&gt;MDN recommends a blink HTML polyfill using CSS&lt;/a&gt; which uses keyframes and will make blink HTML tag blink again.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink&quot; target=&quot;_blank&quot;&gt;MDN recommends a blink HTML polyfill using CSS&lt;/a&gt; which uses keyframes and will make blink HTML tag blink again.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;blink {
   animation: 2s linear infinite condemned_blink_effect;
