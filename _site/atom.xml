@@ -4,13 +4,48 @@
  <title>Alex Sorokoletov Notes</title>
  <link href="http://0.0.0.0:4000/atom.xml" rel="self"/>
  <link href="http://0.0.0.0:4000/"/>
- <updated>2020-11-12T03:23:48+00:00</updated>
+ <updated>2020-12-14T00:31:42+00:00</updated>
  <id>http://0.0.0.0:4000</id>
  <author>
    <name>Alex Sorokoletov</name>
    <email>alex@sorokoletov.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Git pull, git push, git checkout branch, git delete local branch and so on.
+</title>
+   <link href="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/"/>
+   <updated>2020-12-13T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated</id>
+   <content type="html">&lt;p&gt;Who knows all these git commands? What is git pull? What does your git push? How do you delete a local git branch but not the server one?&lt;/p&gt;
+
+&lt;p&gt;There a lots of git-based tools that are visual and clear. I used those tools too. Until I did not. Because they hide the meaning and behavior of git by presenting it differently.&lt;/p&gt;
+
+&lt;p&gt;This is why I would like to share my tips, tricks and ways of using git efficiently, without any dependency and no mess.&lt;/p&gt;
+
+&lt;p&gt;I’m launching a &lt;a href=&quot;https://gum.co/git-terminal&quot; target=&quot;_blank&quot;&gt;course about git&lt;/a&gt; and how to use git efficiently. You will learn how to use git, how to solve git challenges and help others.&lt;/p&gt;
+
+&lt;p&gt;You can pre-order the course here: &lt;a href=&quot;https://gum.co/git-terminal&quot; target=&quot;_blank&quot;&gt;https://gum.co/git-terminal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Get git educated and earn kudos by helping your team with git 💪!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The course will go live on February 1, 2021 and you can preorder it using the link above.&lt;/p&gt;
+
+&lt;p&gt;Let me know what questions do you have around git, what tools have you used and what bothers you with git.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/&amp;amp;text=Git+pull%2C+git+push%2C+git+checkout+branch%2C+git+delete+local+branch+and+so+on.%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Blink HTML - how to make blink HTML these days 😉

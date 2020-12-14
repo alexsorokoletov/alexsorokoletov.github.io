@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-12T03:23:48+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Blink HTML - how to make blink HTML these days 😉</title><link href="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/" rel="alternate" type="text/html" title="Blink HTML - how to make blink HTML these days 😉" /><published>2020-11-11T00:00:00+00:00</published><updated>2020-11-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink</id><content type="html" xml:base="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/">&lt;p&gt;The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-12-14T00:31:42+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Git pull, git push, git checkout branch, git delete local branch and so on.</title><link href="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/" rel="alternate" type="text/html" title="Git pull, git push, git checkout branch, git delete local branch and so on." /><published>2020-12-13T00:00:00+00:00</published><updated>2020-12-13T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated</id><content type="html" xml:base="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/">&lt;p&gt;Who knows all these git commands? What is git pull? What does your git push? How do you delete a local git branch but not the server one?&lt;/p&gt;
+
+&lt;p&gt;There a lots of git-based tools that are visual and clear. I used those tools too. Until I did not. Because they hide the meaning and behavior of git by presenting it differently.&lt;/p&gt;
+
+&lt;p&gt;This is why I would like to share my tips, tricks and ways of using git efficiently, without any dependency and no mess.&lt;/p&gt;
+
+&lt;p&gt;I’m launching a &lt;a href=&quot;https://gum.co/git-terminal&quot; target=&quot;_blank&quot;&gt;course about git&lt;/a&gt; and how to use git efficiently. You will learn how to use git, how to solve git challenges and help others.&lt;/p&gt;
+
+&lt;p&gt;You can pre-order the course here: &lt;a href=&quot;https://gum.co/git-terminal&quot; target=&quot;_blank&quot;&gt;https://gum.co/git-terminal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Get git educated and earn kudos by helping your team with git 💪!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The course will go live on February 1, 2021 and you can preorder it using the link above.&lt;/p&gt;
+
+&lt;p&gt;Let me know what questions do you have around git, what tools have you used and what bothers you with git.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/&amp;amp;text=Git+pull%2C+git+push%2C+git+checkout+branch%2C+git+delete+local+branch+and+so+on.%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Who knows all these git commands? What is git pull? What does your git push? How do you delete a local git branch but not the server one? There a lots of git-based tools that are visual and clear. I used those tools too. Until I did not. Because they hide the meaning and behavior of git by presenting it differently. This is why I would like to share my tips, tricks and ways of using git efficiently, without any dependency and no mess. I’m launching a course about git and how to use git efficiently. You will learn how to use git, how to solve git challenges and help others. You can pre-order the course here: https://gum.co/git-terminal Get git educated and earn kudos by helping your team with git 💪!</summary></entry><entry><title type="html">Blink HTML - how to make blink HTML these days 😉</title><link href="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/" rel="alternate" type="text/html" title="Blink HTML - how to make blink HTML these days 😉" /><published>2020-11-11T00:00:00+00:00</published><updated>2020-11-11T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink</id><content type="html" xml:base="http://0.0.0.0:4000/2020/11/11/blink-html-how-to-make-your-html-blink/">&lt;p&gt;The Blink HTML was first visual effect that was available in HTML. Your HTML page could show text, use different colors and blink.
 How that happened and how to make blink HTML nowadays (or blink HTML5)&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -185,7 +210,60 @@ To be honest, I’m not sure why the Mac version does not support them yet.&lt;/
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it. One of the great features that came with Roslyn compiler was support for analyzers. Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation. It’s a powerful addition and there are hundreds of GREAT analyzers on GitHub already. How do we use that greatness with Xamarin apps?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it. One of the great features that came with Roslyn compiler was support for analyzers. Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation. It’s a powerful addition and there are hundreds of GREAT analyzers on GitHub already. How do we use that greatness with Xamarin apps?</summary></entry><entry><title type="html">Why Reply All is an essential skill</title><link href="http://0.0.0.0:4000/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/reply-all</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
+Here is my take on how that applies to a team.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-background&quot;&gt;Some background&lt;/h3&gt;
+&lt;p&gt;As some of you know, I like remote work.
+Mainly because of 192 million benefits :)
+&lt;img src=&quot;/assets/remoteworkbenefits.png&quot; alt=&quot;Remote work has a lot of benefits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Working remotely teaches how to work in a team. Working in an office not always means working in a team, sometimes it is just working around other people.
+Once you are remote for any of the reasons, it is so hard to be in the loop unless there are some practices in the team to prevent this disconnect.
+Today I would like to share my points about Reply All.&lt;/p&gt;
+
+&lt;h3 id=&quot;simple-rules&quot;&gt;Simple rules&lt;/h3&gt;
+&lt;p&gt;Reply All is there for a reason. You have to think whether reply or reply all. Yes. Think :) 
+And I am going to make it easy for you. 
+Here is my gift.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/replyall.png&quot; alt=&quot;Reply All decision maker&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3 of 4 branches lead to Reply All. Only 1 of 4 needs Reply.
+Now, let me give you a few examples.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Your PM sends an email with an issue from your client to you and the rest of the team asking to create a task and investigate. Email has you, team members and a PM as a sender.
+All of these are interested in your response. Reply All. No brainer&lt;/li&gt;
+  &lt;li&gt;Someone from the team leaves the company and sends farewell email to your team and whole company. You would like to wish him/her well. 
+Private response. Reply. No brainer&lt;/li&gt;
+  &lt;li&gt;You report a bug to another team1 and include their PM, team1 alias. Turns out, the team responsible for this issue is another one. PM of team1 fixes that by adding PM2 and team2 aliases and asking them to help you. Someone from team2 asks for an additional info.
+Your response is only interesting now for PM2 and team2. Hit Reply All and edit recipients to remove PM1 and team1. No brainer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With a bit of practice it will be a natural skill.&lt;/p&gt;
+
+&lt;p&gt;Where is that button?
+Good question. All mail apps, even on your phone, have it. Google and find it. Here is what you can do specifically for Gmail.&lt;/p&gt;
+
+&lt;h5 id=&quot;how-to-make-reply-all-your-default-response-in-gmail&quot;&gt;How To Make Reply All Your Default Response in Gmail&lt;/h5&gt;
+&lt;p&gt;Go to Gmail settings -&amp;gt; General tab -&amp;gt; Default reply behavior. Set it to Reply all. Enjoy. It is &lt;em&gt;that&lt;/em&gt; easy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gmail-reply-all.png&quot; alt=&quot;Enable Reply All in Google Mail GMail&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it for today, thank you!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
 Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 &lt;!--more--&gt;&lt;/p&gt;
 
@@ -260,60 +338,7 @@ Extending VS4Mac was moderately easy, and I do that action anyway before commit 
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">5 extensions to transform Visual Studio for Mac to even more powerful IDE. Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Why Reply All is an essential skill</title><link href="http://0.0.0.0:4000/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/reply-all</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
-
-&lt;!--more--&gt;
-&lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
-Here is my take on how that applies to a team.&lt;/p&gt;
-
-&lt;h3 id=&quot;some-background&quot;&gt;Some background&lt;/h3&gt;
-&lt;p&gt;As some of you know, I like remote work.
-Mainly because of 192 million benefits :)
-&lt;img src=&quot;/assets/remoteworkbenefits.png&quot; alt=&quot;Remote work has a lot of benefits&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Working remotely teaches how to work in a team. Working in an office not always means working in a team, sometimes it is just working around other people.
-Once you are remote for any of the reasons, it is so hard to be in the loop unless there are some practices in the team to prevent this disconnect.
-Today I would like to share my points about Reply All.&lt;/p&gt;
-
-&lt;h3 id=&quot;simple-rules&quot;&gt;Simple rules&lt;/h3&gt;
-&lt;p&gt;Reply All is there for a reason. You have to think whether reply or reply all. Yes. Think :) 
-And I am going to make it easy for you. 
-Here is my gift.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/replyall.png&quot; alt=&quot;Reply All decision maker&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3 of 4 branches lead to Reply All. Only 1 of 4 needs Reply.
-Now, let me give you a few examples.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Your PM sends an email with an issue from your client to you and the rest of the team asking to create a task and investigate. Email has you, team members and a PM as a sender.
-All of these are interested in your response. Reply All. No brainer&lt;/li&gt;
-  &lt;li&gt;Someone from the team leaves the company and sends farewell email to your team and whole company. You would like to wish him/her well. 
-Private response. Reply. No brainer&lt;/li&gt;
-  &lt;li&gt;You report a bug to another team1 and include their PM, team1 alias. Turns out, the team responsible for this issue is another one. PM of team1 fixes that by adding PM2 and team2 aliases and asking them to help you. Someone from team2 asks for an additional info.
-Your response is only interesting now for PM2 and team2. Hit Reply All and edit recipients to remove PM1 and team1. No brainer.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;With a bit of practice it will be a natural skill.&lt;/p&gt;
-
-&lt;p&gt;Where is that button?
-Good question. All mail apps, even on your phone, have it. Google and find it. Here is what you can do specifically for Gmail.&lt;/p&gt;
-
-&lt;h5 id=&quot;how-to-make-reply-all-your-default-response-in-gmail&quot;&gt;How To Make Reply All Your Default Response in Gmail&lt;/h5&gt;
-&lt;p&gt;Go to Gmail settings -&amp;gt; General tab -&amp;gt; Default reply behavior. Set it to Reply all. Enjoy. It is &lt;em&gt;that&lt;/em&gt; easy.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/gmail-reply-all.png&quot; alt=&quot;Enable Reply All in Google Mail GMail&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That’s it for today, thank you!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00+00:00</published><updated>2017-02-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">5 extensions to transform Visual Studio for Mac to even more powerful IDE. Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00+00:00</published><updated>2017-02-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
 This was 100% manual process until &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).&lt;/p&gt;
@@ -668,81 +693,4 @@ What’s so great about this?
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Just recently, Visual Studio team published a post on great features coming to the VS 2017 that will increase your productivity. Among those, one small but powerful feature coming to the Visual Studio. It’s .editorconfig support. What’s so great about this?</summary></entry><entry><title type="html">C# Standard Style - single source of formatting truth</title><link href="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/" rel="alternate" type="text/html" title="C# Standard Style - single source of formatting truth" /><published>2016-11-13T00:00:00+00:00</published><updated>2016-11-13T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2016/11/13/csharp-standard-style</id><content type="html" xml:base="http://0.0.0.0:4000/2016/11/13/csharp-standard-style/">&lt;p&gt;Months ago &lt;a href=&quot;https://www.paralect.com/team&quot;&gt;Andrew Orsich&lt;/a&gt; told me about this great tool called &lt;a href=&quot;http://standardjs.com/&quot;&gt;javascript standard style&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Absolutely amazing.&lt;/p&gt;
-
-&lt;p&gt;What it does is just formats code with one pre-configured, non-changeable, non-customizeable, non-arguable style. &lt;strong&gt;You either use it or not&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;After that, all discussions about curly braces, tabs and spaces go to void. Done.&lt;/p&gt;
-
-&lt;p&gt;I’d like to have this for C#.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;We all had enough of discussions whether use tabs or spaces (it’s still happens), where to put braces, how do we name methods and variables. I feel this is especially important now, when .NET is opensource, when C# is being used for iOS and Android development, when many of C# developers are working on Mac and Linux.&lt;/p&gt;
-
-&lt;p&gt;Frankly, we are all already using &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ff926074.aspx&quot;&gt;Microsoft C# Coding Conventions&lt;/a&gt; in some way. It’s just these slight modifications that make us spend time on formatting and arguing about these changes or undoing them.&lt;/p&gt;
-
-&lt;p&gt;I want my team and everyone developing in C# focus on functionality and forget about formatting forever.&lt;/p&gt;
-
-&lt;p&gt;Let’s make it happen.&lt;/p&gt;
-
-&lt;h2 id=&quot;there-should-be-something-for-this-right&quot;&gt;There should be something for this, right?&lt;/h2&gt;
-
-&lt;p&gt;Tools already exist, however…&lt;/p&gt;
-
-&lt;p&gt;One can use Visual Studio settings and configure C# formatting. Then do the same with Xamarin Studio.(strictly speaking, having XS format C# code exactly same way as VS is not possible). 
-And what about VS Code?&lt;/p&gt;
-
-&lt;p&gt;There is an &lt;a href=&quot;https://github.com/editorconfig/editorconfig-vscode&quot;&gt;.editorconfig support for Visual Studio&lt;/a&gt; but it’s covering just part of formatting questions.&lt;/p&gt;
-
-&lt;p&gt;ReSharper is another candidate, however, it doesn’t work with Xamarin Studio and you can customize rules.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/onovotny&quot;&gt;Oren&lt;/a&gt; kindly pointed there is a &lt;a href=&quot;https://github.com/dotnet/codeformatter&quot;&gt;dotnet/CodeFormatter project&lt;/a&gt; and &lt;a href=&quot;https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/contributing.md&quot;&gt;Roslyn and .NET Core teams use styles&lt;/a&gt; enforced by the tool.&lt;/p&gt;
-
-&lt;p&gt;Good old StyleCop/FxCop might be suitable as well, but again, you can and have to customize it.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, all available tools are customizable. As long as you use them, there will be always someone who will do something his way.  Again, I want to have this binary and simple choice. Use it or don’t use it.&lt;/p&gt;
-
-&lt;h2 id=&quot;should-we-build-another-tool&quot;&gt;Should we build another tool?&lt;/h2&gt;
-
-&lt;p&gt;Actually, CodeFormatter is a good candidate for becoming a single source of truth. It has default rules baked in, it runs on Windows and Mono and it’s built with Roslyn and people are already using it. Here is a &lt;a href=&quot;https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md&quot;&gt;list of rules CodeFormatter enforces&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I feel like we just need to extend it and build VS extension, Xamarin Add-in and VS Code extension to make experience seamless.&lt;/p&gt;
-
-&lt;h2 id=&quot;its-just-your-crazy-idea&quot;&gt;It’s just your crazy idea&lt;/h2&gt;
-
-&lt;p&gt;According to the post from Roslyn team, I’m not alone&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/dotnet/2015/02/09/automatic-code-formatter-released-to-github/&quot;&gt;Automatic code formatter released to GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;We strongly believe that having a consistent style greatly increases the readability and maintainability of a code base. The individual style decisions themselves are subjective, the key is the consistency of the decisions. As such the .NET team has a set of style guidelines for all C# code written by the team.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;i-have-another-ideaopinion&quot;&gt;I have another idea/opinion&lt;/h2&gt;
-
-&lt;p&gt;I would love to hear your feedback and thoughs on this idea. Feel free to contact me or comment this article and please share it with your team and friends.&lt;/p&gt;
-
-&lt;h2 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h2&gt;
-
-&lt;h4 id=&quot;i-do-not-want-to-re-format-my-solution&quot;&gt;I do not want to re-format my solution.&lt;/h4&gt;
-&lt;p&gt;You don’t need to re-format existing codebase unless you want. When you start your next project, this is the best time to start using C# Standard Format.&lt;/p&gt;
-
-&lt;h4 id=&quot;why-we-should-enforce-style-a-and-not-enforce-style-b&quot;&gt;Why we should enforce style A and not enforce style B.&lt;/h4&gt;
-
-&lt;p&gt;Discussing specific style settings is not the goal of this post.&lt;/p&gt;
-
-&lt;h4 id=&quot;i-will-not-use-this-c-standard-formatting&quot;&gt;I will not use this C# standard formatting.&lt;/h4&gt;
-
-&lt;p&gt;Fine, it’s “use it or don’t”. Nothing will change for people that don’t want to use a non-customizeable set of rules. A lot of free time will come to those that want to use it.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2016/11/13/csharp-standard-style/&amp;amp;text=C%23+Standard+Style+-+single+source+of+formatting+truth%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Months ago Andrew Orsich told me about this great tool called javascript standard style. Absolutely amazing. What it does is just formats code with one pre-configured, non-changeable, non-customizeable, non-arguable style. You either use it or not. After that, all discussions about curly braces, tabs and spaces go to void. Done. I’d like to have this for C#.</summary></entry></feed>
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">Just recently, Visual Studio team published a post on great features coming to the VS 2017 that will increase your productivity. Among those, one small but powerful feature coming to the Visual Studio. It’s .editorconfig support. What’s so great about this?</summary></entry></feed>
