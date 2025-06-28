@@ -23,7 +23,10 @@ Twitter [@alexsorokoletov](https://twitter.com/alexsorokoletov)
 
 
 ## Projects
-* [WIP: Livio - No-code video calls for your business](https://welivio.com/)
+* [TurboAI.dev - Proven AI productivity wins that save teams real hours every week](https://www.turboai.dev/)
+* [AI-Powered Effortless Language Learning - helping myself learn more languages](https://www.instantlyfluent.com/)
+* [Macbook and iPhone availability tracker - which store has it in stock](https://apple-m1-macbook-tracker.vercel.app/)
+* [Livio - No-code video calls for your business](https://welivio.com/)
 * [Frontporch - Clubhouse event card generator](https://frontporch-ch.herokuapp.com/)
 * [BurnVibes.com](https://burnvibes.com/)
 * [Visual Studio for Mac - extension to show solution name on the icon](https://github.com/DreamTeamMobile/VS4Mac.SolutionName)

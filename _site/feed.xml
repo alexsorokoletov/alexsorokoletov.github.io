@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2021-02-12T04:08:28+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Git pull, git push, git checkout branch, git delete local branch and so on.</title><link href="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/" rel="alternate" type="text/html" title="Git pull, git push, git checkout branch, git delete local branch and so on." /><published>2020-12-13T00:00:00+00:00</published><updated>2020-12-13T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated</id><content type="html" xml:base="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/">&lt;p&gt;Who knows all these git commands? What is git pull? What does your git push? How do you delete a local git branch but not the server one?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-06-28T01:59:03+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Alex Sorokoletov Notes</title><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><entry><title type="html">Git pull, git push, git checkout branch, git delete local branch and so on.</title><link href="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/" rel="alternate" type="text/html" title="Git pull, git push, git checkout branch, git delete local branch and so on." /><published>2020-12-13T00:00:00+00:00</published><updated>2020-12-13T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated</id><content type="html" xml:base="http://0.0.0.0:4000/2020/12/13/git-using-terminal-get-educated/">&lt;p&gt;Who knows all these git commands? What is git pull? What does your git push? How do you delete a local git branch but not the server one?&lt;/p&gt;
 
 &lt;p&gt;There a lots of git-based tools that are visual and clear. I used those tools too. Until I did not. Because they hide the meaning and behavior of git by presenting it differently.&lt;/p&gt;
 
@@ -210,60 +210,7 @@ To be honest, I’m not sure why the Mac version does not support them yet.&lt;/
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it. One of the great features that came with Roslyn compiler was support for analyzers. Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation. It’s a powerful addition and there are hundreds of GREAT analyzers on GitHub already. How do we use that greatness with Xamarin apps?</summary></entry><entry><title type="html">Why Reply All is an essential skill</title><link href="http://0.0.0.0:4000/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/reply-all</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
-
-&lt;!--more--&gt;
-&lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
-Here is my take on how that applies to a team.&lt;/p&gt;
-
-&lt;h3 id=&quot;some-background&quot;&gt;Some background&lt;/h3&gt;
-&lt;p&gt;As some of you know, I like remote work.
-Mainly because of 192 million benefits :)
-&lt;img src=&quot;/assets/remoteworkbenefits.png&quot; alt=&quot;Remote work has a lot of benefits&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Working remotely teaches how to work in a team. Working in an office not always means working in a team, sometimes it is just working around other people.
-Once you are remote for any of the reasons, it is so hard to be in the loop unless there are some practices in the team to prevent this disconnect.
-Today I would like to share my points about Reply All.&lt;/p&gt;
-
-&lt;h3 id=&quot;simple-rules&quot;&gt;Simple rules&lt;/h3&gt;
-&lt;p&gt;Reply All is there for a reason. You have to think whether reply or reply all. Yes. Think :) 
-And I am going to make it easy for you. 
-Here is my gift.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/replyall.png&quot; alt=&quot;Reply All decision maker&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3 of 4 branches lead to Reply All. Only 1 of 4 needs Reply.
-Now, let me give you a few examples.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Your PM sends an email with an issue from your client to you and the rest of the team asking to create a task and investigate. Email has you, team members and a PM as a sender.
-All of these are interested in your response. Reply All. No brainer&lt;/li&gt;
-  &lt;li&gt;Someone from the team leaves the company and sends farewell email to your team and whole company. You would like to wish him/her well. 
-Private response. Reply. No brainer&lt;/li&gt;
-  &lt;li&gt;You report a bug to another team1 and include their PM, team1 alias. Turns out, the team responsible for this issue is another one. PM of team1 fixes that by adding PM2 and team2 aliases and asking them to help you. Someone from team2 asks for an additional info.
-Your response is only interesting now for PM2 and team2. Hit Reply All and edit recipients to remove PM1 and team1. No brainer.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;With a bit of practice it will be a natural skill.&lt;/p&gt;
-
-&lt;p&gt;Where is that button?
-Good question. All mail apps, even on your phone, have it. Google and find it. Here is what you can do specifically for Gmail.&lt;/p&gt;
-
-&lt;h5 id=&quot;how-to-make-reply-all-your-default-response-in-gmail&quot;&gt;How To Make Reply All Your Default Response in Gmail&lt;/h5&gt;
-&lt;p&gt;Go to Gmail settings -&amp;gt; General tab -&amp;gt; Default reply behavior. Set it to Reply all. Enjoy. It is &lt;em&gt;that&lt;/em&gt; easy.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/gmail-reply-all.png&quot; alt=&quot;Enable Reply All in Google Mail GMail&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That’s it for today, thank you!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you liked this post, you can
-&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
-  share it with your followers&lt;/a&gt; 
-or 
-&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">The news of having C# compiler written in C# were crazy at first. Then everyone realized the power that comes with it. One of the great features that came with Roslyn compiler was support for analyzers. Analyzers are like a plugins for C# compilers. Easy to write and thus really flexible to adjust to your specific situation. It’s a powerful addition and there are hundreds of GREAT analyzers on GitHub already. How do we use that greatness with Xamarin apps?</summary></entry><entry><title type="html">My favorite extensions for Visual Studio for Mac</title><link href="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/" rel="alternate" type="text/html" title="My favorite extensions for Visual Studio for Mac" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/favorite-extensions-visual-studio-mac-xamarin/">&lt;p&gt;5 extensions to transform Visual Studio for Mac to even more powerful IDE. 
 Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.
 &lt;!--more--&gt;&lt;/p&gt;
 
@@ -338,7 +285,60 @@ Extending VS4Mac was moderately easy, and I do that action anyway before commit 
   share it with your followers&lt;/a&gt; 
 or 
 &lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
-  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">5 extensions to transform Visual Studio for Mac to even more powerful IDE. Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00+00:00</published><updated>2017-02-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">5 extensions to transform Visual Studio for Mac to even more powerful IDE. Each of them, when discovered (or developed), allowed me to save my time and simplify my workflow.</summary></entry><entry><title type="html">Why Reply All is an essential skill</title><link href="http://0.0.0.0:4000/2018/09/20/reply-all/" rel="alternate" type="text/html" title="Why Reply All is an essential skill" /><published>2018-09-20T00:00:00+00:00</published><updated>2018-09-20T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2018/09/20/reply-all</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/20/reply-all/">&lt;p&gt;One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;First of all, there are hundreds of different views about Reply All feature. To summarize 99% of them, let’s just agree Reply All should be used in some cases but not others.
+Here is my take on how that applies to a team.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-background&quot;&gt;Some background&lt;/h3&gt;
+&lt;p&gt;As some of you know, I like remote work.
+Mainly because of 192 million benefits :)
+&lt;img src=&quot;/assets/remoteworkbenefits.png&quot; alt=&quot;Remote work has a lot of benefits&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Working remotely teaches how to work in a team. Working in an office not always means working in a team, sometimes it is just working around other people.
+Once you are remote for any of the reasons, it is so hard to be in the loop unless there are some practices in the team to prevent this disconnect.
+Today I would like to share my points about Reply All.&lt;/p&gt;
+
+&lt;h3 id=&quot;simple-rules&quot;&gt;Simple rules&lt;/h3&gt;
+&lt;p&gt;Reply All is there for a reason. You have to think whether reply or reply all. Yes. Think :) 
+And I am going to make it easy for you. 
+Here is my gift.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/replyall.png&quot; alt=&quot;Reply All decision maker&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3 of 4 branches lead to Reply All. Only 1 of 4 needs Reply.
+Now, let me give you a few examples.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Your PM sends an email with an issue from your client to you and the rest of the team asking to create a task and investigate. Email has you, team members and a PM as a sender.
+All of these are interested in your response. Reply All. No brainer&lt;/li&gt;
+  &lt;li&gt;Someone from the team leaves the company and sends farewell email to your team and whole company. You would like to wish him/her well. 
+Private response. Reply. No brainer&lt;/li&gt;
+  &lt;li&gt;You report a bug to another team1 and include their PM, team1 alias. Turns out, the team responsible for this issue is another one. PM of team1 fixes that by adding PM2 and team2 aliases and asking them to help you. Someone from team2 asks for an additional info.
+Your response is only interesting now for PM2 and team2. Hit Reply All and edit recipients to remove PM1 and team1. No brainer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With a bit of practice it will be a natural skill.&lt;/p&gt;
+
+&lt;p&gt;Where is that button?
+Good question. All mail apps, even on your phone, have it. Google and find it. Here is what you can do specifically for Gmail.&lt;/p&gt;
+
+&lt;h5 id=&quot;how-to-make-reply-all-your-default-response-in-gmail&quot;&gt;How To Make Reply All Your Default Response in Gmail&lt;/h5&gt;
+&lt;p&gt;Go to Gmail settings -&amp;gt; General tab -&amp;gt; Default reply behavior. Set it to Reply all. Enjoy. It is &lt;em&gt;that&lt;/em&gt; easy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gmail-reply-all.png&quot; alt=&quot;Enable Reply All in Google Mail GMail&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it for today, thank you!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you liked this post, you can
+&lt;a href=&quot;https://twitter.com/intent/tweet?url=http://0.0.0.0:4000/2018/09/20/reply-all/&amp;amp;text=Why+Reply+All+is+an+essential+skill%0A&amp;amp;via=alexsorokoletov&quot; target=&quot;_blank&quot;&gt;
+  share it with your followers&lt;/a&gt; 
+or 
+&lt;a href=&quot;https://twitter.com/alexsorokoletov&quot;&gt;
+  follow me on Twitter&lt;/a&gt;!&lt;/p&gt;</content><author><name>Alex Sorokoletov</name><email>alex@sorokoletov.com</email></author><summary type="html">One of the practices that I find essential for any member of any team is to use Reply All feature in the email communication. Why is that?</summary></entry><entry><title type="html">Easy way to create Xamarin.iOS binding from CocoaPods</title><link href="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/" rel="alternate" type="text/html" title="Easy way to create Xamarin.iOS binding from CocoaPods" /><published>2017-02-05T00:00:00+00:00</published><updated>2017-02-05T00:00:00+00:00</updated><id>http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios</id><content type="html" xml:base="http://0.0.0.0:4000/2017/02/05/objc-automatic-easy-way-to-create-xamarin-bindings-ios/">&lt;p&gt;Hey, Xamarin developers!
 Developing iOS apps quite often includes using native libraries and Xamarin for iOS supports this by creating bindings.
 This was 100% manual process until &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt;. After, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ObjectiveSharpie&lt;/code&gt; began supporting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CocoaPods&lt;/code&gt; (it is NuGet for iOS developers, so everything is in there). 
 However, it doesn’t work in many cases (it can’t build something or reflect ObjectiveC code correctly).&lt;/p&gt;
